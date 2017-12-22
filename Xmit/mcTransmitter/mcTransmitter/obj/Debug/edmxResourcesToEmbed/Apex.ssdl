@@ -1,0 +1,333 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ApexModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="ApexModelStoreContainer">
+    <EntitySet Name="Slcust" EntityType="ApexModel.Store.Slcust" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Sljob" EntityType="ApexModel.Store.Sljob" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Sljobdet" EntityType="ApexModel.Store.Sljobdet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Sljobprd" EntityType="ApexModel.Store.Sljobprd" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Slorder" EntityType="ApexModel.Store.Slorder" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Slordnam" EntityType="ApexModel.Store.Slordnam" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Slprospe" EntityType="ApexModel.Store.Slprospe" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Sycontac" EntityType="ApexModel.Store.Sycontac" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Sygeofence" EntityType="ApexModel.Store.Sygeofence" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <EntityType Name="Slcust">
+    <Key>
+      <PropertyRef Name="CustomerID" />
+    </Key>
+    <Property Name="CustomerID" Type="nvarchar" Nullable="false" MaxLength="15" />
+  </EntityType>
+  <EntityType Name="Sygeofence">
+    <Key>
+      <PropertyRef Name="GeofenceID" />
+    </Key>
+    <Property Name="GeofenceID" Type="int" Nullable="false" />
+    <Property Name="Latitude" Type="float" Nullable="false" />
+    <Property Name="Longitude" Type="float" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Sljob">
+    <Key>
+      <PropertyRef Name="JobID" />
+    </Key>
+    <Property Name="BidDate" Type="datetime" Nullable="false" />
+    <Property Name="BeginDate" Type="datetime" Nullable="false" />
+    <Property Name="OrderDate" Type="datetime" Nullable="false" />
+    <Property Name="Description1" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Description2" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="JobID" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="SalespersonID" Type="nvarchar" Nullable="false" MaxLength="15" />
+    <Property Name="TypeID" Type="nchar" Nullable="false" MaxLength="1" />
+    <Property Name="ShipAddress1" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="ShipAddress2" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="ShipCity" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="ShipState" Type="nvarchar" Nullable="false" MaxLength="25" />
+    <Property Name="ShipZip" Type="nvarchar" Nullable="false" MaxLength="15" />
+    <Property Name="ShipCounty" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Latitude" Type="float" Nullable="false" />
+    <Property Name="Longitude" Type="float" Nullable="false" />
+    <Property Name="GeofenceID" Type="int" Nullable="false" />
+    <Property Name="BidResults" Type="nchar" Nullable="false" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="Sljobdet">
+    <Key>
+      <PropertyRef Name="JobID" />
+      <PropertyRef Name="JobCostID" />
+    </Key>
+    <Property Name="JobID" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="JobCostID" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="Description1" Type="nvarchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Sljobprd">
+    <Key>
+      <PropertyRef Name="LocationID" />
+      <PropertyRef Name="ProductID" />
+      <PropertyRef Name="JobID" />
+      <PropertyRef Name="JobCostID" />
+    </Key>
+    <Property Name="UpdateProdDesc" Type="nvarchar" Nullable="false" MaxLength="1" />
+    <Property Name="Frt1FreightRate" Type="float" Nullable="false" />
+    <Property Name="Frt2FreightRate" Type="float" Nullable="false" />
+    <Property Name="Frt3FreightRate" Type="float" Nullable="false" />
+    <Property Name="Frt4FreightRate" Type="float" Nullable="false" />
+    <Property Name="Frt5FreightRate" Type="float" Nullable="false" />
+    <Property Name="Frt6FreightRate" Type="float" Nullable="false" />
+    <Property Name="Frt7FreightRate" Type="float" Nullable="false" />
+    <Property Name="Frt8FreightRate" Type="float" Nullable="false" />
+    <Property Name="Frt9FreightRate" Type="float" Nullable="false" />
+    <Property Name="Frt10FreightRate" Type="float" Nullable="false" />
+    <Property Name="Frt11FreightRate" Type="float" Nullable="false" />
+    <Property Name="Frt12FreightRate" Type="float" Nullable="false" />
+    <Property Name="Frt13FreightRate" Type="float" Nullable="false" />
+    <Property Name="Frt14FreightRate" Type="float" Nullable="false" />
+    <Property Name="Frt15FreightRate" Type="float" Nullable="false" />
+    <Property Name="Frt16FreightRate" Type="float" Nullable="false" />
+    <Property Name="Frt17FreightRate" Type="float" Nullable="false" />
+    <Property Name="Frt18FreightRate" Type="float" Nullable="false" />
+    <Property Name="Frt19FreightRate" Type="float" Nullable="false" />
+    <Property Name="Frt20FreightRate" Type="float" Nullable="false" />
+    <Property Name="Frt21FreightRate" Type="float" Nullable="false" />
+    <Property Name="Frt22FreightRate" Type="float" Nullable="false" />
+    <Property Name="Frt23FreightRate" Type="float" Nullable="false" />
+    <Property Name="Frt24FreightRate" Type="float" Nullable="false" />
+    <Property Name="Frt25FreightRate" Type="float" Nullable="false" />
+    <Property Name="Frt1FreightRateType" Type="nvarchar" Nullable="false" MaxLength="1" />
+    <Property Name="Frt2FreightRateType" Type="nvarchar" Nullable="false" MaxLength="1" />
+    <Property Name="Frt3FreightRateType" Type="nvarchar" Nullable="false" MaxLength="1" />
+    <Property Name="Frt4FreightRateType" Type="nvarchar" Nullable="false" MaxLength="1" />
+    <Property Name="Frt5FreightRateType" Type="nvarchar" Nullable="false" MaxLength="1" />
+    <Property Name="Frt6FreightRateType" Type="nvarchar" Nullable="false" MaxLength="1" />
+    <Property Name="Frt7FreightRateType" Type="nvarchar" Nullable="false" MaxLength="1" />
+    <Property Name="Frt8FreightRateType" Type="nvarchar" Nullable="false" MaxLength="1" />
+    <Property Name="Frt9FreightRateType" Type="nvarchar" Nullable="false" MaxLength="1" />
+    <Property Name="Frt10FreightRateType" Type="nvarchar" Nullable="false" MaxLength="1" />
+    <Property Name="Frt11FreightRateType" Type="nvarchar" Nullable="false" MaxLength="1" />
+    <Property Name="Frt12FreightRateType" Type="nvarchar" Nullable="false" MaxLength="1" />
+    <Property Name="Frt13FreightRateType" Type="nvarchar" Nullable="false" MaxLength="1" />
+    <Property Name="Frt14FreightRateType" Type="nvarchar" Nullable="false" MaxLength="1" />
+    <Property Name="Frt15FreightRateType" Type="nvarchar" Nullable="false" MaxLength="1" />
+    <Property Name="Frt16FreightRateType" Type="nvarchar" Nullable="false" MaxLength="1" />
+    <Property Name="Frt17FreightRateType" Type="nvarchar" Nullable="false" MaxLength="1" />
+    <Property Name="Frt18FreightRateType" Type="nvarchar" Nullable="false" MaxLength="1" />
+    <Property Name="Frt19FreightRateType" Type="nvarchar" Nullable="false" MaxLength="1" />
+    <Property Name="Frt20FreightRateType" Type="nvarchar" Nullable="false" MaxLength="1" />
+    <Property Name="Frt21FreightRateType" Type="nvarchar" Nullable="false" MaxLength="1" />
+    <Property Name="Frt22FreightRateType" Type="nvarchar" Nullable="false" MaxLength="1" />
+    <Property Name="Frt23FreightRateType" Type="nvarchar" Nullable="false" MaxLength="1" />
+    <Property Name="Frt24FreightRateType" Type="nvarchar" Nullable="false" MaxLength="1" />
+    <Property Name="Frt25FreightRateType" Type="nvarchar" Nullable="false" MaxLength="1" />
+    <Property Name="JobID" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="JobCostID" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="ProductID" Type="nvarchar" Nullable="false" MaxLength="15" />
+    <Property Name="LocationID" Type="nvarchar" Nullable="false" MaxLength="10" />
+    <Property Name="ProductName" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Price" Type="float" Nullable="false" />
+    <Property Name="Frt1FreightPay" Type="float" Nullable="false" />
+    <Property Name="Frt2FreightPay" Type="float" Nullable="false" />
+    <Property Name="Frt3FreightPay" Type="float" Nullable="false" />
+    <Property Name="Frt4FreightPay" Type="float" Nullable="false" />
+    <Property Name="Frt5FreightPay" Type="float" Nullable="false" />
+    <Property Name="Frt6FreightPay" Type="float" Nullable="false" />
+    <Property Name="Frt7FreightPay" Type="float" Nullable="false" />
+    <Property Name="Frt8FreightPay" Type="float" Nullable="false" />
+    <Property Name="Frt9FreightPay" Type="float" Nullable="false" />
+    <Property Name="Frt10FreightPay" Type="float" Nullable="false" />
+    <Property Name="Frt11FreightPay" Type="float" Nullable="false" />
+    <Property Name="Frt12FreightPay" Type="float" Nullable="false" />
+    <Property Name="Frt13FreightPay" Type="float" Nullable="false" />
+    <Property Name="Frt14FreightPay" Type="float" Nullable="false" />
+    <Property Name="Frt15FreightPay" Type="float" Nullable="false" />
+    <Property Name="Frt16FreightPay" Type="float" Nullable="false" />
+    <Property Name="Frt17FreightPay" Type="float" Nullable="false" />
+    <Property Name="Frt18FreightPay" Type="float" Nullable="false" />
+    <Property Name="Frt19FreightPay" Type="float" Nullable="false" />
+    <Property Name="Frt20FreightPay" Type="float" Nullable="false" />
+    <Property Name="Frt21FreightPay" Type="float" Nullable="false" />
+    <Property Name="Frt22FreightPay" Type="float" Nullable="false" />
+    <Property Name="Frt23FreightPay" Type="float" Nullable="false" />
+    <Property Name="Frt24FreightPay" Type="float" Nullable="false" />
+    <Property Name="Frt25FreightPay" Type="float" Nullable="false" />
+    <Property Name="OrderQty" Type="float" Nullable="false" />
+    <Property Name="MatlUnitID" Type="nvarchar" Nullable="false" MaxLength="5" />
+  </EntityType>
+  <EntityType Name="Slorder">
+    <Key>
+      <PropertyRef Name="CustomerID" />
+      <PropertyRef Name="OrderID" />
+      <PropertyRef Name="LocationID" />
+      <PropertyRef Name="ProductID" />
+      <PropertyRef Name="Item" />
+    </Key>
+    <Property Name="UpdateProdDesc" Type="nvarchar" Nullable="false" MaxLength="1" />
+    <Property Name="CustomerID" Type="nvarchar" Nullable="false" MaxLength="15" />
+    <Property Name="OrderID" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="LocationID" Type="nvarchar" Nullable="false" MaxLength="10" />
+    <Property Name="ProductID" Type="nvarchar" Nullable="false" MaxLength="15" />
+    <Property Name="Item" Type="nvarchar" Nullable="false" MaxLength="15" />
+    <Property Name="JobID" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="JobCostID" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="ProductName" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Price" Type="float" Nullable="false" />
+    <Property Name="Frt1FreightPay" Type="float" Nullable="false" />
+    <Property Name="Frt2FreightPay" Type="float" Nullable="false" />
+    <Property Name="Frt3FreightPay" Type="float" Nullable="false" />
+    <Property Name="Frt4FreightPay" Type="float" Nullable="false" />
+    <Property Name="Frt5FreightPay" Type="float" Nullable="false" />
+    <Property Name="Frt6FreightPay" Type="float" Nullable="false" />
+    <Property Name="Frt7FreightPay" Type="float" Nullable="false" />
+    <Property Name="Frt8FreightPay" Type="float" Nullable="false" />
+    <Property Name="Frt9FreightPay" Type="float" Nullable="false" />
+    <Property Name="Frt10FreightPay" Type="float" Nullable="false" />
+    <Property Name="Frt11FreightPay" Type="float" Nullable="false" />
+    <Property Name="Frt12FreightPay" Type="float" Nullable="false" />
+    <Property Name="Frt13FreightPay" Type="float" Nullable="false" />
+    <Property Name="Frt14FreightPay" Type="float" Nullable="false" />
+    <Property Name="Frt15FreightPay" Type="float" Nullable="false" />
+    <Property Name="Frt16FreightPay" Type="float" Nullable="false" />
+    <Property Name="Frt17FreightPay" Type="float" Nullable="false" />
+    <Property Name="Frt18FreightPay" Type="float" Nullable="false" />
+    <Property Name="Frt19FreightPay" Type="float" Nullable="false" />
+    <Property Name="Frt20FreightPay" Type="float" Nullable="false" />
+    <Property Name="Frt21FreightPay" Type="float" Nullable="false" />
+    <Property Name="Frt22FreightPay" Type="float" Nullable="false" />
+    <Property Name="Frt23FreightPay" Type="float" Nullable="false" />
+    <Property Name="Frt24FreightPay" Type="float" Nullable="false" />
+    <Property Name="Frt25FreightPay" Type="float" Nullable="false" />
+    <Property Name="Frt1FreightRate" Type="float" Nullable="false" />
+    <Property Name="Frt2FreightRate" Type="float" Nullable="false" />
+    <Property Name="Frt3FreightRate" Type="float" Nullable="false" />
+    <Property Name="Frt4FreightRate" Type="float" Nullable="false" />
+    <Property Name="Frt5FreightRate" Type="float" Nullable="false" />
+    <Property Name="Frt6FreightRate" Type="float" Nullable="false" />
+    <Property Name="Frt7FreightRate" Type="float" Nullable="false" />
+    <Property Name="Frt8FreightRate" Type="float" Nullable="false" />
+    <Property Name="Frt9FreightRate" Type="float" Nullable="false" />
+    <Property Name="Frt10FreightRate" Type="float" Nullable="false" />
+    <Property Name="Frt11FreightRate" Type="float" Nullable="false" />
+    <Property Name="Frt12FreightRate" Type="float" Nullable="false" />
+    <Property Name="Frt13FreightRate" Type="float" Nullable="false" />
+    <Property Name="Frt14FreightRate" Type="float" Nullable="false" />
+    <Property Name="Frt15FreightRate" Type="float" Nullable="false" />
+    <Property Name="Frt16FreightRate" Type="float" Nullable="false" />
+    <Property Name="Frt17FreightRate" Type="float" Nullable="false" />
+    <Property Name="Frt18FreightRate" Type="float" Nullable="false" />
+    <Property Name="Frt19FreightRate" Type="float" Nullable="false" />
+    <Property Name="Frt20FreightRate" Type="float" Nullable="false" />
+    <Property Name="Frt21FreightRate" Type="float" Nullable="false" />
+    <Property Name="Frt22FreightRate" Type="float" Nullable="false" />
+    <Property Name="Frt23FreightRate" Type="float" Nullable="false" />
+    <Property Name="Frt24FreightRate" Type="float" Nullable="false" />
+    <Property Name="Frt25FreightRate" Type="float" Nullable="false" />
+    <Property Name="Frt1FreightRateType" Type="nvarchar" Nullable="false" MaxLength="1" />
+    <Property Name="Frt2FreightRateType" Type="nvarchar" Nullable="false" MaxLength="1" />
+    <Property Name="Frt3FreightRateType" Type="nvarchar" Nullable="false" MaxLength="1" />
+    <Property Name="Frt4FreightRateType" Type="nvarchar" Nullable="false" MaxLength="1" />
+    <Property Name="Frt5FreightRateType" Type="nvarchar" Nullable="false" MaxLength="1" />
+    <Property Name="Frt6FreightRateType" Type="nvarchar" Nullable="false" MaxLength="1" />
+    <Property Name="Frt7FreightRateType" Type="nvarchar" Nullable="false" MaxLength="1" />
+    <Property Name="Frt8FreightRateType" Type="nvarchar" Nullable="false" MaxLength="1" />
+    <Property Name="Frt9FreightRateType" Type="nvarchar" Nullable="false" MaxLength="1" />
+    <Property Name="Frt10FreightRateType" Type="nvarchar" Nullable="false" MaxLength="1" />
+    <Property Name="Frt11FreightRateType" Type="nvarchar" Nullable="false" MaxLength="1" />
+    <Property Name="Frt12FreightRateType" Type="nvarchar" Nullable="false" MaxLength="1" />
+    <Property Name="Frt13FreightRateType" Type="nvarchar" Nullable="false" MaxLength="1" />
+    <Property Name="Frt14FreightRateType" Type="nvarchar" Nullable="false" MaxLength="1" />
+    <Property Name="Frt15FreightRateType" Type="nvarchar" Nullable="false" MaxLength="1" />
+    <Property Name="Frt16FreightRateType" Type="nvarchar" Nullable="false" MaxLength="1" />
+    <Property Name="Frt17FreightRateType" Type="nvarchar" Nullable="false" MaxLength="1" />
+    <Property Name="Frt18FreightRateType" Type="nvarchar" Nullable="false" MaxLength="1" />
+    <Property Name="Frt19FreightRateType" Type="nvarchar" Nullable="false" MaxLength="1" />
+    <Property Name="Frt20FreightRateType" Type="nvarchar" Nullable="false" MaxLength="1" />
+    <Property Name="Frt21FreightRateType" Type="nvarchar" Nullable="false" MaxLength="1" />
+    <Property Name="Frt22FreightRateType" Type="nvarchar" Nullable="false" MaxLength="1" />
+    <Property Name="Frt23FreightRateType" Type="nvarchar" Nullable="false" MaxLength="1" />
+    <Property Name="Frt24FreightRateType" Type="nvarchar" Nullable="false" MaxLength="1" />
+    <Property Name="Frt25FreightRateType" Type="nvarchar" Nullable="false" MaxLength="1" />
+    <Property Name="ExpireDate" Type="datetime" Nullable="false" />
+    <Property Name="SchedStartDate" Type="datetime" Nullable="false" />
+    <Property Name="SchedStartTime" Type="datetime" Nullable="false" />
+    <Property Name="OrderQty" Type="float" Nullable="false" />
+    <Property Name="MatlUnitID" Type="nvarchar" Nullable="false" MaxLength="5" />
+    <Property Name="PurchaseOrder" Type="nvarchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Slordnam">
+    <Key>
+      <PropertyRef Name="CustomerID" />
+      <PropertyRef Name="OrderID" />
+    </Key>
+    <Property Name="CustomerID" Type="nvarchar" Nullable="false" MaxLength="15" />
+    <Property Name="GeofenceID" Type="int" Nullable="false" />
+    <Property Name="OrderID" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="JobID" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="Description1" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Description2" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="QuoteFlag" Type="nvarchar" Nullable="false" MaxLength="1" />
+    <Property Name="OrderFlag" Type="nvarchar" Nullable="false" MaxLength="1" />
+    <Property Name="ShipAddress1" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="ShipAddress2" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="ShipCity" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="ShipCounty" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="ShipState" Type="nvarchar" Nullable="false" MaxLength="25" />
+    <Property Name="FreightFOB" Type="nvarchar" Nullable="false" MaxLength="1" />
+    <Property Name="ShipZip" Type="nvarchar" Nullable="false" MaxLength="15" />
+    <Property Name="Contact" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Phone" Type="nvarchar" Nullable="false" MaxLength="25" />
+    <Property Name="Fax" Type="nvarchar" Nullable="false" MaxLength="25" />
+    <Property Name="Email" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="SalespersonID" Type="nvarchar" Nullable="false" MaxLength="15" />
+    <Property Name="QuoteDate" Type="datetime" Nullable="false" />
+    <Property Name="BidDate" Type="datetime" Nullable="false" />
+    <Property Name="ExpireDate" Type="datetime" Nullable="false" />
+    <Property Name="UfCustomerOrder1" Type="nvarchar" Nullable="false" MaxLength="5" />
+    <Property Name="SchedStartDate" Type="datetime" Nullable="false" />
+    <Property Name="SchedStartTime" Type="datetime" Nullable="false" />
+    <Property Name="OrderDate" Type="datetime" Nullable="false" />
+    <Property Name="OrderTime" Type="datetime" Nullable="false" />
+    <Property Name="OrigQuoteID" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="VehicleType1" Type="nvarchar" Nullable="false" MaxLength="5" />
+    <Property Name="VehicleType2" Type="nvarchar" Nullable="false" MaxLength="5" />
+    <Property Name="VehicleType3" Type="nvarchar" Nullable="false" MaxLength="5" />
+    <Property Name="VehicleType4" Type="nvarchar" Nullable="false" MaxLength="5" />
+    <Property Name="VehicleType5" Type="nvarchar" Nullable="false" MaxLength="5" />
+    <Property Name="PurchaseOrder" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="BeginDate" Type="datetime" Nullable="false" />
+    <Property Name="AllowBeforeStart" Type="nvarchar" Nullable="false" MaxLength="1" />
+    <Property Name="AllowAfterEnd" Type="nvarchar" Nullable="false" MaxLength="1" />
+    <Property Name="AllowExceedQty" Type="nvarchar" Nullable="false" MaxLength="1" />
+    <Property Name="AllowExceedLoads" Type="nvarchar" Nullable="false" MaxLength="1" />
+    <Property Name="AllowAfterComplete" Type="nvarchar" Nullable="false" MaxLength="1" />
+    <Property Name="BidResults" Type="nvarchar" Nullable="false" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="Slprospe">
+    <Key>
+      <PropertyRef Name="CustomerID" />
+    </Key>
+    <Property Name="CustomerID" Type="nvarchar" Nullable="false" MaxLength="15" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Description" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Address1" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Address2" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="City" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="State" Type="nvarchar" Nullable="false" MaxLength="25" />
+    <Property Name="Zip" Type="nvarchar" Nullable="false" MaxLength="15" />
+    <Property Name="Phone" Type="nvarchar" Nullable="false" MaxLength="25" />
+    <Property Name="Fax" Type="nvarchar" Nullable="false" MaxLength="25" />
+  </EntityType>
+  <EntityType Name="Sycontac">
+    <Key>
+      <PropertyRef Name="CustomerID" />
+      <PropertyRef Name="Name" />
+    </Key>
+    <Property Name="CustomerID" Type="nvarchar" Nullable="false" MaxLength="15" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Address1" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Address2" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="City" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="State" Type="nvarchar" Nullable="false" MaxLength="25" />
+    <Property Name="Zip" Type="nvarchar" Nullable="false" MaxLength="15" />
+    <Property Name="Email" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Phone" Type="nvarchar" Nullable="false" MaxLength="25" />
+    <Property Name="Phone2" Type="nvarchar" Nullable="false" MaxLength="25" />
+    <Property Name="Fax" Type="nvarchar" Nullable="false" MaxLength="25" />
+    <Property Name="Title" Type="nvarchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+</Schema>

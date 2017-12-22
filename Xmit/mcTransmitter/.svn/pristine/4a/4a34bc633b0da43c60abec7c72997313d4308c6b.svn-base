@@ -1,0 +1,102 @@
+﻿//using System;
+//using System.Globalization;
+//using System.IO;
+//using System.Net;
+//using System.Net.Http;
+//using System.Security.Cryptography;
+//using System.Text;
+//using System.Web.Http;
+//using ScoutII.DTOs;
+//using System.IO;
+
+//namespace mcTransmitter.Controllers {
+//    public class RemoteController : ApiController {
+
+
+
+//    #region Private Methods
+
+
+
+
+
+
+
+//    #endregion
+
+
+
+
+//        private int ValidateUser(string userName, byte[] password, ref int companyId) {
+//            //  TODO:   write code to perform DB validation and return value
+
+//            return 0;
+//        }
+
+//        private int ValidateUser(string inKey, out string outKey, ref int companyId) {
+//            outKey = string.Empty;
+//            var cipherTextBytes = Convert.FromBase64String(inKey);
+//            var keyBytes = new Rfc2898DeriveBytes(Constants.hash, Encoding.ASCII.GetBytes(Constants.salt)).GetBytes(256 / 8);
+//            var symmetricKey = new RijndaelManaged() {
+//                Mode = CipherMode.CBC,
+//                Padding = PaddingMode.None
+//            };
+
+//            var decryptor = symmetricKey.CreateDecryptor(keyBytes, Encoding.ASCII.GetBytes(Constants.VIKey));
+//            var memoryStream = new MemoryStream(cipherTextBytes);
+//            var cryptoStream = new CryptoStream(memoryStream, decryptor, CryptoStreamMode.Read);
+//            var plainTextBytes = new byte[cipherTextBytes.Length];
+
+//            var decryptedByteCount = cryptoStream.Read(plainTextBytes, 0, plainTextBytes.Length);
+//            memoryStream.Close();
+//            cryptoStream.Close();
+//            var decryptedString = Encoding.UTF8.GetString(plainTextBytes, 0, decryptedByteCount).TrimEnd("\0".ToCharArray());
+//            if (companyId > -1) {
+//                var companyIndex = decryptedString.IndexOf("||");
+//                companyId = int.Parse(decryptedString.Substring(0, companyIndex));
+//                decryptedString = decryptedString.Substring(companyIndex + 2);
+//            }
+//            var lastPipe = decryptedString.LastIndexOf("||");
+//            var firstIndex = decryptedString.IndexOf("||");
+
+//            string timeString = decryptedString.Substring(lastPipe + 2, decryptedString.Length - lastPipe - 2);
+//            var time = DateTime.ParseExact(timeString, Constants.SecurityTokenDateFormat, CultureInfo.InvariantCulture);
+
+//            var ts = DateTime.Now.Subtract(time);
+//            if (ts.Minutes < 15) {
+//                var userName = decryptedString.Substring(0, firstIndex);
+//                var password = decryptedString.Substring(firstIndex + 2, lastPipe - firstIndex - 2);
+//                int? userId = ValidateUser(userName, SecurityUtils.GetBinaryPassword(password), ref companyId);
+//                if (userId.HasValue && userId.Value > 0) {
+//                    outKey = SecurityUtils.CreateUserSecurityKey(userName, password, companyId);
+//                    return userId.Value;
+//                }
+//            }
+//            return 0;
+//        }
+
+//        [HttpPost]
+//        public HttpResponseMessage ProcessJobFile([FromBody] JobExportDto dto) {
+//            //  validate the key            
+//            string key;
+//            var companyId = 0;
+//            var userId = ValidateUser(dto.Key, out key, ref companyId);
+//            if (userId > 0) {
+//                //  write file to specified folder
+//                //  TODO: rewrite code for proper folder name
+//                var fileName = dto.FileName;
+//                var files = dto.JobFiles;
+
+//                //  TODO:   create necessary permissions on destination folder to allow writing file to disk
+//                using (var sw = new StreamWriter(System.Web.HttpContext.Current.Server.MapPath("~/JobImportFolder/" + fileName), true)) {
+//                    foreach (var file in files) {
+//                        sw.Write(file, 0, file.Length);   
+//                    }                    
+//                } 
+//                return Request.CreateResponse(HttpStatusCode.Accepted, "Created file " + fileName); 
+//            }
+//            var message = "validation failed";
+//            return Request.CreateResponse(HttpStatusCode.NotFound, message);
+//        }
+//    }
+//}

@@ -1,0 +1,168 @@
+﻿namespace mcTransmitter.DTOs{
+    public class ProspectDTO {
+        public string Key {
+            get;
+            set;
+        }
+
+
+        public string ProspectID {
+            get;
+            set;
+        }
+        public string Private {
+            get;
+            set;
+        }
+        public string OwnerID {
+            get;
+            set;
+        }
+
+        public string CompanyID {
+            get;
+            set;
+        }
+        public string ProspectName {
+            get;
+            set;
+        }
+        public string Inserted {
+            get;
+            set;
+        }
+        public string Modified {
+            get;
+            set;
+        }
+        public string ProspectCode {
+            get;
+            set;
+        }
+        public string ConnectionCode {
+            get;
+            set;
+        }
+        public string LocalCustNumber {
+            get;
+            set;
+        }
+        public string LocalCustName {
+            get;
+            set;
+        }
+        public string Credit_Status_ID {
+            get;
+            set;
+        }
+        public string CustomerStatus {
+            get;
+            set;
+        }
+        public string Sales {
+            get;
+            set;
+        }
+        public string Margin {
+            get;
+            set;
+        }
+        public string MaterialMargin {
+            get;
+            set;
+        }
+        public string JobCount {
+            get;
+            set;
+        }
+        public string Address1 {
+            get;
+            set;
+        }
+
+        public string Address2 {
+            get;
+            set;
+        }
+
+        public string City {
+            get;
+            set;
+        }
+
+        public string State {
+            get;
+            set;
+        }
+
+        public string Zip {
+            get;
+            set;
+        }
+        public string Phone {
+            get;
+            set;
+        }
+
+        public string HighestBalance {
+            get;
+            set;
+        }
+        public string AvgInvoiceAmt {
+            get;
+            set;
+        }
+        public string AvgDaysToPay {
+            get;
+            set;
+        }
+        public string AvgDaysPastDue {
+            get;
+            set;
+        }
+        public string TotalDue {
+            get;
+            set;
+        }
+        public string ZeroTo30Days {
+            get;
+            set;
+        }
+        public string ThirtyOneTo60Days {
+            get;
+            set;
+        }
+        public string SixtyOneto90Days {
+            get;
+            set;
+        }
+        public string NinetyOneTo120Days {
+            get;
+            set;
+        }
+        public string Over120Days {
+            get;
+            set;
+        }
+        public string CustomerTypeID {
+            get;
+            set;
+        }
+        public string StatementFrequency {
+            get;
+            set;
+        }
+        public string FinanceRate {
+            get;
+            set;
+        }
+        public string PaymentTermsID {
+            get;
+            set;
+        }
+        public string SalesmanCode {
+            get;
+            set;
+        }
+    }
+}

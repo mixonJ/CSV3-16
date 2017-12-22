@@ -1,0 +1,398 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="ApexModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="ApexModelStoreContainer">
+          <EntitySet Name="Slcust" EntityType="ApexModel.Store.Slcust" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Sljob" EntityType="ApexModel.Store.Sljob" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Sljobdet" EntityType="ApexModel.Store.Sljobdet" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Sljobprd" EntityType="ApexModel.Store.Sljobprd" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Slorder" EntityType="ApexModel.Store.Slorder" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Slordnam" EntityType="ApexModel.Store.Slordnam" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Slprospe" EntityType="ApexModel.Store.Slprospe" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Sycontac" EntityType="ApexModel.Store.Sycontac" store:Type="Tables" Schema="dbo" />
+        </EntityContainer>
+        <EntityType Name="Slcust">
+            <Key>
+                <PropertyRef Name="CustomerID" />
+            </Key>
+            <Property Name="CustomerID" Type="nvarchar" Nullable="false" MaxLength="15" />
+        </EntityType>
+        <EntityType Name="Sljob">
+          <Key>
+            <PropertyRef Name="JobID" />
+          </Key>
+            <Property Name="Description1" Type="nvarchar" Nullable="false" MaxLength="50" />
+            <Property Name="JobID" Type="nvarchar" Nullable="false" MaxLength="20" />
+            <Property Name="SalespersonID" Type="nvarchar" Nullable="false" MaxLength="15" />
+            <Property Name="TypeID" Type="nchar" Nullable="false" MaxLength="1" />
+            <Property Name="ShipAddress1" Type="nvarchar" Nullable="false" MaxLength="50" />
+            <Property Name="ShipAddress2" Type="nvarchar" Nullable="false" MaxLength="50" />
+            <Property Name="ShipCity" Type="nvarchar" Nullable="false" MaxLength="50" />
+            <Property Name="ShipState" Type="nvarchar" Nullable="false" MaxLength="25" />
+            <Property Name="ShipZip" Type="nvarchar" Nullable="false" MaxLength="15" />
+            <Property Name="ShipCounty" Type="nvarchar" Nullable="false" MaxLength="50" />
+            <Property Name="Latitude" Type="float" Nullable="false" />
+            <Property Name="Longitude" Type="float" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Sljobdet">
+          <Key>
+            <PropertyRef Name="JobID" />
+            <PropertyRef Name="JobCostID" />
+          </Key>
+          <Property Name="JobID" Type="nvarchar" Nullable="false" MaxLength="20" />
+          <Property Name="JobCostID" Type="nvarchar" Nullable="false" MaxLength="20" />
+          <Property Name="Description1" Type="nvarchar" Nullable="false" MaxLength="50" />          
+        </EntityType>
+        <EntityType Name="Sljobprd">
+          <Key>
+            <PropertyRef Name="LocationID" />
+            <PropertyRef Name="ProductID" />
+            <PropertyRef Name="JobID" />
+            <PropertyRef Name="JobCostID" />
+          </Key>
+            <Property Name="JobID" Type="nvarchar" Nullable="false" MaxLength="20" />
+            <Property Name="JobCostID" Type="nvarchar" Nullable="false" MaxLength="20" />
+            <Property Name="ProductID" Type="nvarchar" Nullable="false" MaxLength="15" />
+            <Property Name="LocationID" Type="nvarchar" Nullable="false" MaxLength="10" />
+            <Property Name="ProductName" Type="nvarchar" Nullable="false" MaxLength="50" />
+            <Property Name="Price" Type="float" Nullable="false" />
+            <Property Name="Frt1FreightRate" Type="float" Nullable="false" />
+            <Property Name="Frt1FreightPay" Type="float" Nullable="false" />
+            <Property Name="OrderQty" Type="float" Nullable="false" />
+            <Property Name="MatlUnitID" Type="nvarchar" Nullable="false" MaxLength="5" />
+        </EntityType>
+        <EntityType Name="Slorder">
+          <Key>
+            <PropertyRef Name="CustomerID" />
+            <PropertyRef Name="OrderID" />
+            <PropertyRef Name="LocationID" />
+            <PropertyRef Name="ProductID" />
+            <PropertyRef Name="Item" />
+          </Key>
+          <Property Name="CustomerID" Type="nvarchar" Nullable="false" MaxLength="15" />
+          <Property Name="OrderID" Type="nvarchar" Nullable="false" MaxLength="20" />
+          <Property Name="LocationID" Type="nvarchar" Nullable="false" MaxLength="10" />
+          <Property Name="ProductID" Type="nvarchar" Nullable="false" MaxLength="15" />
+          <Property Name="Item" Type="nvarchar" Nullable="false" MaxLength="15" />
+            <Property Name="JobID" Type="nvarchar" Nullable="false" MaxLength="20" />
+            <Property Name="JobCostID" Type="nvarchar" Nullable="false" MaxLength="20" />
+            <Property Name="ProductName" Type="nvarchar" Nullable="false" MaxLength="50" />
+            <Property Name="Price" Type="float" Nullable="false" />
+            <Property Name="Frt1FreightRate" Type="float" Nullable="false" />
+            <Property Name="Frt1FreightPay" Type="float" Nullable="false" />
+            <Property Name="OrderQty" Type="float" Nullable="false" />
+            <Property Name="MatlUnitID" Type="nvarchar" Nullable="false" MaxLength="5" />
+        </EntityType>
+        <EntityType Name="Slordnam">
+          <Key>
+            <PropertyRef Name="CustomerID" />
+            <PropertyRef Name="OrderID" />
+          </Key>
+          <Property Name="CustomerID" Type="nvarchar" Nullable="false" MaxLength="15" />
+          <Property Name="OrderID" Type="nvarchar" Nullable="false" MaxLength="20" />
+            <Property Name="JobID" Type="nvarchar" Nullable="false" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="Slprospe">
+            <Key>
+                <PropertyRef Name="CustomerID" />                
+            </Key>
+            <Property Name="CustomerID" Type="nvarchar" Nullable="false" MaxLength="15" />
+            <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+            <Property Name="Address1" Type="nvarchar" Nullable="false" MaxLength="50" />
+            <Property Name="Address2" Type="nvarchar" Nullable="false" MaxLength="50" />
+            <Property Name="City" Type="nvarchar" Nullable="false" MaxLength="50" />
+            <Property Name="State" Type="nvarchar" Nullable="false" MaxLength="25" />
+            <Property Name="Zip" Type="nvarchar" Nullable="false" MaxLength="15" />
+            <Property Name="Phone" Type="nvarchar" Nullable="false" MaxLength="25" />
+            <Property Name="Fax" Type="nvarchar" Nullable="false" MaxLength="25" />
+        </EntityType>
+        <EntityType Name="Sycontac">
+            <Key>
+                <PropertyRef Name="CustomerID" />
+                <PropertyRef Name="Name" />
+            </Key>
+            <Property Name="CustomerID" Type="nvarchar" Nullable="false" MaxLength="15" />
+            <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+            <Property Name="Address1" Type="nvarchar" Nullable="false" MaxLength="50" />
+            <Property Name="Address2" Type="nvarchar" Nullable="false" MaxLength="50" />
+            <Property Name="City" Type="nvarchar" Nullable="false" MaxLength="50" />
+            <Property Name="State" Type="nvarchar" Nullable="false" MaxLength="25" />
+            <Property Name="Zip" Type="nvarchar" Nullable="false" MaxLength="15" />
+            <Property Name="Email" Type="nvarchar" Nullable="false" MaxLength="50" />
+            <Property Name="Phone" Type="nvarchar" Nullable="false" MaxLength="25" />
+            <Property Name="Phone2" Type="nvarchar" Nullable="false" MaxLength="25" />
+            <Property Name="Fax" Type="nvarchar" Nullable="false" MaxLength="25" />
+            <Property Name="Title" Type="nvarchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ApexModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="ApexEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="Sljobs" EntityType="ApexModel.Sljob" />
+          <EntitySet Name="Sljobdets" EntityType="ApexModel.Sljobdet" />
+          <EntitySet Name="Sljobprds" EntityType="ApexModel.Sljobprd" />
+          <EntitySet Name="Slorders" EntityType="ApexModel.Slorder" />
+          <EntitySet Name="Slordnams" EntityType="ApexModel.Slordnam" />
+          <EntitySet Name="Slcusts" EntityType="ApexModel.Slcust" />
+          <EntitySet Name="Slprospes" EntityType="ApexModel.Slprospe" />
+          <EntitySet Name="Sycontacs" EntityType="ApexModel.Sycontac" />
+        </EntityContainer>
+        <EntityType Name="Sljob">
+          <Key>
+            <PropertyRef Name="JobID" />
+          </Key>
+            <Property Type="String" Name="Description1" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+            <Property Type="String" Name="JobID" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+            <Property Type="String" Name="SalespersonID" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+            <Property Type="String" Name="TypeID" Nullable="false" MaxLength="1" FixedLength="true" Unicode="true" />
+            <Property Type="String" Name="ShipAddress1" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+            <Property Type="String" Name="ShipAddress2" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+            <Property Type="String" Name="ShipCity" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+            <Property Type="String" Name="ShipState" Nullable="false" MaxLength="25" FixedLength="false" Unicode="true" />
+            <Property Type="String" Name="ShipZip" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+            <Property Type="String" Name="ShipCounty" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+            <Property Type="Double" Name="Latitude" Nullable="false" />
+            <Property Type="Double" Name="Longitude" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Sljobdet">
+          <Key>
+            <PropertyRef Name="JobID" />
+            <PropertyRef Name="JobCostID" />
+          </Key>
+          <Property Type="String" Name="JobID" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="JobCostID" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Description1" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Sljobprd">
+          <Key>
+            <PropertyRef Name="LocationID" />
+            <PropertyRef Name="ProductID" />
+            <PropertyRef Name="JobID" />
+            <PropertyRef Name="JobCostID" />
+          </Key>
+            <Property Type="String" Name="JobID" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+            <Property Type="String" Name="JobCostID" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+            <Property Type="String" Name="ProductID" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+            <Property Type="String" Name="LocationID" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+            <Property Type="String" Name="ProductName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+            <Property Type="Double" Name="Price" Nullable="false" />
+            <Property Type="Double" Name="Frt1FreightRate" Nullable="false" />
+            <Property Type="Double" Name="Frt1FreightPay" Nullable="false" />
+            <Property Type="Double" Name="OrderQty" Nullable="false" />
+            <Property Type="String" Name="MatlUnitID" Nullable="false" MaxLength="5" FixedLength="false" Unicode="true" />  
+        </EntityType>
+        <EntityType Name="Slorder">
+          <Key>
+            <PropertyRef Name="CustomerID" />
+            <PropertyRef Name="OrderID" />
+            <PropertyRef Name="LocationID" />
+            <PropertyRef Name="ProductID" />
+            <PropertyRef Name="Item" />
+          </Key>
+          <Property Type="String" Name="CustomerID" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="OrderID" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="LocationID" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ProductID" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Item" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+            <Property Type="String" Name="JobID" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+            <Property Type="String" Name="JobCostID" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+            <Property Type="String" Name="ProductName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+            <Property Type="Double" Name="Price" Nullable="false" />
+            <Property Type="Double" Name="Frt1FreightRate" Nullable="false" />
+            <Property Type="Double" Name="Frt1FreightPay" Nullable="false" />
+            <Property Type="Double" Name="OrderQty" Nullable="false" />
+            <Property Type="String" Name="MatlUnitID" Nullable="false" MaxLength="5" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Slordnam">
+          <Key>
+            <PropertyRef Name="CustomerID" />
+            <PropertyRef Name="OrderID" />
+          </Key>
+          <Property Type="String" Name="CustomerID" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="OrderID" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+            <Property Type="String" Name="JobID" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Slcust">
+          <Key>
+            <PropertyRef Name="CustomerID" />
+          </Key>
+          <Property Type="String" Name="CustomerID" Nullable="false" annotation:StoreGeneratedPattern="None" />
+        </EntityType>
+        <EntityType Name="Slprospe">
+          <Key>
+            <PropertyRef Name="CustomerID" />            
+          </Key>
+          <Property Type="String" Name="CustomerID" Nullable="false" annotation:StoreGeneratedPattern="None" />
+          <Property Type="String" Name="Name" Nullable="false" />
+          <Property Type="String" Name="Address1" Nullable="false" />
+          <Property Type="String" Name="Address2" Nullable="false" />
+          <Property Type="String" Name="City" Nullable="false" />
+          <Property Type="String" Name="State" Nullable="false" />
+          <Property Type="String" Name="Zip" Nullable="false" />
+          <Property Type="String" Name="Phone" Nullable="false" />
+          <Property Type="String" Name="Fax" Nullable="false" />          
+        </EntityType>
+        <EntityType Name="Sycontac">
+          <Key>
+            <PropertyRef Name="Name" />
+            <PropertyRef Name="CustomerID" />
+          </Key>
+          <Property Type="String" Name="Name" Nullable="false" annotation:StoreGeneratedPattern="None" />
+          <Property Type="String" Name="CustomerID" Nullable="false" />
+          <Property Type="String" Name="Address1" Nullable="false" />
+          <Property Type="String" Name="Address2" Nullable="false" />
+          <Property Type="String" Name="City" Nullable="false" />
+          <Property Type="String" Name="State" Nullable="false" />
+          <Property Type="String" Name="Zip" Nullable="false" />
+          <Property Type="String" Name="Email" Nullable="false" />
+          <Property Type="String" Name="Phone" Nullable="false" />
+          <Property Type="String" Name="Phone2" Nullable="false" />
+          <Property Type="String" Name="Fax" Nullable="false" />
+          <Property Type="String" Name="Title" Nullable="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ApexModelStoreContainer" CdmEntityContainer="ApexEntities">
+            <EntitySetMapping Name="Slcusts">
+                <EntityTypeMapping TypeName="ApexModel.Slcust">
+                    <MappingFragment StoreEntitySet="Slcust">
+                        <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+                    </MappingFragment>
+                </EntityTypeMapping>
+            </EntitySetMapping>
+            <EntitySetMapping Name="Sycontacs">
+                <EntityTypeMapping TypeName="ApexModel.Sycontac">
+                    <MappingFragment StoreEntitySet="Sycontac">
+                        <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+                        <ScalarProperty Name="Name" ColumnName="Name" />
+                        <ScalarProperty Name="Address1" ColumnName="Address1" />
+                        <ScalarProperty Name="Address2" ColumnName="Address2" />
+                        <ScalarProperty Name="City" ColumnName="City" />
+                        <ScalarProperty Name="State" ColumnName="State" />
+                        <ScalarProperty Name="Zip" ColumnName="Zip" />
+                        <ScalarProperty Name="Email" ColumnName="Email" />
+                        <ScalarProperty Name="Phone" ColumnName="Phone" />
+                        <ScalarProperty Name="Phone2" ColumnName="Phone2" />
+                        <ScalarProperty Name="Fax" ColumnName="Fax" />
+                        <ScalarProperty Name="Title" ColumnName="Title" />
+                    </MappingFragment>
+                </EntityTypeMapping>
+            </EntitySetMapping>
+          <EntitySetMapping Name="Sljobs">
+            <EntityTypeMapping TypeName="ApexModel.Sljob">
+              <MappingFragment StoreEntitySet="Sljob">
+                  <ScalarProperty Name="Description1" ColumnName="Description1" />
+                  <ScalarProperty Name="JobID" ColumnName="JobID" />
+                  <ScalarProperty Name="SalespersonID" ColumnName="SalespersonID" />
+                  <ScalarProperty Name="TypeID" ColumnName="TypeID" />
+                  <ScalarProperty Name="ShipCounty" ColumnName="ShipCounty" />
+                  <ScalarProperty Name="ShipZip" ColumnName="ShipZip" />
+                  <ScalarProperty Name="ShipState" ColumnName="ShipState" />
+                  <ScalarProperty Name="ShipCity" ColumnName="ShipCity" />
+                  <ScalarProperty Name="ShipAddress2" ColumnName="ShipAddress2" />
+                  <ScalarProperty Name="ShipAddress1" ColumnName="ShipAddress1" />
+                  <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+                  <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sljobdets">
+            <EntityTypeMapping TypeName="ApexModel.Sljobdet">
+              <MappingFragment StoreEntitySet="Sljobdet">                
+                <ScalarProperty Name="Description1" ColumnName="Description1" />
+                <ScalarProperty Name="JobCostID" ColumnName="JobCostID" />
+                <ScalarProperty Name="JobID" ColumnName="JobID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sljobprds">
+            <EntityTypeMapping TypeName="ApexModel.Sljobprd">
+              <MappingFragment StoreEntitySet="Sljobprd">
+                  <ScalarProperty Name="JobCostID" ColumnName="JobCostID" />
+                  <ScalarProperty Name="JobID" ColumnName="JobID" />
+                  <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+                  <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+                  <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+                  <ScalarProperty Name="Price" ColumnName="Price" />
+                  <ScalarProperty Name="Frt1FreightRate" ColumnName="Frt1FreightRate" />
+                  <ScalarProperty Name="Frt1FreightPay" ColumnName="Frt1FreightPay" />
+                  <ScalarProperty Name="OrderQty" ColumnName="OrderQty" />
+                  <ScalarProperty Name="MatlUnitID" ColumnName="MatlUnitID" />
+
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Slorders">
+            <EntityTypeMapping TypeName="ApexModel.Slorder">
+              <MappingFragment StoreEntitySet="Slorder">
+                  <ScalarProperty Name="Item" ColumnName="Item" />
+                  <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+                  <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+                  <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+                  <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+                  <ScalarProperty Name="JobID" ColumnName="JobID" />
+                  <ScalarProperty Name="JobCostID" ColumnName="JobCostID" />
+                  <ScalarProperty Name="Price" ColumnName="Price" />
+                  <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+                  <ScalarProperty Name="Frt1FreightRate" ColumnName="Frt1FreightRate" />
+                  <ScalarProperty Name="Frt1FreightPay" ColumnName="Frt1FreightPay" />
+                  <ScalarProperty Name="OrderQty" ColumnName="OrderQty" />
+                  <ScalarProperty Name="MatlUnitID" ColumnName="MatlUnitID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Slordnams">
+            <EntityTypeMapping TypeName="ApexModel.Slordnam">
+              <MappingFragment StoreEntitySet="Slordnam">
+                  <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+                  <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+                  <ScalarProperty Name="JobID" ColumnName="JobID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+            <EntitySetMapping Name="Slprospes">
+                <EntityTypeMapping TypeName="ApexModel.Slprospe">
+                    <MappingFragment StoreEntitySet="Slprospe">
+                        <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+                        <ScalarProperty Name="Name" ColumnName="Name" />
+                        <ScalarProperty Name="Address1" ColumnName="Address1" />
+                        <ScalarProperty Name="Address2" ColumnName="Address2" />
+                        <ScalarProperty Name="City" ColumnName="City" />
+                        <ScalarProperty Name="State" ColumnName="State" />
+                        <ScalarProperty Name="Zip" ColumnName="Zip" />
+                        <ScalarProperty Name="Phone" ColumnName="Phone" />
+                        <ScalarProperty Name="Fax" ColumnName="Fax" />
+                    </MappingFragment>
+                </EntityTypeMapping>
+            </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

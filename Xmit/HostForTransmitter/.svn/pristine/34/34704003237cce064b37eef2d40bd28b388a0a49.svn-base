@@ -1,0 +1,541 @@
+﻿using System;
+using System.Configuration;
+using System.Data;
+using System.Data.Entity.Infrastructure;
+using System.Globalization;
+using System.IO;
+using System.Linq;
+using System.Net;
+using System.Net.Http;
+using System.Security.Cryptography;
+using System.Text;
+using System.Web.Http;
+using mcTransmitter;
+using ScoutII.DTOs;
+using mcTransmitter.DTOs;
+
+namespace HostForTransmitter.Controllers
+{
+    public class RemoteController : ApiController
+    {
+
+
+
+        #region Private Methods
+
+
+
+
+
+        private bool ValidateKey(string key)
+        {
+            try
+            {
+                var cipherTextBytes = Convert.FromBase64String(key);
+                var keyBytes = new Rfc2898DeriveBytes(Constants.hash, Encoding.ASCII.GetBytes(Constants.salt)).GetBytes(256 / 8);
+                var symmetricKey = new RijndaelManaged()
+                {
+                    Mode = CipherMode.CBC,
+                    Padding = PaddingMode.None
+                };
+
+                var decryptor = symmetricKey.CreateDecryptor(keyBytes, Encoding.ASCII.GetBytes(Constants.VIKey));
+                var memoryStream = new MemoryStream(cipherTextBytes);
+                var cryptoStream = new CryptoStream(memoryStream, decryptor, CryptoStreamMode.Read);
+                var plainTextBytes = new byte[cipherTextBytes.Length];
+
+                var decryptedByteCount = cryptoStream.Read(plainTextBytes, 0, plainTextBytes.Length);
+                memoryStream.Close();
+                cryptoStream.Close();
+                var decryptedString = Encoding.UTF8.GetString(plainTextBytes, 0, decryptedByteCount).TrimEnd("\0".ToCharArray());
+                var companyIndex = decryptedString.IndexOf("||");
+                var companyIdFromKey = int.Parse(decryptedString.Substring(0, companyIndex));
+                var companyId = int.Parse(ConfigurationManager.AppSettings["CompanyId"]);
+                if (companyId != companyIdFromKey)
+                {
+                    return false;
+                }
+                decryptedString = decryptedString.Substring(companyIndex + 2);
+
+                var lastPipe = decryptedString.LastIndexOf("||");
+                var timeString = decryptedString.Substring(lastPipe + 2, decryptedString.Length - lastPipe - 2);
+                var time = DateTime.ParseExact(timeString, Constants.SecurityTokenDateFormat, CultureInfo.InvariantCulture);
+
+                var ts = DateTime.Now.Subtract(time);
+                return ts.Minutes < 15;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+
+        #endregion
+
+        [HttpPost]
+        public HttpResponseMessage ProcessApexFile([FromBody] ApexExport_Dto dto) {
+            //validate the key
+            if( ValidateKey(dto.Key)) {
+                //  create records
+                var context = new ApexEntities();
+                var deleteContext = new ApexEntities();
+                var jobId = dto.JobId;
+                if (dto.JobDto != null) {
+                    var jobObj = dto.JobDto;
+                    var rec = deleteContext.Sljobs.SingleOrDefault(x => x.JobID == jobObj.JobID);
+                    if (rec != null) {
+                        deleteContext.Sljobs.Remove(rec);
+                        try {
+                            deleteContext.SaveChanges();
+                        }
+                        catch(DbUpdateConcurrencyException){
+                            //  sweeper beat us to the punch
+                        }
+                        catch (OptimisticConcurrencyException) {
+                            //  sweeper beat us to the punch
+                        }                        
+                    }
+                    var jobRec = context.Sljobs.Create();
+                    jobRec.Description1 = jobObj.Description1;
+                    jobRec.JobID = jobObj.JobID;
+                    jobRec.SalespersonID = jobObj.SalespersonID;
+                    jobRec.TypeID = jobObj.TypeID;
+                    jobRec.ShipAddress1 = jobObj.ShipAddress1;
+                    jobRec.ShipAddress2 = jobObj.ShipAddress2;
+                    jobRec.ShipCity = jobObj.ShipCity;
+                    jobRec.ShipState = jobObj.ShipState;
+                    jobRec.ShipZip = jobObj.ShipZip;
+                    jobRec.ShipCounty = jobObj.ShipCounty;
+                    jobRec.Latitude = (double)jobObj.Latitude;
+                    jobRec.Longitude = (double)jobObj.Longitude;
+                    jobRec.BidDate = jobObj.BidDate;
+                    context.Sljobs.Add(jobRec);
+                }
+                if (dto.JobDetCollection != null && dto.JobDetCollection.Any()) {
+                    var recs = deleteContext.Sljobdets.Where(x => x.JobID == jobId);
+                    if (recs.Any()) {
+                        foreach (var rec in recs) {
+                            deleteContext.Sljobdets.Remove(rec);
+                        }
+                        try {
+                            deleteContext.SaveChanges();
+                        }
+                        catch (DbUpdateConcurrencyException) {
+                            //  sweeper beat us to the punch
+                        }
+                        catch (OptimisticConcurrencyException) {
+                            //  sweeper beat us to the punch
+                        }
+                    }
+                    var jobDetCol = dto.JobDetCollection;
+                    foreach (var obj in jobDetCol) {
+                        var jobDet = context.Sljobdets.Create();
+                        jobDet.JobID = obj.JobID;
+                        jobDet.JobCostID = obj.JobCostID;
+                        jobDet.Description1 = obj.Description1;
+                        context.Sljobdets.Add(jobDet);
+                    }
+                }
+                if (dto.JobPrdCollection != null && dto.JobPrdCollection.Any()) {
+                    var prdDet = dto.JobPrdCollection;
+                    var recs = deleteContext.Sljobprds.Where(x => x.JobID == jobId);
+                    if (recs.Any()) {
+                        foreach (var rec in recs) {
+                             deleteContext.Sljobprds.Remove(rec);
+                        }
+                        try {
+                            deleteContext.SaveChanges();
+                        }
+                        catch (DbUpdateConcurrencyException) {
+                            //  sweeper beat us to the punch
+                        }
+                        catch (OptimisticConcurrencyException) {
+                            //  sweeper beat us to the punch
+                        }
+                    }
+                    foreach (var obj in prdDet) {
+                        var jobPrd = context.Sljobprds.Create();
+                        jobPrd.JobID = obj.JobID;
+                        jobPrd.JobCostID = obj.JobCostID;
+                        jobPrd.ProductID = obj.ProductID;
+                        jobPrd.LocationID = obj.LocationID;
+                        jobPrd.ProductName = obj.ProductName;
+                        jobPrd.Price = (double)obj.Price;
+                        jobPrd.OrderQty = (double)obj.OrderQty;
+                        jobPrd.MatlUnitID = obj.MatlUnitID;
+                        var pay = (double)obj.Frt1FreightPay;
+                        jobPrd.Frt1FreightPay = pay;
+                        jobPrd.Frt2FreightPay = pay;
+                        jobPrd.Frt3FreightPay = pay;
+                        jobPrd.Frt4FreightPay = pay;
+                        jobPrd.Frt5FreightPay = pay;
+                        jobPrd.Frt6FreightPay = pay;
+                        jobPrd.Frt7FreightPay = pay;
+                        jobPrd.Frt8FreightPay = pay;
+                        jobPrd.Frt9FreightPay = pay;
+                        jobPrd.Frt10FreightPay = pay;
+                        jobPrd.Frt11FreightPay = pay;
+                        jobPrd.Frt12FreightPay = pay;
+                        jobPrd.Frt13FreightPay = pay;
+                        jobPrd.Frt14FreightPay = pay;
+                        jobPrd.Frt15FreightPay = pay;
+                        jobPrd.Frt16FreightPay = pay;
+                        jobPrd.Frt17FreightPay = pay;
+                        jobPrd.Frt18FreightPay = pay;
+                        jobPrd.Frt19FreightPay = pay;
+                        jobPrd.Frt20FreightPay = pay;
+                        jobPrd.Frt21FreightPay = pay;
+                        jobPrd.Frt22FreightPay = pay;
+                        jobPrd.Frt23FreightPay = pay;
+                        jobPrd.Frt24FreightPay = pay;
+                        jobPrd.Frt25FreightPay = pay;
+                        jobPrd.Frt1FreightRateType = "A";
+                        jobPrd.Frt2FreightRateType = "B";
+                        jobPrd.Frt3FreightRateType = "C";
+                        jobPrd.Frt4FreightRateType = "D";
+                        jobPrd.Frt5FreightRateType = "E";
+                        jobPrd.Frt6FreightRateType = "F";
+                        jobPrd.Frt7FreightRateType = "G";
+                        jobPrd.Frt8FreightRateType = "H";
+                        jobPrd.Frt9FreightRateType = "I";
+                        jobPrd.Frt10FreightRateType = "J";
+                        jobPrd.Frt11FreightRateType = "K";
+                        jobPrd.Frt12FreightRateType = "L";
+                        jobPrd.Frt13FreightRateType = "M";
+                        jobPrd.Frt14FreightRateType = "N";
+                        jobPrd.Frt15FreightRateType = "O";
+                        jobPrd.Frt16FreightRateType = "P";
+                        jobPrd.Frt17FreightRateType = "Q";
+                        jobPrd.Frt18FreightRateType = "R";
+                        jobPrd.Frt19FreightRateType = "S";
+                        jobPrd.Frt20FreightRateType = "T";
+                        jobPrd.Frt21FreightRateType = "U";
+                        jobPrd.Frt22FreightRateType = "V";
+                        jobPrd.Frt23FreightRateType = "W";
+                        jobPrd.Frt24FreightRateType = "X";
+                        jobPrd.Frt25FreightRateType = "Y";
+                        var rate = (double)obj.Frt1FreightRate;
+                        jobPrd.Frt1FreightRate = rate;
+                        jobPrd.Frt2FreightRate = rate;
+                        jobPrd.Frt3FreightRate = rate;
+                        jobPrd.Frt4FreightRate = rate;
+                        jobPrd.Frt5FreightRate = rate;
+                        jobPrd.Frt6FreightRate = rate;
+                        jobPrd.Frt7FreightRate = rate;
+                        jobPrd.Frt8FreightRate = rate;
+                        jobPrd.Frt9FreightRate = rate;
+                        jobPrd.Frt10FreightRate = rate;
+                        jobPrd.Frt11FreightRate = rate;
+                        jobPrd.Frt12FreightRate = rate;
+                        jobPrd.Frt13FreightRate = rate;
+                        jobPrd.Frt14FreightRate = rate;
+                        jobPrd.Frt15FreightRate = rate;
+                        jobPrd.Frt16FreightRate = rate;
+                        jobPrd.Frt17FreightRate = rate;
+                        jobPrd.Frt18FreightRate = rate;
+                        jobPrd.Frt19FreightRate = rate;
+                        jobPrd.Frt20FreightRate = rate;
+                        jobPrd.Frt21FreightRate = rate;
+                        jobPrd.Frt22FreightRate = rate;
+                        jobPrd.Frt23FreightRate = rate;
+                        jobPrd.Frt24FreightRate = rate;
+                        jobPrd.Frt25FreightRate = rate;
+                        context.Sljobprds.Add(jobPrd);
+                    }
+                }
+                if (dto.SlorderCollection != null && dto.SlorderCollection.Any()) {
+                    foreach (var obj in dto.SlorderCollection) {
+                        var recs = deleteContext.Slorders
+                                                .Where(x => x.CustomerID == obj.CustomerID
+                                                        && x.OrderID == obj.OrderID
+                                                        && x.LocationID == obj.LocationID
+                                                        && x.ProductID == obj.ProductID
+                                                        && x.Item == obj.Item);
+                        if (recs.Any()) {
+                            foreach (var rec in recs) {
+                                deleteContext.Slorders.Remove(rec);
+                            }
+                            try {
+                                deleteContext.SaveChanges();
+                            }
+                            catch (DbUpdateConcurrencyException) {
+                                //  sweeper beat us to the punch
+                            }
+                            catch (OptimisticConcurrencyException) {
+                                //  sweeper beat us to the punch
+                            }
+                        }
+                        var order = context.Slorders.Create();
+                        order.CustomerID = obj.CustomerID;
+                        order.OrderID = obj.OrderID;
+                        order.LocationID = obj.LocationID;
+                        order.ProductID = obj.ProductID;
+                        order.Item = obj.Item;
+                        order.JobID = obj.JobID;
+                        order.JobCostID = obj.JobCostID;
+                        order.ProductName = obj.ProductName;
+                        order.Price = obj.Price;
+                        order.OrderQty = obj.OrderQty;
+                        order.MatlUnitID = obj.MatlUnitID;
+                        var pay = (double)obj.Frt1FreightPay;
+                        order.Frt1FreightPay = pay;
+                        order.Frt2FreightPay = pay;
+                        order.Frt3FreightPay = pay;
+                        order.Frt4FreightPay = pay;
+                        order.Frt5FreightPay = pay;
+                        order.Frt6FreightPay = pay;
+                        order.Frt7FreightPay = pay;
+                        order.Frt8FreightPay = pay;
+                        order.Frt9FreightPay = pay;
+                        order.Frt10FreightPay = pay;
+                        order.Frt11FreightPay = pay;
+                        order.Frt12FreightPay = pay;
+                        order.Frt13FreightPay = pay;
+                        order.Frt14FreightPay = pay;
+                        order.Frt15FreightPay = pay;
+                        order.Frt16FreightPay = pay;
+                        order.Frt17FreightPay = pay;
+                        order.Frt18FreightPay = pay;
+                        order.Frt19FreightPay = pay;
+                        order.Frt20FreightPay = pay;
+                        order.Frt21FreightPay = pay;
+                        order.Frt22FreightPay = pay;
+                        order.Frt23FreightPay = pay;
+                        order.Frt24FreightPay = pay;
+                        order.Frt25FreightPay = pay;
+                        order.Frt1FreightRateType = "A";
+                        order.Frt2FreightRateType = "B";
+                        order.Frt3FreightRateType = "C";
+                        order.Frt4FreightRateType = "D";
+                        order.Frt5FreightRateType = "E";
+                        order.Frt6FreightRateType = "F";
+                        order.Frt7FreightRateType = "G";
+                        order.Frt8FreightRateType = "H";
+                        order.Frt9FreightRateType = "I";
+                        order.Frt10FreightRateType = "J";
+                        order.Frt11FreightRateType = "K";
+                        order.Frt12FreightRateType = "L";
+                        order.Frt13FreightRateType = "M";
+                        order.Frt14FreightRateType = "N";
+                        order.Frt15FreightRateType = "O";
+                        order.Frt16FreightRateType = "P";
+                        order.Frt17FreightRateType = "Q";
+                        order.Frt18FreightRateType = "R";
+                        order.Frt19FreightRateType = "S";
+                        order.Frt20FreightRateType = "T";
+                        order.Frt21FreightRateType = "U";
+                        order.Frt22FreightRateType = "V";
+                        order.Frt23FreightRateType = "W";
+                        order.Frt24FreightRateType = "X";
+                        order.Frt25FreightRateType = "Y";
+                        var rate = (double)obj.Frt1FreightRate;
+                        order.Frt1FreightRate = rate;
+                        order.Frt2FreightRate = rate;
+                        order.Frt3FreightRate = rate;
+                        order.Frt4FreightRate = rate;
+                        order.Frt5FreightRate = rate;
+                        order.Frt6FreightRate = rate;
+                        order.Frt7FreightRate = rate;
+                        order.Frt8FreightRate = rate;
+                        order.Frt9FreightRate = rate;
+                        order.Frt10FreightRate = rate;
+                        order.Frt11FreightRate = rate;
+                        order.Frt12FreightRate = rate;
+                        order.Frt13FreightRate = rate;
+                        order.Frt14FreightRate = rate;
+                        order.Frt15FreightRate = rate;
+                        order.Frt16FreightRate = rate;
+                        order.Frt17FreightRate = rate;
+                        order.Frt18FreightRate = rate;
+                        order.Frt19FreightRate = rate;
+                        order.Frt20FreightRate = rate;
+                        order.Frt21FreightRate = rate;
+                        order.Frt22FreightRate = rate;
+                        order.Frt23FreightRate = rate;
+                        order.Frt24FreightRate = rate;
+                        order.Frt25FreightRate = rate;
+                        
+                        context.Slorders.Add(order);
+                    }
+                }
+                if (dto.SlordnamDto != null) {
+                    var recs = deleteContext.Slordnams.Where(x => x.CustomerID == dto.SlordnamDto.CustomerID
+                                                                && x.OrderID == dto.SlordnamDto.OrderID);
+                    if (recs.Any()) {
+                        foreach (var rec in recs) {
+                            deleteContext.Slordnams.Remove(rec);
+                        }
+                        try {
+                            deleteContext.SaveChanges();
+                        }
+                        catch (DbUpdateConcurrencyException) {
+                            //  sweeper beat us to the punch
+                        }
+                        catch (OptimisticConcurrencyException) {
+                            //  sweeper beat us to the punch
+                        }
+                    }
+                    var ordNam = context.Slordnams.Create();
+                    ordNam.CustomerID = dto.SlordnamDto.CustomerID;
+                    ordNam.OrderID = dto.SlordnamDto.OrderID;
+                    ordNam.JobID = dto.SlordnamDto.JobID;
+                    ordNam.Description1 = dto.SlordnamDto.Description1;
+                    ordNam.QuoteFlag = dto.SlordnamDto.QuoteFlag;
+                    ordNam.ShipAddress1 = dto.SlordnamDto.ShipAddress1;
+                    ordNam.ShipAddress2 = dto.SlordnamDto.ShipAddress2;
+                    ordNam.ShipCity = dto.SlordnamDto.ShipCity;
+                    ordNam.ShipState = dto.SlordnamDto.ShipState;
+                    ordNam.ShipZip = dto.SlordnamDto.ShipZip;
+                    ordNam.Contact = dto.SlordnamDto.Contact;
+                    ordNam.Phone = dto.SlordnamDto.Phone;
+                    ordNam.Fax = dto.SlordnamDto.Fax;
+                    ordNam.Email = dto.SlordnamDto.Email;
+                    ordNam.SalespersonID = dto.SlordnamDto.SalespersonID;
+                    ordNam.QuoteDate = dto.SlordnamDto.QuoteDate;
+                    ordNam.BidDate = dto.SlordnamDto.BidDate;
+                    context.Slordnams.Add(ordNam);
+                }
+                
+                context.Configuration.ValidateOnSaveEnabled = false;
+                context.SaveChanges();
+                deleteContext.Dispose();
+                context.Dispose();
+                return Request.CreateResponse(HttpStatusCode.OK, "Created records");
+            }
+            //throw new Exception("validation failed");
+            return Request.CreateResponse(HttpStatusCode.Forbidden, "validation failed");
+        }
+
+
+        [HttpPost]
+        public HttpResponseMessage ProcessApexCustomer([FromBody] Apex_CustomerDto dto) {
+        //validate the key
+            if( ValidateKey(dto.Key)) {
+                var context = new ApexEntities();
+                if (dto.IsCustomer) {
+                    var customer = context.Slcusts.Create();
+                    customer.CustomerID = dto.CustomerID;
+                    context.Slcusts.Add(customer);
+                }
+                else {
+                    var deleteContext = new ApexEntities();
+                    var rec = deleteContext.Slprospes.SingleOrDefault(x => x.CustomerID == dto.CustomerID);
+                    if (rec != null) {
+                        deleteContext.Slprospes.Remove(rec);
+                        try {
+                            deleteContext.SaveChanges();
+                        }
+                        catch (DbUpdateConcurrencyException) {
+                            //  sweeper beat us to the punch
+                        }
+                        catch (OptimisticConcurrencyException) {
+                            //  sweeper beat us to the punch
+                        }
+                    }
+                    deleteContext.Dispose();
+                    var prospect = context.Slprospes.Create();
+                    prospect.CustomerID = dto.CustomerID;
+                    prospect.Name = dto.Name;
+                    prospect.Address1 = string.IsNullOrEmpty(dto.Address1) ? "" : dto.Address1;
+                    prospect.Address2 = string.IsNullOrEmpty(dto.Address2) ? "" : dto.Address2;
+                    prospect.City = string.IsNullOrEmpty(dto.City) ? "" : dto.City;
+                    prospect.State = string.IsNullOrEmpty(dto.State) ? "" : dto.State;
+                    prospect.Zip = string.IsNullOrEmpty(dto.Zip) ? "" : dto.Zip;
+                    prospect.Phone = string.IsNullOrEmpty(dto.Phone) ? "" : dto.Phone;
+                    prospect.Fax = string.IsNullOrEmpty(dto.Fax) ? "" : dto.Fax;
+                    context.Slprospes.Add(prospect);
+                }
+                context.Configuration.ValidateOnSaveEnabled = false;
+                context.SaveChanges();
+                context.Dispose();
+                return Request.CreateResponse(HttpStatusCode.OK, "Created records");
+            }
+            //throw new Exception("validation failed");
+            return Request.CreateResponse(HttpStatusCode.Forbidden, "validation failed");
+        }
+
+
+        [HttpPost]
+        public HttpResponseMessage ProcessApexContact([FromBody] Apex_Contact dto) {
+            //validate the key
+            if( ValidateKey(dto.Key)) {
+                var context = new ApexEntities();
+                var deleteContext = new ApexEntities();
+                var recs = deleteContext.Sycontacs.Where(x => x.CustomerID == dto.CustomerID);
+                if (recs.Any()) {
+                    foreach (var rec in recs) {
+                        deleteContext.Sycontacs.Remove(rec);
+                    }
+                    try {
+                        deleteContext.SaveChanges();
+                    }
+                    catch (DbUpdateConcurrencyException) {
+                        //  sweeper beat us to the punch
+                    }
+                    catch (OptimisticConcurrencyException) {
+                        //  sweeper beat us to the punch
+                    }
+                }
+                deleteContext.Dispose();
+                var contact = context.Sycontacs.Create();
+                contact.CustomerID = dto.CustomerID;
+                contact.Name = string.IsNullOrEmpty(dto.Name) ? "" : dto.Name;
+                contact.Address1 = string.IsNullOrEmpty(dto.Address1) ? "" : dto.Address1;
+                contact.Address2 = string.IsNullOrEmpty(dto.Address2) ? "" : dto.Address2;
+                contact.City = string.IsNullOrEmpty(dto.City) ? "" : dto.City;
+                contact.State = string.IsNullOrEmpty(dto.State) ? "" : dto.State;
+                contact.Zip = string.IsNullOrEmpty(dto.Zip) ? "" : dto.Zip;
+                contact.Email = string.IsNullOrEmpty(dto.Email) ? "" : dto.Email;
+                contact.Phone = string.IsNullOrEmpty(dto.Phone) ? "" : dto.Phone;
+                contact.Phone2 = string.IsNullOrEmpty(dto.Phone2) ? "" : dto.Phone2;
+                contact.Fax = string.IsNullOrEmpty(dto.Fax) ? "" : dto.Fax;
+                contact.Title = string.IsNullOrEmpty(dto.Title) ? "" : dto.Title;
+                context.Sycontacs.Add(contact);
+                context.Configuration.ValidateOnSaveEnabled = false;
+                context.SaveChanges();
+                context.Dispose();
+                return Request.CreateResponse(HttpStatusCode.OK, "Created records");
+            }
+            //throw new Exception("validation failed");
+            return Request.CreateResponse(HttpStatusCode.Forbidden, "validation failed");
+        }
+
+        [HttpPost]
+        //public Task<HttpResponseMessage> ProcessJobFile([FromBody] JobExportDto dto) {
+        public HttpResponseMessage ProcessJobFile([FromBody] JobExportDto dto)
+        {
+              //validate the key
+                if( ValidateKey(dto.Key)) {
+                    //  write file to specified folder
+                    //  TODO: rewrite code for proper folder name
+                    var fileName = "\\" + dto.FileName;
+                    var files = dto.JobFiles;
+                    //string fileName = "TestHarper.txt";
+                    ////  TODO:   create necessary permissions on destination folder to allow writing file to disk
+                    var pathName = ConfigurationManager.AppSettings["pathName"];
+                    using (var sw = new StreamWriter(pathName + fileName, true)) {
+                        foreach (var file in files) {
+                            sw.Write(file, 0, file.Length);
+                        }
+                    }  
+                    //var req = Request.CreateResponse(HttpStatusCode.Accepted, "Created file " + fileName); 
+                    //return new Task<HttpResponseMessage>(() => req);
+                    return Request.CreateResponse(HttpStatusCode.Accepted, "Created file " + fileName); 
+                    //return Request.CreateResponse(HttpStatusCode.Accepted, dto);
+                }
+                //throw new Exception("validation failed");
+                return Request.CreateResponse(HttpStatusCode.Forbidden, "validation failed");
+
+
+        }
+
+
+
+        [HttpGet]
+        public HttpResponseMessage ProcessJobFile1()
+        {
+            return Request.CreateResponse(HttpStatusCode.OK, "Got Here");
+        }
+    }
+}

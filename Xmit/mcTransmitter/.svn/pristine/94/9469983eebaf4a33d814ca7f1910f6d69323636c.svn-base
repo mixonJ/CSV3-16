@@ -1,0 +1,15 @@
+﻿namespace mcTransmitter.DTOs {
+    public class Apex_SLJOBPRD_Dto {
+        public string JobID { get; set; }
+        public string JobCostID { get; set; }
+        public string ProductID { get; set; }
+        public string LocationID { get; set; }
+        public string ProductName { get; set; }
+        public decimal Price { get; set; }
+        public decimal Frt1FreightRate { get; set; }
+        public decimal Frt1FreightPay { get; set; }
+        public decimal OrderQty { get; set; }
+        public string MatlUnitID { get; set; }
+        public string UpdateProdDesc { get; set; }
+    }
+}

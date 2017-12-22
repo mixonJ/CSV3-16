@@ -1,0 +1,323 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ApexModelStoreContainer" CdmEntityContainer="ApexEntities">
+    <EntitySetMapping Name="Sygeofence">
+      <EntityTypeMapping TypeName="ApexModel.Sygeofence">
+        <MappingFragment StoreEntitySet="Sygeofence">
+          <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+          <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+          <ScalarProperty Name="GeofenceID" ColumnName="GeofenceID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Slcusts">
+      <EntityTypeMapping TypeName="ApexModel.Slcust">
+        <MappingFragment StoreEntitySet="Slcust">
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sycontacs">
+      <EntityTypeMapping TypeName="ApexModel.Sycontac">
+        <MappingFragment StoreEntitySet="Sycontac">
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Address1" ColumnName="Address1" />
+          <ScalarProperty Name="Address2" ColumnName="Address2" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="Zip" ColumnName="Zip" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Phone2" ColumnName="Phone2" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sljobs">
+      <EntityTypeMapping TypeName="ApexModel.Sljob">
+        <MappingFragment StoreEntitySet="Sljob">
+          <ScalarProperty Name="BidDate" ColumnName="BidDate" />
+          <ScalarProperty Name="BeginDate" ColumnName="BeginDate" />
+          <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
+          <ScalarProperty Name="Description1" ColumnName="Description1" />
+          <ScalarProperty Name="Description2" ColumnName="Description2" />
+          <ScalarProperty Name="JobID" ColumnName="JobID" />
+          <ScalarProperty Name="SalespersonID" ColumnName="SalespersonID" />
+          <ScalarProperty Name="TypeID" ColumnName="TypeID" />
+          <ScalarProperty Name="ShipCounty" ColumnName="ShipCounty" />
+          <ScalarProperty Name="ShipZip" ColumnName="ShipZip" />
+          <ScalarProperty Name="ShipState" ColumnName="ShipState" />
+          <ScalarProperty Name="ShipCity" ColumnName="ShipCity" />
+          <ScalarProperty Name="ShipAddress2" ColumnName="ShipAddress2" />
+          <ScalarProperty Name="ShipAddress1" ColumnName="ShipAddress1" />
+          <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+          <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+          <ScalarProperty Name="GeofenceID" ColumnName="GeofenceID" />
+          <ScalarProperty Name="BidResults" ColumnName="BidResults" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sljobdets">
+      <EntityTypeMapping TypeName="ApexModel.Sljobdet">
+        <MappingFragment StoreEntitySet="Sljobdet">
+          <ScalarProperty Name="Description1" ColumnName="Description1" />
+          <ScalarProperty Name="JobCostID" ColumnName="JobCostID" />
+          <ScalarProperty Name="JobID" ColumnName="JobID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sljobprds">
+      <EntityTypeMapping TypeName="ApexModel.Sljobprd">
+        <MappingFragment StoreEntitySet="Sljobprd">
+          <ScalarProperty Name="JobCostID" ColumnName="JobCostID" />
+          <ScalarProperty Name="JobID" ColumnName="JobID" />
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="OrderQty" ColumnName="OrderQty" />
+          <ScalarProperty Name="MatlUnitID" ColumnName="MatlUnitID" />
+          <ScalarProperty Name="UpdateProdDesc" ColumnName="UpdateProdDesc" />
+          <ScalarProperty Name="Frt1FreightPay" ColumnName="Frt1FreightPay" />
+          <ScalarProperty Name="Frt2FreightPay" ColumnName="Frt2FreightPay" />
+          <ScalarProperty Name="Frt3FreightPay" ColumnName="Frt3FreightPay" />
+          <ScalarProperty Name="Frt4FreightPay" ColumnName="Frt4FreightPay" />
+          <ScalarProperty Name="Frt5FreightPay" ColumnName="Frt5FreightPay" />
+          <ScalarProperty Name="Frt6FreightPay" ColumnName="Frt6FreightPay" />
+          <ScalarProperty Name="Frt7FreightPay" ColumnName="Frt7FreightPay" />
+          <ScalarProperty Name="Frt8FreightPay" ColumnName="Frt8FreightPay" />
+          <ScalarProperty Name="Frt9FreightPay" ColumnName="Frt9FreightPay" />
+          <ScalarProperty Name="Frt10FreightPay" ColumnName="Frt10FreightPay" />
+          <ScalarProperty Name="Frt11FreightPay" ColumnName="Frt11FreightPay" />
+          <ScalarProperty Name="Frt12FreightPay" ColumnName="Frt12FreightPay" />
+          <ScalarProperty Name="Frt13FreightPay" ColumnName="Frt13FreightPay" />
+          <ScalarProperty Name="Frt14FreightPay" ColumnName="Frt14FreightPay" />
+          <ScalarProperty Name="Frt15FreightPay" ColumnName="Frt15FreightPay" />
+          <ScalarProperty Name="Frt16FreightPay" ColumnName="Frt16FreightPay" />
+          <ScalarProperty Name="Frt17FreightPay" ColumnName="Frt17FreightPay" />
+          <ScalarProperty Name="Frt18FreightPay" ColumnName="Frt18FreightPay" />
+          <ScalarProperty Name="Frt19FreightPay" ColumnName="Frt19FreightPay" />
+          <ScalarProperty Name="Frt20FreightPay" ColumnName="Frt20FreightPay" />
+          <ScalarProperty Name="Frt21FreightPay" ColumnName="Frt21FreightPay" />
+          <ScalarProperty Name="Frt22FreightPay" ColumnName="Frt22FreightPay" />
+          <ScalarProperty Name="Frt23FreightPay" ColumnName="Frt23FreightPay" />
+          <ScalarProperty Name="Frt24FreightPay" ColumnName="Frt24FreightPay" />
+          <ScalarProperty Name="Frt25FreightPay" ColumnName="Frt25FreightPay" />
+          <ScalarProperty Name="Frt1FreightRateType" ColumnName="Frt1FreightRateType" />
+          <ScalarProperty Name="Frt2FreightRateType" ColumnName="Frt2FreightRateType" />
+          <ScalarProperty Name="Frt3FreightRateType" ColumnName="Frt3FreightRateType" />
+          <ScalarProperty Name="Frt4FreightRateType" ColumnName="Frt4FreightRateType" />
+          <ScalarProperty Name="Frt5FreightRateType" ColumnName="Frt5FreightRateType" />
+          <ScalarProperty Name="Frt6FreightRateType" ColumnName="Frt6FreightRateType" />
+          <ScalarProperty Name="Frt7FreightRateType" ColumnName="Frt7FreightRateType" />
+          <ScalarProperty Name="Frt8FreightRateType" ColumnName="Frt8FreightRateType" />
+          <ScalarProperty Name="Frt9FreightRateType" ColumnName="Frt9FreightRateType" />
+          <ScalarProperty Name="Frt10FreightRateType" ColumnName="Frt10FreightRateType" />
+          <ScalarProperty Name="Frt11FreightRateType" ColumnName="Frt11FreightRateType" />
+          <ScalarProperty Name="Frt12FreightRateType" ColumnName="Frt12FreightRateType" />
+          <ScalarProperty Name="Frt13FreightRateType" ColumnName="Frt13FreightRateType" />
+          <ScalarProperty Name="Frt14FreightRateType" ColumnName="Frt14FreightRateType" />
+          <ScalarProperty Name="Frt15FreightRateType" ColumnName="Frt15FreightRateType" />
+          <ScalarProperty Name="Frt16FreightRateType" ColumnName="Frt16FreightRateType" />
+          <ScalarProperty Name="Frt17FreightRateType" ColumnName="Frt17FreightRateType" />
+          <ScalarProperty Name="Frt18FreightRateType" ColumnName="Frt18FreightRateType" />
+          <ScalarProperty Name="Frt19FreightRateType" ColumnName="Frt19FreightRateType" />
+          <ScalarProperty Name="Frt20FreightRateType" ColumnName="Frt20FreightRateType" />
+          <ScalarProperty Name="Frt21FreightRateType" ColumnName="Frt21FreightRateType" />
+          <ScalarProperty Name="Frt22FreightRateType" ColumnName="Frt22FreightRateType" />
+          <ScalarProperty Name="Frt23FreightRateType" ColumnName="Frt23FreightRateType" />
+          <ScalarProperty Name="Frt24FreightRateType" ColumnName="Frt24FreightRateType" />
+          <ScalarProperty Name="Frt25FreightRateType" ColumnName="Frt25FreightRateType" />
+          <ScalarProperty Name="Frt1FreightRate" ColumnName="Frt1FreightRate" />
+          <ScalarProperty Name="Frt2FreightRate" ColumnName="Frt2FreightRate" />
+          <ScalarProperty Name="Frt3FreightRate" ColumnName="Frt3FreightRate" />
+          <ScalarProperty Name="Frt4FreightRate" ColumnName="Frt4FreightRate" />
+          <ScalarProperty Name="Frt5FreightRate" ColumnName="Frt5FreightRate" />
+          <ScalarProperty Name="Frt6FreightRate" ColumnName="Frt6FreightRate" />
+          <ScalarProperty Name="Frt7FreightRate" ColumnName="Frt7FreightRate" />
+          <ScalarProperty Name="Frt8FreightRate" ColumnName="Frt8FreightRate" />
+          <ScalarProperty Name="Frt9FreightRate" ColumnName="Frt9FreightRate" />
+          <ScalarProperty Name="Frt10FreightRate" ColumnName="Frt10FreightRate" />
+          <ScalarProperty Name="Frt11FreightRate" ColumnName="Frt11FreightRate" />
+          <ScalarProperty Name="Frt12FreightRate" ColumnName="Frt12FreightRate" />
+          <ScalarProperty Name="Frt13FreightRate" ColumnName="Frt13FreightRate" />
+          <ScalarProperty Name="Frt14FreightRate" ColumnName="Frt14FreightRate" />
+          <ScalarProperty Name="Frt15FreightRate" ColumnName="Frt15FreightRate" />
+          <ScalarProperty Name="Frt16FreightRate" ColumnName="Frt16FreightRate" />
+          <ScalarProperty Name="Frt17FreightRate" ColumnName="Frt17FreightRate" />
+          <ScalarProperty Name="Frt18FreightRate" ColumnName="Frt18FreightRate" />
+          <ScalarProperty Name="Frt19FreightRate" ColumnName="Frt19FreightRate" />
+          <ScalarProperty Name="Frt20FreightRate" ColumnName="Frt20FreightRate" />
+          <ScalarProperty Name="Frt21FreightRate" ColumnName="Frt21FreightRate" />
+          <ScalarProperty Name="Frt22FreightRate" ColumnName="Frt22FreightRate" />
+          <ScalarProperty Name="Frt23FreightRate" ColumnName="Frt23FreightRate" />
+          <ScalarProperty Name="Frt24FreightRate" ColumnName="Frt24FreightRate" />
+          <ScalarProperty Name="Frt25FreightRate" ColumnName="Frt25FreightRate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Slorders">
+      <EntityTypeMapping TypeName="ApexModel.Slorder">
+        <MappingFragment StoreEntitySet="Slorder">
+          <ScalarProperty Name="Item" ColumnName="Item" />
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+          <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="JobID" ColumnName="JobID" />
+          <ScalarProperty Name="JobCostID" ColumnName="JobCostID" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+          <ScalarProperty Name="OrderQty" ColumnName="OrderQty" />
+          <ScalarProperty Name="MatlUnitID" ColumnName="MatlUnitID" />
+          <ScalarProperty Name="UpdateProdDesc" ColumnName="UpdateProdDesc" />
+          <ScalarProperty Name="Frt1FreightPay" ColumnName="Frt1FreightPay" />
+          <ScalarProperty Name="Frt2FreightPay" ColumnName="Frt2FreightPay" />
+          <ScalarProperty Name="Frt3FreightPay" ColumnName="Frt3FreightPay" />
+          <ScalarProperty Name="Frt4FreightPay" ColumnName="Frt4FreightPay" />
+          <ScalarProperty Name="Frt5FreightPay" ColumnName="Frt5FreightPay" />
+          <ScalarProperty Name="Frt6FreightPay" ColumnName="Frt6FreightPay" />
+          <ScalarProperty Name="Frt7FreightPay" ColumnName="Frt7FreightPay" />
+          <ScalarProperty Name="Frt8FreightPay" ColumnName="Frt8FreightPay" />
+          <ScalarProperty Name="Frt9FreightPay" ColumnName="Frt9FreightPay" />
+          <ScalarProperty Name="Frt10FreightPay" ColumnName="Frt10FreightPay" />
+          <ScalarProperty Name="Frt11FreightPay" ColumnName="Frt11FreightPay" />
+          <ScalarProperty Name="Frt12FreightPay" ColumnName="Frt12FreightPay" />
+          <ScalarProperty Name="Frt13FreightPay" ColumnName="Frt13FreightPay" />
+          <ScalarProperty Name="Frt14FreightPay" ColumnName="Frt14FreightPay" />
+          <ScalarProperty Name="Frt15FreightPay" ColumnName="Frt15FreightPay" />
+          <ScalarProperty Name="Frt16FreightPay" ColumnName="Frt16FreightPay" />
+          <ScalarProperty Name="Frt17FreightPay" ColumnName="Frt17FreightPay" />
+          <ScalarProperty Name="Frt18FreightPay" ColumnName="Frt18FreightPay" />
+          <ScalarProperty Name="Frt19FreightPay" ColumnName="Frt19FreightPay" />
+          <ScalarProperty Name="Frt20FreightPay" ColumnName="Frt20FreightPay" />
+          <ScalarProperty Name="Frt21FreightPay" ColumnName="Frt21FreightPay" />
+          <ScalarProperty Name="Frt22FreightPay" ColumnName="Frt22FreightPay" />
+          <ScalarProperty Name="Frt23FreightPay" ColumnName="Frt23FreightPay" />
+          <ScalarProperty Name="Frt24FreightPay" ColumnName="Frt24FreightPay" />
+          <ScalarProperty Name="Frt25FreightPay" ColumnName="Frt25FreightPay" />
+          <ScalarProperty Name="Frt1FreightRateType" ColumnName="Frt1FreightRateType" />
+          <ScalarProperty Name="Frt2FreightRateType" ColumnName="Frt2FreightRateType" />
+          <ScalarProperty Name="Frt3FreightRateType" ColumnName="Frt3FreightRateType" />
+          <ScalarProperty Name="Frt4FreightRateType" ColumnName="Frt4FreightRateType" />
+          <ScalarProperty Name="Frt5FreightRateType" ColumnName="Frt5FreightRateType" />
+          <ScalarProperty Name="Frt6FreightRateType" ColumnName="Frt6FreightRateType" />
+          <ScalarProperty Name="Frt7FreightRateType" ColumnName="Frt7FreightRateType" />
+          <ScalarProperty Name="Frt8FreightRateType" ColumnName="Frt8FreightRateType" />
+          <ScalarProperty Name="Frt9FreightRateType" ColumnName="Frt9FreightRateType" />
+          <ScalarProperty Name="Frt10FreightRateType" ColumnName="Frt10FreightRateType" />
+          <ScalarProperty Name="Frt11FreightRateType" ColumnName="Frt11FreightRateType" />
+          <ScalarProperty Name="Frt12FreightRateType" ColumnName="Frt12FreightRateType" />
+          <ScalarProperty Name="Frt13FreightRateType" ColumnName="Frt13FreightRateType" />
+          <ScalarProperty Name="Frt14FreightRateType" ColumnName="Frt14FreightRateType" />
+          <ScalarProperty Name="Frt15FreightRateType" ColumnName="Frt15FreightRateType" />
+          <ScalarProperty Name="Frt16FreightRateType" ColumnName="Frt16FreightRateType" />
+          <ScalarProperty Name="Frt17FreightRateType" ColumnName="Frt17FreightRateType" />
+          <ScalarProperty Name="Frt18FreightRateType" ColumnName="Frt18FreightRateType" />
+          <ScalarProperty Name="Frt19FreightRateType" ColumnName="Frt19FreightRateType" />
+          <ScalarProperty Name="Frt20FreightRateType" ColumnName="Frt20FreightRateType" />
+          <ScalarProperty Name="Frt21FreightRateType" ColumnName="Frt21FreightRateType" />
+          <ScalarProperty Name="Frt22FreightRateType" ColumnName="Frt22FreightRateType" />
+          <ScalarProperty Name="Frt23FreightRateType" ColumnName="Frt23FreightRateType" />
+          <ScalarProperty Name="Frt24FreightRateType" ColumnName="Frt24FreightRateType" />
+          <ScalarProperty Name="Frt25FreightRateType" ColumnName="Frt25FreightRateType" />
+          <ScalarProperty Name="Frt1FreightRate" ColumnName="Frt1FreightRate" />
+          <ScalarProperty Name="Frt2FreightRate" ColumnName="Frt2FreightRate" />
+          <ScalarProperty Name="Frt3FreightRate" ColumnName="Frt3FreightRate" />
+          <ScalarProperty Name="Frt4FreightRate" ColumnName="Frt4FreightRate" />
+          <ScalarProperty Name="Frt5FreightRate" ColumnName="Frt5FreightRate" />
+          <ScalarProperty Name="Frt6FreightRate" ColumnName="Frt6FreightRate" />
+          <ScalarProperty Name="Frt7FreightRate" ColumnName="Frt7FreightRate" />
+          <ScalarProperty Name="Frt8FreightRate" ColumnName="Frt8FreightRate" />
+          <ScalarProperty Name="Frt9FreightRate" ColumnName="Frt9FreightRate" />
+          <ScalarProperty Name="Frt10FreightRate" ColumnName="Frt10FreightRate" />
+          <ScalarProperty Name="Frt11FreightRate" ColumnName="Frt11FreightRate" />
+          <ScalarProperty Name="Frt12FreightRate" ColumnName="Frt12FreightRate" />
+          <ScalarProperty Name="Frt13FreightRate" ColumnName="Frt13FreightRate" />
+          <ScalarProperty Name="Frt14FreightRate" ColumnName="Frt14FreightRate" />
+          <ScalarProperty Name="Frt15FreightRate" ColumnName="Frt15FreightRate" />
+          <ScalarProperty Name="Frt16FreightRate" ColumnName="Frt16FreightRate" />
+          <ScalarProperty Name="Frt17FreightRate" ColumnName="Frt17FreightRate" />
+          <ScalarProperty Name="Frt18FreightRate" ColumnName="Frt18FreightRate" />
+          <ScalarProperty Name="Frt19FreightRate" ColumnName="Frt19FreightRate" />
+          <ScalarProperty Name="Frt20FreightRate" ColumnName="Frt20FreightRate" />
+          <ScalarProperty Name="Frt21FreightRate" ColumnName="Frt21FreightRate" />
+          <ScalarProperty Name="Frt22FreightRate" ColumnName="Frt22FreightRate" />
+          <ScalarProperty Name="Frt23FreightRate" ColumnName="Frt23FreightRate" />
+          <ScalarProperty Name="Frt24FreightRate" ColumnName="Frt24FreightRate" />
+          <ScalarProperty Name="Frt25FreightRate" ColumnName="Frt25FreightRate" />
+          <ScalarProperty Name="ExpireDate" ColumnName="ExpireDate" />
+          <ScalarProperty Name="SchedStartDate" ColumnName="SchedStartDate" />
+          <ScalarProperty Name="SchedStartTime" ColumnName="SchedStartTime" />
+          <ScalarProperty Name="PurchaseOrder" ColumnName="PurchaseOrder" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Slordnams">
+      <EntityTypeMapping TypeName="ApexModel.Slordnam">
+        <MappingFragment StoreEntitySet="Slordnam">
+          <ScalarProperty Name="GeofenceID" ColumnName="GeofenceID" />
+          <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="JobID" ColumnName="JobID" />
+          <ScalarProperty Name="Description1" ColumnName="Description1" />
+          <ScalarProperty Name="Description2" ColumnName="Description2" />
+          <ScalarProperty Name="QuoteFlag" ColumnName="QuoteFlag" />
+          <ScalarProperty Name="OrderFlag" ColumnName="OrderFlag" />
+          <ScalarProperty Name="ShipAddress1" ColumnName="ShipAddress1" />
+          <ScalarProperty Name="ShipAddress2" ColumnName="ShipAddress2" />
+          <ScalarProperty Name="ShipCity" ColumnName="ShipCity" />
+          <ScalarProperty Name="ShipCounty" ColumnName="ShipCounty" />
+          <ScalarProperty Name="ShipState" ColumnName="ShipState" />
+          <ScalarProperty Name="ShipZip" ColumnName="ShipZip" />
+          <ScalarProperty Name="Contact" ColumnName="Contact" />
+          <ScalarProperty Name="FreightFOB" ColumnName="FreightFOB" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="SalespersonID" ColumnName="SalespersonID" />
+          <ScalarProperty Name="QuoteDate" ColumnName="QuoteDate" />
+          <ScalarProperty Name="BidDate" ColumnName="BidDate" />
+          <ScalarProperty Name="ExpireDate" ColumnName="ExpireDate" />
+          <ScalarProperty Name="UfCustomerOrder1" ColumnName="UfCustomerOrder1" />
+          <ScalarProperty Name="SchedStartDate" ColumnName="SchedStartDate" />
+          <ScalarProperty Name="SchedStartTime" ColumnName="SchedStartTime" />
+          <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
+          <ScalarProperty Name="OrderTime" ColumnName="OrderTime" />
+          <ScalarProperty Name="OrigQuoteID" ColumnName="OrigQuoteID" />
+          <ScalarProperty Name="VehicleType1" ColumnName="VehicleType1" />
+          <ScalarProperty Name="VehicleType2" ColumnName="VehicleType2" />
+          <ScalarProperty Name="VehicleType3" ColumnName="VehicleType3" />
+          <ScalarProperty Name="VehicleType4" ColumnName="VehicleType4" />
+          <ScalarProperty Name="VehicleType5" ColumnName="VehicleType5" />
+          <ScalarProperty Name="PurchaseOrder" ColumnName="PurchaseOrder" />
+          <ScalarProperty Name="BeginDate" ColumnName="BeginDate" />
+          <ScalarProperty Name="AllowBeforeStart" ColumnName="AllowBeforeStart" />
+          <ScalarProperty Name="AllowAfterEnd" ColumnName="AllowAfterEnd" />
+          <ScalarProperty Name="AllowExceedQty" ColumnName="AllowExceedQty" />
+          <ScalarProperty Name="AllowExceedLoads" ColumnName="AllowExceedLoads" />
+          <ScalarProperty Name="AllowAfterComplete" ColumnName="AllowAfterComplete" />
+          <ScalarProperty Name="BidResults" ColumnName="BidResults" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Slprospes">
+      <EntityTypeMapping TypeName="ApexModel.Slprospe">
+        <MappingFragment StoreEntitySet="Slprospe">
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Address1" ColumnName="Address1" />
+          <ScalarProperty Name="Address2" ColumnName="Address2" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="Zip" ColumnName="Zip" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

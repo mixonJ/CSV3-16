@@ -1,0 +1,1479 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="OracleEntities.Store" Provider="Oracle.ManagedDataAccess.Client" ProviderManifestToken="11.2" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="AccountsReceivable">
+    <Key>
+      <PropertyRef Name="AccountsReceivableID" />
+    </Key>
+    <Property Name="AccountsReceivableID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="ProspectID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="AgeRangeID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="Dollars" Type="number" Precision="11" Scale="2" Nullable="false" />
+    <Property Name="CompanyID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="MsModificationDate" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AdditionalProducts">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="ProductName" Type="varchar2" MaxLength="50" Nullable="false" />
+    <Property Name="Description" Type="varchar2" MaxLength="100" Nullable="false" />
+    <Property Name="CostPerUnit" Type="varchar2" MaxLength="50" />
+    <Property Name="Active" Type="number" Precision="1" Scale="0" Nullable="false" />
+    <Property Name="DivisionID" Type="number" Precision="38" Scale="0" />
+    <Property Name="ProductID" Type="number" Precision="38" Scale="0" />
+    <Property Name="CompanyID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="MsModificationDate" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AgeRanges">
+    <Key>
+      <PropertyRef Name="AgeRangeID" />
+    </Key>
+    <Property Name="AgeRangeID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="CompanyID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="RangeStart" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="RangeEnd" Type="number" Precision="38" Scale="0" />
+    <Property Name="Description" Type="varchar2" MaxLength="50" Nullable="false" />
+    <Property Name="MsModificationDate" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BatchEvents">
+    <Key>
+      <PropertyRef Name="BatchEventsID" />
+    </Key>
+    <Property Name="BatchPerformedDate" Type="varchar2" MaxLength="50" />
+    <Property Name="BatchEventsID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="CompanyID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="MsModificationDate" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BidderQuoteDetails">
+    <Key>
+      <PropertyRef Name="BidderQuoteDetailID" />
+    </Key>
+    <Property Name="BidderQuoteDetailID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="BidderQuoteID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="Description" Type="varchar2" MaxLength="100" Nullable="false" />
+    <Property Name="Price" Type="varchar2" MaxLength="100" Nullable="false" />
+    <Property Name="MsModificationDate" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BidderQuotes">
+    <Key>
+      <PropertyRef Name="BidderQuoteID" />
+    </Key>
+    <Property Name="BidderQuoteID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="Attention" Type="varchar2" MaxLength="100" />
+    <Property Name="SalespersonName" Type="varchar2" MaxLength="100" />
+    <Property Name="SalespersonID" Type="number" Precision="38" Scale="0" />
+    <Property Name="Address1" Type="varchar2" MaxLength="200" />
+    <Property Name="Paymentterms" Type="varchar2" MaxLength="200" />
+    <Property Name="PaymenttermsValue" Type="number" Precision="38" Scale="0" />
+    <Property Name="Jobname" Type="varchar2" MaxLength="200" />
+    <Property Name="DateQuoted" Type="varchar2" MaxLength="50" />
+    <Property Name="ProjectBidderID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="Division" Type="varchar2" MaxLength="100" />
+    <Property Name="ExpirationDate" Type="date" />
+    <Property Name="ProjectID" Type="number" Precision="38" Scale="0" />
+    <Property Name="MsModificationDate" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BudgetedYards">
+    <Key>
+      <PropertyRef Name="BudgetedYardsID" />
+    </Key>
+    <Property Name="BudgetedYardsID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="UserID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="Year" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="Month" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="BudgetedYards" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="BudgetedRevenue" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="ValueAddID" Type="number" Precision="38" Scale="0" />
+    <Property Name="MsModificationDate" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Companies">
+    <Key>
+      <PropertyRef Name="CompanyID" />
+    </Key>
+    <Property Name="CompanyID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="CompanyName" Type="varchar2" MaxLength="100" Nullable="false" />
+    <Property Name="Address1" Type="varchar2" MaxLength="100" />
+    <Property Name="Address2" Type="varchar2" MaxLength="100" />
+    <Property Name="City" Type="varchar2" MaxLength="100" />
+    <Property Name="ST" Type="varchar2" MaxLength="50" />
+    <Property Name="Zip" Type="varchar2" MaxLength="50" />
+    <Property Name="Phone1" Type="varchar2" MaxLength="16" />
+    <Property Name="Phone2" Type="varchar2" MaxLength="16" />
+    <Property Name="Fax" Type="varchar2" MaxLength="16" />
+    <Property Name="ServiceUrl" Type="varchar2" MaxLength="50" />
+    <Property Name="QuoteImage" Type="long raw" />
+    <Property Name="SourceSystemID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="ChannelID" Type="varchar2" MaxLength="50" />
+    <Property Name="InstanceID" Type="number" Precision="38" Scale="0" />
+    <Property Name="CompanyCode" Type="varchar2" MaxLength="2" />
+    <Property Name="UsesCategories" Type="number" Precision="1" Scale="0" />
+    <Property Name="MaxQuantity" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="DefaultUomID" Type="number" Precision="38" Scale="0" />
+    <Property Name="Cert509" Type="varchar2" MaxLength="4000" />
+    <Property Name="UsesSAML" Type="number" Precision="1" Scale="0" Nullable="false" />
+    <Property Name="TimeoutRedirect" Type="varchar2" MaxLength="250" Nullable="false" />
+    <Property Name="ChangeProjectCode" Type="number" Precision="1" Scale="0" Nullable="false" />
+    <Property Name="UsesPriceIntegration" Type="number" Precision="1" Scale="0" Nullable="false" />
+    <Property Name="UsesSalesOrders" Type="number" Precision="1" Scale="0" Nullable="false" />
+    <Property Name="Country" Type="varchar2" MaxLength="100" />
+    <Property Name="MsModificationDate" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CompanyBidStatuses">
+    <Key>
+      <PropertyRef Name="CompanyBidStatusID" />
+    </Key>
+    <Property Name="CompanyBidStatusID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="CompanyBidStatusName" Type="varchar2" MaxLength="50" Nullable="false" />
+    <Property Name="CompanyID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="SystemCode" Type="varchar2" MaxLength="20" Nullable="false" />
+    <Property Name="MSStatusID" Type="number" Precision="38" Scale="0" />
+    <Property Name="MsModificationDate" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CompanyOrderStatuses">
+    <Key>
+      <PropertyRef Name="CompanyOrderStatusID" />
+    </Key>
+    <Property Name="CompanyOrderStatusID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="CompanyOrderStatusName" Type="varchar2" MaxLength="50" Nullable="false" />
+    <Property Name="CompanyID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="MsModificationDate" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CompanyProjectProductStatuses">
+    <Key>
+      <PropertyRef Name="CompanyProjectProductStatusID" />
+    </Key>
+    <Property Name="CompanyProjectProductStatusID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="ProjectProductStatusName" Type="varchar2" MaxLength="50" Nullable="false" />
+    <Property Name="CompanyID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="MsModificationDate" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CompanyProjectStatuses">
+    <Key>
+      <PropertyRef Name="CompanyProjectStatusID" />
+    </Key>
+    <Property Name="CompanyProjectStatusID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="CompanyProjectStatusName" Type="varchar2" MaxLength="50" Nullable="false" />
+    <Property Name="CompanyID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="MsModificationDate" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CompanyQuoteStatuses">
+    <Key>
+      <PropertyRef Name="CompanyQuoteStatusID" />
+    </Key>
+    <Property Name="CompanyQuoteStatusID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="CompanyQuoteStatusName" Type="varchar2" MaxLength="50" Nullable="false" />
+    <Property Name="CompanyID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="MsModificationDate" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CompanyUsers">
+    <Key>
+      <PropertyRef Name="CompanyUserID" />
+    </Key>
+    <Property Name="CompanyUserID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="CompanyID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="UserID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="SalesmanCode" Type="varchar2" MaxLength="10" />
+    <Property Name="MsModificationDate" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CompetitorPlants">
+    <Key>
+      <PropertyRef Name="CompetitorPlantID" />
+    </Key>
+    <Property Name="CompetitorPlantID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="CompetitorID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="PlantName" Type="varchar2" MaxLength="100" Nullable="false" />
+    <Property Name="Inserted" Type="date" Nullable="false" />
+    <Property Name="Modified" Type="date" Nullable="false" />
+    <Property Name="Inactive_Flag" Type="number" Precision="1" Scale="0" Nullable="false" />
+    <Property Name="PlantCost" Type="number" Precision="9" Scale="2" />
+    <Property Name="DeliveryCost" Type="number" Precision="9" Scale="2" />
+    <Property Name="MaterialCost" Type="number" Precision="9" Scale="2" />
+    <Property Name="SGACost" Type="number" Precision="9" Scale="2" />
+    <Property Name="Address1" Type="varchar2" MaxLength="50" />
+    <Property Name="Address2" Type="varchar2" MaxLength="50" />
+    <Property Name="City" Type="varchar2" MaxLength="50" />
+    <Property Name="State" Type="varchar2" MaxLength="50" />
+    <Property Name="Zip" Type="varchar2" MaxLength="50" />
+    <Property Name="Longitude" Type="number" Precision="10" Scale="7" />
+    <Property Name="Latitude" Type="number" Precision="10" Scale="7" />
+    <Property Name="LineOfBusinessID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="DivisionID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="Country" Type="varchar2" MaxLength="100" />
+    <Property Name="MsModificationDate" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Competitors">
+    <Key>
+      <PropertyRef Name="CompetitorID" />
+    </Key>
+    <Property Name="CompetitorID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="CompanyID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="CompetitorName" Type="varchar2" MaxLength="40" />
+    <Property Name="Inserted" Type="date" Nullable="false" />
+    <Property Name="Modified" Type="date" Nullable="false" />
+    <Property Name="Inactive" Type="number" Precision="1" Scale="0" Nullable="false" />
+    <Property Name="UserID" Type="number" Precision="38" Scale="0" />
+    <Property Name="Address1" Type="varchar2" MaxLength="50" />
+    <Property Name="Address2" Type="varchar2" MaxLength="50" />
+    <Property Name="City" Type="varchar2" MaxLength="50" />
+    <Property Name="State" Type="varchar2" MaxLength="50" />
+    <Property Name="Zip" Type="varchar2" MaxLength="50" />
+    <Property Name="Longitude" Type="number" Precision="10" Scale="7" />
+    <Property Name="Latitude" Type="number" Precision="10" Scale="7" />
+    <Property Name="Country" Type="varchar2" MaxLength="100" />
+    <Property Name="MsModificationDate" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Contact">
+    <Key>
+      <PropertyRef Name="ContactID" />
+    </Key>
+    <Property Name="ContactID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="Private" Type="number" Precision="1" Scale="0" />
+    <Property Name="OwnerID" Type="number" Precision="38" Scale="0" />
+    <Property Name="FirstName" Type="varchar2" MaxLength="20" />
+    <Property Name="LastName" Type="varchar2" MaxLength="20" />
+    <Property Name="Name" Type="varchar2" MaxLength="50" />
+    <Property Name="ProspectID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="Email" Type="varchar2" MaxLength="50" />
+    <Property Name="MobilePhone" Type="varchar2" MaxLength="20" />
+    <Property Name="Phone" Type="varchar2" MaxLength="20" />
+    <Property Name="Fax" Type="varchar2" MaxLength="20" />
+    <Property Name="Address" Type="varchar2" MaxLength="50" />
+    <Property Name="FullName" Type="varchar2" MaxLength="50" />
+    <Property Name="Title" Type="varchar2" MaxLength="50" />
+    <Property Name="StartingYearatCompany" Type="varchar2" MaxLength="25" />
+    <Property Name="Department" Type="varchar2" MaxLength="20" />
+    <Property Name="Address2" Type="varchar2" MaxLength="50" />
+    <Property Name="City" Type="varchar2" MaxLength="50" />
+    <Property Name="State" Type="varchar2" MaxLength="50" />
+    <Property Name="Zip" Type="varchar2" MaxLength="50" />
+    <Property Name="Salutation" Type="varchar2" MaxLength="10" />
+    <Property Name="Notes" Type="varchar2" MaxLength="250" />
+    <Property Name="Inserted" Type="date" />
+    <Property Name="Modified" Type="date" />
+    <Property Name="Country" Type="varchar2" MaxLength="100" />
+    <Property Name="MsModificationDate" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ContactNotes">
+    <Key>
+      <PropertyRef Name="ContactNoteID" />
+    </Key>
+    <Property Name="ContactNoteID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="ContactID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="Note" Type="varchar2" MaxLength="1000" />
+    <Property Name="Inserted" Type="date" Nullable="false" />
+    <Property Name="CreatedBy" Type="number" Precision="38" Scale="0" />
+    <Property Name="Subject" Type="varchar2" MaxLength="500" />
+    <Property Name="Source" Type="varchar2" MaxLength="50" />
+    <Property Name="MsModificationDate" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CreditStatuses">
+    <Key>
+      <PropertyRef Name="CreditStatusID" />
+    </Key>
+    <Property Name="CreditStatusID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="CompanyID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="Code" Type="varchar2" MaxLength="25" Nullable="false" />
+    <Property Name="Description" Type="varchar2" MaxLength="50" />
+    <Property Name="ColorCode" Type="varchar2" MaxLength="10" />
+    <Property Name="MsModificationDate" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CustomerEvents">
+    <Key>
+      <PropertyRef Name="CustomerEventID" />
+    </Key>
+    <Property Name="CustomerEventID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="Private" Type="number" Precision="1" Scale="0" />
+    <Property Name="OwnerID" Type="number" Precision="38" Scale="0" />
+    <Property Name="EventTypeID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="EventStartDate" Type="date" Nullable="false" />
+    <Property Name="EventEndDate" Type="date" />
+    <Property Name="CompletedDate" Type="date" />
+    <Property Name="Description" Type="varchar2" MaxLength="250" />
+    <Property Name="ContactID" Type="number" Precision="38" Scale="0" />
+    <Property Name="UserID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="EventFrequencyID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="ProjectID" Type="number" Precision="38" Scale="0" />
+    <Property Name="MasterEventID" Type="number" Precision="38" Scale="0" />
+    <Property Name="EventStatusID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="Subject" Type="varchar2" MaxLength="50" />
+    <Property Name="ProspectID" Type="number" Precision="38" Scale="0" />
+    <Property Name="RecurrenceEndDate" Type="date" />
+    <Property Name="MsModificationDate" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CustomerEventTypes">
+    <Key>
+      <PropertyRef Name="EventTypeID" />
+    </Key>
+    <Property Name="EventTypeID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="CompanyID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="EventType" Type="varchar2" MaxLength="20" Nullable="false" />
+    <Property Name="MsModificationDate" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CustomerTypes">
+    <Key>
+      <PropertyRef Name="CustomerTypeID" />
+    </Key>
+    <Property Name="CustomerTypeID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="CompanyID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="CustomerTypeName" Type="varchar2" MaxLength="50" Nullable="false" />
+    <Property Name="MsModificationDate" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DeviationTypes">
+    <Key>
+      <PropertyRef Name="DeviationTypeID" />
+    </Key>
+    <Property Name="DeviationTypeID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="DeviationTypeName" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="MsModificationDate" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Divisions">
+    <Key>
+      <PropertyRef Name="DivisionID" />
+    </Key>
+    <Property Name="DivisionID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="DivisionName" Type="varchar2" MaxLength="50" Nullable="false" />
+    <Property Name="CompanyID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="Address1" Type="varchar2" MaxLength="100" />
+    <Property Name="Address2" Type="varchar2" MaxLength="100" />
+    <Property Name="City" Type="varchar2" MaxLength="100" />
+    <Property Name="ST" Type="varchar2" MaxLength="50" />
+    <Property Name="Zip" Type="varchar2" MaxLength="10" />
+    <Property Name="Country" Type="varchar2" MaxLength="100" />
+    <Property Name="MsModificationDate" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Employee">
+    <Key>
+      <PropertyRef Name="Employee_ID" />
+    </Key>
+    <Property Name="Employee_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="Employee_Type_ID" Type="number" Precision="38" Scale="0" />
+    <Property Name="Home_Plant_ID" Type="number" Precision="38" Scale="0" />
+    <Property Name="Employee_Number" Type="varchar2" MaxLength="25" />
+    <Property Name="Hire_Date" Type="date" Nullable="false" />
+    <Property Name="Last_Name" Type="varchar2" MaxLength="50" />
+    <Property Name="First_Name" Type="varchar2" MaxLength="50" />
+    <Property Name="Middle_Name" Type="varchar2" MaxLength="50" />
+    <Property Name="Complete_Name" Type="varchar2" MaxLength="100" />
+    <Property Name="Addrees_1" Type="varchar2" MaxLength="100" />
+    <Property Name="Address_2" Type="varchar2" MaxLength="100" />
+    <Property Name="Address_3" Type="varchar2" MaxLength="100" />
+    <Property Name="Address_4" Type="varchar2" MaxLength="100" />
+    <Property Name="Address_5" Type="varchar2" MaxLength="100" />
+    <Property Name="Address_6" Type="varchar2" MaxLength="100" />
+    <Property Name="Address_7" Type="varchar2" MaxLength="100" />
+    <Property Name="Home_Phone" Type="varchar2" MaxLength="100" />
+    <Property Name="Business_Phone" Type="varchar2" MaxLength="100" />
+    <Property Name="Cell_Phone" Type="varchar2" MaxLength="100" />
+    <Property Name="Pager" Type="varchar2" MaxLength="100" />
+    <Property Name="Email_Address" Type="varchar2" MaxLength="100" />
+    <Property Name="Social_Security_Number" Type="varchar2" MaxLength="100" />
+    <Property Name="Birth_Date" Type="date" />
+    <Property Name="Pay_Rate" Type="number" Precision="18" Scale="2" />
+    <Property Name="Inactive_Flag" Type="number" Precision="1" Scale="0" Nullable="false" />
+    <Property Name="User_Profile_ID" Type="number" Precision="38" Scale="0" />
+    <Property Name="Punch_Out_Flag" Type="number" Precision="1" Scale="0" />
+    <Property Name="TWFormat_File_Concrete" Type="varchar2" MaxLength="255" />
+    <Property Name="TWFormat_File_Aggregate" Type="varchar2" MaxLength="255" />
+    <Property Name="TWFormat_File_Block" Type="varchar2" MaxLength="255" />
+    <Property Name="CompanyID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="MsModificationDate" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ErrorLog">
+    <Key>
+      <PropertyRef Name="ErrorID" />
+    </Key>
+    <Property Name="ErrorID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="CompanyID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="ErrorMessage" Type="varchar2" MaxLength="250" />
+    <Property Name="ErrorMethod" Type="varchar2" MaxLength="250" />
+    <Property Name="ErrorSource" Type="varchar2" MaxLength="250" />
+    <Property Name="ErrorDate" Type="date" Nullable="false" />
+    <Property Name="MsModificationDate" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="EventFrequency">
+    <Key>
+      <PropertyRef Name="EventFrequencyID" />
+    </Key>
+    <Property Name="EventFrequencyID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="CompanyID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="EventFrequency" Type="varchar2" MaxLength="10" Nullable="false" />
+    <Property Name="MsModificationDate" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="EventStatus">
+    <Key>
+      <PropertyRef Name="EventStatusID" />
+    </Key>
+    <Property Name="EventStatusID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="EventStatus" Type="varchar2" MaxLength="20" />
+    <Property Name="MsModificationDate" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LinesOfBusiness">
+    <Key>
+      <PropertyRef Name="LineOfBusinessID" />
+    </Key>
+    <Property Name="LineOfBusinessID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="Name" Type="varchar2" MaxLength="100" Nullable="false" />
+    <Property Name="CompanyID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="LineOfBusinessCode" Type="varchar2" MaxLength="2" Nullable="false" />
+    <Property Name="MsModificationDate" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Locations_Divisions_Lookup">
+    <Key>
+      <PropertyRef Name="RecordID" />
+    </Key>
+    <Property Name="RecordID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="DivisionID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="Division_Name" Type="varchar2" MaxLength="250" />
+    <Property Name="Location1_Code" Type="varchar2" MaxLength="250" />
+    <Property Name="Location1_Name" Type="varchar2" MaxLength="250" />
+    <Property Name="MsModificationDate" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Logins">
+    <Key>
+      <PropertyRef Name="LoginID" />
+    </Key>
+    <Property Name="LoginID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="UserID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="LoginDate" Type="date" Nullable="false" />
+    <Property Name="MsModificationDate" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LostReasons">
+    <Key>
+      <PropertyRef Name="LostReasonID" />
+    </Key>
+    <Property Name="LostReasonID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="CompanyID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="LostReason" Type="varchar2" MaxLength="20" Nullable="false" />
+    <Property Name="Inserted" Type="date" Nullable="false" />
+    <Property Name="Modified" Type="date" Nullable="false" />
+    <Property Name="MsModificationDate" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ManagersSalesmen">
+    <Key>
+      <PropertyRef Name="ManagerUserID" />
+    </Key>
+    <Property Name="ManagerUserID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="ManagerID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="SalesmanID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="MsModificationDate" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="OrderDetails">
+    <Key>
+      <PropertyRef Name="OrderDetailID" />
+    </Key>
+    <Property Name="OrderDetailID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="OrderID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="ProductID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="Quantity" Type="number" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="UnitPrice" Type="number" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="Mix" Type="number" Precision="1" Scale="0" Nullable="false" />
+    <Property Name="MsModificationDate" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Orders">
+    <Key>
+      <PropertyRef Name="OrderID" />
+    </Key>
+    <Property Name="OrderID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="CompanyID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="ProjectID" Type="number" Precision="38" Scale="0" />
+    <Property Name="year" Type="number" Precision="38" Scale="0" />
+    <Property Name="month" Type="number" Precision="38" Scale="0" />
+    <Property Name="YardsActual" Type="number" Precision="9" Scale="2" />
+    <Property Name="MaterialCost" Type="number" Precision="9" Scale="2" />
+    <Property Name="DollarsActual" Type="number" Precision="9" Scale="2" />
+    <Property Name="OrderDate" Type="date" />
+    <Property Name="ShipDate" Type="date" />
+    <Property Name="YardsTicketed" Type="number" Precision="9" Scale="2" />
+    <Property Name="OnJobTime" Type="date" />
+    <Property Name="LocationID" Type="number" Precision="38" Scale="0" />
+    <Property Name="ProspectID" Type="number" Precision="38" Scale="0" />
+    <Property Name="DispatchOrderID" Type="number" Precision="38" Scale="0" />
+    <Property Name="DispatchOrderNumber" Type="varchar2" MaxLength="20" />
+    <Property Name="SalesmanCode" Type="varchar2" MaxLength="10" />
+    <Property Name="Inserted" Type="date" />
+    <Property Name="Modified" Type="date" />
+    <Property Name="MsModificationDate" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PaymentTerms">
+    <Key>
+      <PropertyRef Name="Terms_Discount_ID" />
+    </Key>
+    <Property Name="Terms_Discount_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="CompanyID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="Description" Type="varchar2" MaxLength="50" />
+    <Property Name="MsModificationDate" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Plant">
+    <Key>
+      <PropertyRef Name="PlantID" />
+    </Key>
+    <Property Name="PlantID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="Description" Type="varchar2" MaxLength="100" Nullable="false" />
+    <Property Name="SystechCompNbr" Type="varchar2" MaxLength="20" />
+    <Property Name="CSPlantCode" Type="varchar2" MaxLength="10" />
+    <Property Name="CSShortName" Type="varchar2" MaxLength="8" />
+    <Property Name="CSPlantName" Type="varchar2" MaxLength="40" />
+    <Property Name="Inserted" Type="date" Nullable="false" />
+    <Property Name="Modified" Type="date" Nullable="false" />
+    <Property Name="Inactive_Flag" Type="number" Precision="1" Scale="0" Nullable="false" />
+    <Property Name="DivisionID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="LineOfBusinessID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="PlantCost" Type="number" Precision="9" Scale="2" />
+    <Property Name="DeliveryCost" Type="number" Precision="9" Scale="2" />
+    <Property Name="MaterialCost" Type="number" Precision="9" Scale="2" />
+    <Property Name="SGACost" Type="number" Precision="9" Scale="2" />
+    <Property Name="Address1" Type="varchar2" MaxLength="50" />
+    <Property Name="Address2" Type="varchar2" MaxLength="50" />
+    <Property Name="City" Type="varchar2" MaxLength="50" />
+    <Property Name="State" Type="varchar2" MaxLength="50" />
+    <Property Name="Zip" Type="varchar2" MaxLength="50" />
+    <Property Name="Longitude" Type="number" Precision="10" Scale="7" />
+    <Property Name="Latitude" Type="number" Precision="10" Scale="7" />
+    <Property Name="Country" Type="varchar2" MaxLength="100" />
+    <Property Name="MsModificationDate" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PlantLinesOfBusiness">
+    <Key>
+      <PropertyRef Name="PlantLineOfBusinessID" />
+    </Key>
+    <Property Name="PlantLineOfBusinessID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="LineOfBusinessID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="PlantID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="MsModificationDate" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PlantProductPrices">
+    <Key>
+      <PropertyRef Name="PlantProductPriceID" />
+    </Key>
+    <Property Name="PlantProductPriceID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="PlantID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="ProductID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="ListPrice" Type="number" Precision="9" Scale="2" Nullable="false" />
+    <Property Name="Description" Type="varchar2" MaxLength="100" Nullable="false" />
+    <Property Name="PriceListID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="MsModificationDate" Type="date" Nullable="false" />
+    <Property Name="PriceExtensionCode" Type="varchar2" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="PourSchedule">
+    <Key>
+      <PropertyRef Name="PourID" />
+    </Key>
+    <Property Name="PourID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="ProjectID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name=", --DEFAULTschedule" Type="number" Precision="1" Scale="0" />
+    <Property Name="ProjectProductID" Type="number" Precision="38" Scale="0" />
+    <Property Name="PourScheduleName" Type="varchar2" MaxLength="50" />
+    <Property Name="MsModificationDate" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="ProductID" />
+    </Key>
+    <Property Name="ProductID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="CompanyID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="ProductName" Type="varchar2" MaxLength="50" Nullable="false" />
+    <Property Name="Active" Type="number" Precision="1" Scale="0" />
+    <Property Name="AU_ID" Type="number" Precision="38" Scale="0" />
+    <Property Name="UnitOfMeasureID" Type="number" Precision="38" Scale="0" />
+    <Property Name="ProductTypeID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="ConnectionCode" Type="varchar2" MaxLength="50" />
+    <Property Name="ITEM_CAT" Type="varchar2" MaxLength="6" />
+    <Property Name="Product_Code" Type="varchar2" MaxLength="50" />
+    <Property Name="Inserted" Type="date" />
+    <Property Name="Modified" Type="date" />
+    <Property Name="extProduct_Code" Type="varchar2" MaxLength="50" />
+    <Property Name="IsSellable" Type="number" Precision="1" Scale="0" Nullable="false" />
+    <Property Name="MsModificationDate" Type="date" Nullable="false" />
+    <Property Name="ProductShortName" Type="varchar2" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="ProductLines">
+    <Key>
+      <PropertyRef Name="ProductLineID" />
+    </Key>
+    <Property Name="ProductLineID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="CompanyID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="ProductLineCode" Type="varchar2" MaxLength="50" />
+    <Property Name="ProductLineName" Type="varchar2" MaxLength="50" Nullable="false" />
+    <Property Name="Active" Type="number" Precision="1" Scale="0" Nullable="false" />
+    <Property Name="extProductLineCode" Type="varchar2" MaxLength="50" />
+    <Property Name="LineOfBusinessID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="MsModificationDate" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProductTemplates">
+    <Key>
+      <PropertyRef Name="ProductTemplateID" />
+    </Key>
+    <Property Name="ProductTemplateID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="TemplateName" Type="varchar2" MaxLength="50" />
+    <Property Name="CompanyUserID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="Inactive" Type="number" Precision="1" Scale="0" Nullable="false" />
+    <Property Name="MsModificationDate" Type="date" Nullable="false" />
+    <Property Name="Shared" Type="number" Precision="1" Scale="0" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProductTypes">
+    <Key>
+      <PropertyRef Name="ProductTypeID" />
+    </Key>
+    <Property Name="ProductTypeID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="CompanyID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="ProductTypeName" Type="varchar2" MaxLength="50" Nullable="false" />
+    <Property Name="ProductTypeCode" Type="varchar2" MaxLength="50" />
+    <Property Name="ProductLineID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="ListPrice" Type="number" Precision="9" Scale="2" Nullable="false" />
+    <Property Name="UOMID" Type="number" Precision="38" Scale="0" />
+    <Property Name="Inactive" Type="number" Precision="1" Scale="0" Nullable="false" />
+    <Property Name="MsModificationDate" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProductUsage">
+    <Key>
+      <PropertyRef Name="ProductUsageID" />
+    </Key>
+    <Property Name="ProductUsageID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="CompanyID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="ProductUsageName" Type="varchar2" MaxLength="50" Nullable="false" />
+    <Property Name="ProductLineID" Type="number" Precision="38" Scale="0" />
+    <Property Name="MsModificationDate" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProjectBidderCharges">
+    <Key>
+      <PropertyRef Name="ProjectBidderChargeID" />
+    </Key>
+    <Property Name="ProjectBidderChargeID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="ProjectBidderID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="ProductLineID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="ProjectChargeID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="MsModificationDate" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProjectBidderNotes">
+    <Key>
+      <PropertyRef Name="NoteID" />
+    </Key>
+    <Property Name="NoteID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="ProjectBidderID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="Note" Type="varchar2" MaxLength="100" Nullable="false" />
+    <Property Name="Inserted" Type="date" Nullable="false" />
+    <Property Name="CreatedBy" Type="number" Precision="38" Scale="0" />
+    <Property Name="MsModificationDate" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProjectBidderProducts">
+    <Key>
+      <PropertyRef Name="ProjectBidderProductID" />
+    </Key>
+    <Property Name="ProjectBidderProductID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="ProjectBidderID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="ProjectProductID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="Price" Type="number" Precision="9" Scale="2" Nullable="false" />
+    <Property Name="Inserted" Type="date" Nullable="false" />
+    <Property Name="Modified" Type="date" Nullable="false" />
+    <Property Name="SameAsList" Type="number" Precision="1" Scale="0" />
+    <Property Name="Forecasted" Type="number" Precision="1" Scale="0" />
+    <Property Name="Freight" Type="number" Precision="9" Scale="2" />
+    <Property Name="FreightPay" Type="number" Precision="9" Scale="2" />
+    <Property Name="ListPrice" Type="number" Precision="9" Scale="2" />
+    <Property Name="CustomerPrice" Type="number" Precision="9" Scale="2" />
+    <Property Name="Exported" Type="number" Precision="1" Scale="0" Nullable="false" />
+    <Property Name="Quantity" Type="number" Precision="9" Scale="2" />
+    <Property Name="StatusID" Type="number" Precision="38" Scale="0" />
+    <Property Name="LineNbr" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="MsModificationDate" Type="date" Nullable="false" />
+    <Property Name="PreviousPrice" Type="number" Precision="9" Scale="2" />
+    <Property Name="PreviousDeliveredPrice" Type="number" Precision="9" Scale="2" />
+  </EntityType>
+  <EntityType Name="ProjectBidders">
+    <Key>
+      <PropertyRef Name="ProjectBidderID" />
+    </Key>
+    <Property Name="ProjectBidderID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="ProjectID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="ProspectID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="Quoted" Type="number" Precision="1" Scale="0" />
+    <Property Name="StatusSub" Type="number" Precision="1" Scale="0" />
+    <Property Name="QuoteDate" Type="date" />
+    <Property Name="NotLIkeLIst" Type="number" Precision="1" Scale="0" />
+    <Property Name="StatusID" Type="number" Precision="38" Scale="0" />
+    <Property Name="PlantID" Type="number" Precision="38" Scale="0" />
+    <Property Name="ProjectCode" Type="varchar2" MaxLength="50" />
+    <Property Name="StartDate" Type="date" />
+    <Property Name="EndDate" Type="date" />
+    <Property Name="PONumber" Type="varchar2" MaxLength="50" />
+    <Property Name="MinLoadCharge" Type="number" Precision="38" Scale="0" />
+    <Property Name="SundryCharge" Type="number" Precision="38" Scale="0" />
+    <Property Name="SeasonalCharge" Type="number" Precision="38" Scale="0" />
+    <Property Name="UnloadCharge" Type="number" Precision="38" Scale="0" />
+    <Property Name="CustJobNbr" Type="varchar2" MaxLength="50" />
+    <Property Name="MsModificationDate" Type="date" Nullable="false" />
+    <Property Name="EffectiveDate" Type="date" />
+  </EntityType>
+  <EntityType Name="ProjectBidderStatuses">
+    <Key>
+      <PropertyRef Name="ProjectBidderStatusID" />
+    </Key>
+    <Property Name="ProjectBidderStatusID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="StatusName" Type="varchar2" MaxLength="50" Nullable="false" />
+    <Property Name="MsModificationDate" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProjectCharges">
+    <Key>
+      <PropertyRef Name="ChargeID" />
+    </Key>
+    <Property Name="ChargeID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="ChargeName" Type="varchar2" MaxLength="50" Nullable="false" />
+    <Property Name="ChargeType" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="ChargeCode" Type="varchar2" MaxLength="20" Nullable="false" />
+    <Property Name="CompanyID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="MsModificationDate" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProjectChargeTypes">
+    <Key>
+      <PropertyRef Name="ChargeTypeID" />
+    </Key>
+    <Property Name="ChargeTypeID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="ChargeTypeName" Type="varchar2" MaxLength="50" Nullable="false" />
+    <Property Name="MsModificationDate" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProjectDistances">
+    <Key>
+      <PropertyRef Name="ProjectDistanceID" />
+    </Key>
+    <Property Name="ProjectDistanceID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="ProjectID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="PlantID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="Miles" Type="number" Precision="9" Scale="2" />
+    <Property Name="Kilometers" Type="number" Precision="9" Scale="2" />
+    <Property Name="MsModificationDate" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProjectHistorySummary">
+    <Key>
+      <PropertyRef Name="ProjectHistorySummaryID" />
+    </Key>
+    <Property Name="ProjectHistorySummaryID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="ProspectID" Type="number" Precision="38" Scale="0" />
+    <Property Name="PROJ_CODE" Type="varchar2" MaxLength="15" />
+    <Property Name="PROJ_NAME" Type="varchar2" MaxLength="50" />
+    <Property Name="SETUP_DATE" Type="date" />
+    <Property Name="EXPIR_DATE" Type="date" />
+    <Property Name="Orders" Type="number" Precision="38" Scale="0" />
+    <Property Name="Tickets" Type="number" Precision="38" Scale="0" />
+    <Property Name="Yards" Type="number" Precision="9" Scale="2" />
+    <Property Name="AvgPrice" Type="number" Precision="9" Scale="2" />
+    <Property Name="Amount" Type="number" Precision="12" Scale="2" />
+    <Property Name="MsModificationDate" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProjectMapQtyRanges">
+    <Key>
+      <PropertyRef Name="ProjectMapQtyRangeID" />
+    </Key>
+    <Property Name="ProjectMapQtyRangeID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="CompanyID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="Min" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="Max" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="DisplayText" Type="varchar2" MaxLength="50" Nullable="false" />
+    <Property Name="MsModificationDate" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProjectNotes">
+    <Key>
+      <PropertyRef Name="NoteID" />
+    </Key>
+    <Property Name="NoteID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="ProjectID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="Note" Type="varchar2" MaxLength="500" />
+    <Property Name="Inserted" Type="date" Nullable="false" />
+    <Property Name="CreatedBy" Type="number" Precision="38" Scale="0" />
+    <Property Name="MsModificationDate" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProjectProducts">
+    <Key>
+      <PropertyRef Name="ProjectProductID" />
+    </Key>
+    <Property Name="ProjectProductID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="ProjectID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="Qty" Type="number" Precision="16" Scale="2" Nullable="false" />
+    <Property Name="UOMID" Type="number" Precision="38" Scale="0" />
+    <Property Name="Inserted" Type="date" Nullable="false" />
+    <Property Name="Modified" Type="date" Nullable="false" />
+    <Property Name="Price" Type="number" Precision="9" Scale="2" />
+    <Property Name="ProductLineID" Type="number" Precision="38" Scale="0" />
+    <Property Name="ProductTypeID" Type="number" Precision="38" Scale="0" />
+    <Property Name="ProductID" Type="number" Precision="38" Scale="0" />
+    <Property Name="PsiID" Type="number" Precision="38" Scale="0" />
+    <Property Name="ProductUsageID" Type="number" Precision="38" Scale="0" />
+    <Property Name="Note" Type="varchar2" MaxLength="200" />
+    <Property Name="Forecasted" Type="number" Precision="1" Scale="0" />
+    <Property Name="PlantID" Type="number" Precision="38" Scale="0" />
+    <Property Name="Freight" Type="number" Precision="9" Scale="2" />
+    <Property Name="FreightPay" Type="number" Precision="9" Scale="2" />
+    <Property Name="CompetitorPrice" Type="number" Precision="9" Scale="2" />
+    <Property Name="Category" Type="varchar2" MaxLength="50" />
+    <Property Name="Description" Type="varchar2" MaxLength="100" />
+    <Property Name="LineOfBusinessID" Type="number" Precision="38" Scale="0" />
+    <Property Name="StatusID" Type="number" Precision="38" Scale="0" />
+    <Property Name="MsModificationDate" Type="date" Nullable="false" />
+    <Property Name="LostReasonID" Type="number" Precision="38" Scale="0" />
+    <Property Name="LostToID" Type="number" Precision="38" Scale="0" />
+    <Property Name="LostNote" Type="varchar2" MaxLength="500" />
+    <Property Name="PriceExtensionCode" Type="char" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="Projects">
+    <Key>
+      <PropertyRef Name="ProjectID" />
+    </Key>
+    <Property Name="ProjectID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="Private" Type="number" Precision="1" Scale="0" />
+    <Property Name="OwnerID" Type="number" Precision="38" Scale="0" />
+    <Property Name="CompanyID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="ProjectName" Type="varchar2" MaxLength="50" Nullable="false" />
+    <Property Name="ProjectTypeID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="StatusID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="StatusChangeDate" Type="date" Nullable="false" />
+    <Property Name="SourceID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="Active" Type="number" Precision="1" Scale="0" Nullable="false" />
+    <Property Name="Address1" Type="varchar2" MaxLength="50" />
+    <Property Name="Address2" Type="varchar2" MaxLength="50" />
+    <Property Name="City" Type="varchar2" MaxLength="50" />
+    <Property Name="County" Type="varchar2" MaxLength="50" />
+    <Property Name="State" Type="varchar2" MaxLength="50" />
+    <Property Name="ZipCode" Type="varchar2" MaxLength="50" />
+    <Property Name="PlantID" Type="number" Precision="38" Scale="0" />
+    <Property Name="SalespersonID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="BidDate" Type="date" />
+    <Property Name="LostReasonID" Type="number" Precision="38" Scale="0" />
+    <Property Name="LostToID" Type="number" Precision="38" Scale="0" />
+    <Property Name="LostNote" Type="varchar2" MaxLength="500" />
+    <Property Name="Inserted" Type="date" Nullable="false" />
+    <Property Name="Modified" Type="date" />
+    <Property Name="PrevStatus" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="Exported" Type="number" Precision="1" Scale="0" />
+    <Property Name="WinningProjectBidderID" Type="number" Precision="38" Scale="0" />
+    <Property Name="StartDate" Type="date" />
+    <Property Name="EndDate" Type="date" />
+    <Property Name="TotalYards" Type="number" Precision="38" Scale="0" />
+    <Property Name="ConnectionCode" Type="varchar2" MaxLength="100" />
+    <Property Name="CustCode" Type="varchar2" MaxLength="100" />
+    <Property Name="ProjectCode" Type="varchar2" MaxLength="50" />
+    <Property Name="Longitude" Type="number" Precision="9" Scale="5" />
+    <Property Name="Latitude" Type="number" Precision="9" Scale="5" />
+    <Property Name="GeofenceID" Type="number" Precision="38" Scale="0" />
+    <Property Name="Country" Type="varchar2" MaxLength="100" />
+    <Property Name="ProjectDescription" Type="varchar2" MaxLength="50" />
+    <Property Name="ZoneCodeID" Type="number" Precision="38" Scale="0" />
+    <Property Name="MsModificationDate" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProjectTypes">
+    <Key>
+      <PropertyRef Name="ProjectTypeID" />
+    </Key>
+    <Property Name="ProjectTypeID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="CompanyID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="ConnectionCode" Type="varchar2" MaxLength="50" />
+    <Property Name="SANL_Code" Type="varchar2" MaxLength="3" />
+    <Property Name="ProjectTypeName" Type="varchar2" MaxLength="50" Nullable="false" />
+    <Property Name="ShortName" Type="varchar2" MaxLength="8" />
+    <Property Name="Inserted" Type="date" Nullable="false" />
+    <Property Name="Modified" Type="date" Nullable="false" />
+    <Property Name="MsModificationDate" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProspectNotes">
+    <Key>
+      <PropertyRef Name="ProspectNoteID" />
+    </Key>
+    <Property Name="ProspectNoteID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="ProspectID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="Note" Type="varchar2" MaxLength="1000" />
+    <Property Name="Inserted" Type="date" Nullable="false" />
+    <Property Name="CreatedBy" Type="number" Precision="38" Scale="0" />
+    <Property Name="Subject" Type="varchar2" MaxLength="500" />
+    <Property Name="Source" Type="varchar2" MaxLength="50" />
+    <Property Name="MsModificationDate" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProspectQuantities">
+    <Key>
+      <PropertyRef Name="ProspectQuantityID" />
+    </Key>
+    <Property Name="ProspectQuantityID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="ProspectID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="ProductID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="Quantity" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="MsModificationDate" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProspectRegions">
+    <Key>
+      <PropertyRef Name="ProspectRegionID" />
+    </Key>
+    <Property Name="ProspectRegionID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="ProspectID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="PlantID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="MsModificationDate" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Prospects">
+    <Key>
+      <PropertyRef Name="ProspectID" />
+    </Key>
+    <Property Name="ProspectID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="Private" Type="number" Precision="1" Scale="0" />
+    <Property Name="OwnerID" Type="number" Precision="38" Scale="0" />
+    <Property Name="CompanyID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="ProspectName" Type="varchar2" MaxLength="50" Nullable="false" />
+    <Property Name="Inserted" Type="date" Nullable="false" />
+    <Property Name="Modified" Type="date" Nullable="false" />
+    <Property Name="ProspectCode" Type="varchar2" MaxLength="50" />
+    <Property Name="ConnectionCode" Type="varchar2" MaxLength="50" />
+    <Property Name="LocalCustNumber" Type="varchar2" MaxLength="50" />
+    <Property Name="LocalCustName" Type="varchar2" MaxLength="50" />
+    <Property Name="IsCustomer" Type="number" Precision="1" Scale="0" Nullable="false" />
+    <Property Name="Credit_Status_ID" Type="number" Precision="38" Scale="0" />
+    <Property Name="CustomerStatus" Type="varchar2" MaxLength="50" />
+    <Property Name="Sales" Type="number" Precision="19" Scale="4" />
+    <Property Name="Margin" Type="number" Precision="19" Scale="4" />
+    <Property Name="MaterialMargin" Type="number" Precision="19" Scale="4" />
+    <Property Name="JobCount" Type="number" Precision="38" Scale="0" />
+    <Property Name="Address1" Type="varchar2" MaxLength="50" />
+    <Property Name="Address2" Type="varchar2" MaxLength="50" />
+    <Property Name="City" Type="varchar2" MaxLength="20" />
+    <Property Name="State" Type="varchar2" MaxLength="50" />
+    <Property Name="Zip" Type="varchar2" MaxLength="15" />
+    <Property Name="Phone" Type="varchar2" MaxLength="20" />
+    <Property Name="HighestBalance" Type="number" Precision="12" Scale="2" />
+    <Property Name="AvgInvoiceAmt" Type="number" Precision="12" Scale="2" />
+    <Property Name="AvgDaysToPay" Type="number" Precision="38" Scale="0" />
+    <Property Name="AvgDaysPastDue" Type="number" Precision="38" Scale="0" />
+    <Property Name="TotalDue" Type="number" Precision="12" Scale="2" />
+    <Property Name="ZeroTo30Days" Type="number" Precision="12" Scale="2" />
+    <Property Name="ThirtyOneTo60Days" Type="number" Precision="12" Scale="2" />
+    <Property Name="SixtyOneTo90Days" Type="number" Precision="12" Scale="2" />
+    <Property Name="NinetyOneTo120Days" Type="number" Precision="12" Scale="2" />
+    <Property Name="Over120Days" Type="number" Precision="12" Scale="2" />
+    <Property Name="CustomerTypeID" Type="number" Precision="38" Scale="0" />
+    <Property Name="StatementFrequency" Type="varchar2" MaxLength="30" />
+    <Property Name="FinanceRate" Type="number" Precision="5" Scale="2" />
+    <Property Name="PaymentTermsID" Type="number" Precision="38" Scale="0" />
+    <Property Name="SalesmanCode" Type="varchar2" MaxLength="15" />
+    <Property Name="Fax" Type="varchar2" MaxLength="20" />
+    <Property Name="WebSite" Type="varchar2" MaxLength="50" />
+    <Property Name="AvgRevenue" Type="number" Precision="12" Scale="2" />
+    <Property Name="NumberofEmployees" Type="varchar2" MaxLength="20" />
+    <Property Name="CompanyOriginDate" Type="varchar2" MaxLength="25" />
+    <Property Name="BusinessTypeID" Type="number" Precision="38" Scale="0" />
+    <Property Name="Notes" Type="varchar2" MaxLength="250" />
+    <Property Name="Country" Type="varchar2" MaxLength="100" />
+    <Property Name="PORequired" Type="number" Precision="1" Scale="0" />
+    <Property Name="MsModificationDate" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="QuoteDetails">
+    <Key>
+      <PropertyRef Name="QuoteDetailID" />
+    </Key>
+    <Property Name="QuoteDetailID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="QuoteID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="ProjectProductID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="Price" Type="number" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="Qty" Type="number" Precision="16" Scale="2" Nullable="false" />
+    <Property Name="Freight" Type="number" Precision="9" Scale="2" Nullable="false" />
+    <Property Name="FreightPay" Type="number" Precision="9" Scale="2" Nullable="false" />
+    <Property Name="ListPrice" Type="number" Precision="10" Scale="2" />
+    <Property Name="CustomerPrice" Type="number" Precision="10" Scale="2" />
+    <Property Name="MsModificationDate" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="QuoteGuids">
+    <Key>
+      <PropertyRef Name="QuoteGuidID" />
+    </Key>
+    <Property Name="QuoteGuidID" Type="char" MaxLength="36" Nullable="false" />
+    <Property Name="QuoteHtml" Type="long" Nullable="false" />
+    <Property Name="MsModificationDate" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Quotes">
+    <Key>
+      <PropertyRef Name="QuoteID" />
+    </Key>
+    <Property Name="QuoteID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="ProjectBidderID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="ContactID" Type="number" Precision="38" Scale="0" />
+    <Property Name="TermsID" Type="number" Precision="38" Scale="0" />
+    <Property Name="Attention" Type="varchar2" MaxLength="100" />
+    <Property Name="Phone" Type="varchar2" MaxLength="20" />
+    <Property Name="CellPhone" Type="varchar2" MaxLength="20" />
+    <Property Name="Fax" Type="varchar2" MaxLength="20" />
+    <Property Name="Email" Type="varchar2" MaxLength="100" />
+    <Property Name="QuoteDate" Type="date" Nullable="false" />
+    <Property Name="FirmUntilDate" Type="date" Nullable="false" />
+    <Property Name="QuoteSequenceNumber" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="QuoteTypeID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="DateCreated" Type="date" Nullable="false" />
+    <Property Name="DateLastModified" Type="date" Nullable="false" />
+    <Property Name="CustomerQuoteID" Type="varchar2" MaxLength="20" />
+    <Property Name="Exported" Type="number" Precision="1" Scale="0" Nullable="false" />
+    <Property Name="EscalationDate" Type="date" />
+    <Property Name="QuoteNote" Type="varchar2" MaxLength="1000" />
+    <Property Name="EscalationAmount" Type="varchar2" MaxLength="50" />
+    <Property Name="QuoteStatusID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="Notes" Type="varchar2" MaxLength="3000" />
+    <Property Name="CreatedByID" Type="number" Precision="38" Scale="0" />
+    <Property Name="OrderDate" Type="date" />
+    <Property Name="StartOrderDate" Type="date" />
+    <Property Name="ExpireOrderDate" Type="date" />
+    <Property Name="VehicleTypeID_1" Type="number" Precision="38" Scale="0" />
+    <Property Name="VehicleTypeID_2" Type="number" Precision="38" Scale="0" />
+    <Property Name="VehicleTypeID_3" Type="number" Precision="38" Scale="0" />
+    <Property Name="VehicleTypeID_4" Type="number" Precision="38" Scale="0" />
+    <Property Name="VehicleTypeID_5" Type="number" Precision="38" Scale="0" />
+    <Property Name="CustomerOrderID" Type="varchar2" MaxLength="20" />
+    <Property Name="PurchaseOrder" Type="varchar2" MaxLength="50" />
+    <Property Name="BeginDate" Type="date" />
+    <Property Name="AllowBeforeStart" Type="number" Precision="1" Scale="0" />
+    <Property Name="AllowAfterEnd" Type="number" Precision="1" Scale="0" />
+    <Property Name="AllowExceedQty" Type="number" Precision="1" Scale="0" />
+    <Property Name="AllowExceedLoads" Type="number" Precision="1" Scale="0" />
+    <Property Name="AllowAfterComplete" Type="number" Precision="1" Scale="0" />
+    <Property Name="MsModificationDate" Type="date" Nullable="false" />
+    <Property Name="SalespersonID" Type="number" Precision="38" Scale="0" />
+    <Property Name="ApexNoteID" Type="number" Precision="1" Scale="0" />
+  </EntityType>
+  <EntityType Name="QuoteSections">
+    <Key>
+      <PropertyRef Name="QuoteSectionID" />
+    </Key>
+    <Property Name="QuoteSectionID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="QuoteTypeID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="SectionContent" Type="blob" />
+    <Property Name="PositionTop" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="PositionLeft" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="Height" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="Width" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="IsProducts" Type="number" Precision="1" Scale="0" Nullable="false" />
+    <Property Name="IsSurcharges" Type="number" Precision="1" Scale="0" Nullable="false" />
+    <Property Name="IsLogo" Type="number" Precision="1" Scale="0" Nullable="false" />
+    <Property Name="IsCompanyInfo" Type="number" Precision="1" Scale="0" Nullable="false" />
+    <Property Name="IsCustomerInfo" Type="number" Precision="1" Scale="0" Nullable="false" />
+    <Property Name="IsSignature" Type="number" Precision="1" Scale="0" Nullable="false" />
+    <Property Name="IsExpiration" Type="number" Precision="1" Scale="0" Nullable="false" />
+    <Property Name="IsQuoteNumber" Type="number" Precision="1" Scale="0" Nullable="false" />
+    <Property Name="ProductColumns" Type="varchar2" MaxLength="50" />
+    <Property Name="MsModificationDate" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="QuoteStandardClauses">
+    <Key>
+      <PropertyRef Name="QuoteStandardClauseID" />
+    </Key>
+    <Property Name="QuoteStandardClauseID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="QuoteID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="StandardClauseID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="MsModificationDate" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="QuoteStatuses">
+    <Key>
+      <PropertyRef Name="QuoteStatusID" />
+    </Key>
+    <Property Name="QuoteStatusID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="QuoteStatusName" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="SortOrder" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="MsModificationDate" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="QuoteSurcharges">
+    <Key>
+      <PropertyRef Name="QuoteSurchargeID" />
+    </Key>
+    <Property Name="QuoteSurchargeID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="QuoteID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="SurchargeID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="Rate" Type="number" Precision="6" Scale="2" Nullable="false" />
+    <Property Name="MsModificationDate" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="QuoteTypes">
+    <Key>
+      <PropertyRef Name="QuoteTypeID" />
+    </Key>
+    <Property Name="QuoteTypeID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="CompanyID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="QuoteTypeName" Type="varchar2" MaxLength="50" Nullable="false" />
+    <Property Name="Section1" Type="varchar2" MaxLength="4000" />
+    <Property Name="Section2" Type="varchar2" MaxLength="4000" />
+    <Property Name="Section3" Type="varchar2" MaxLength="4000" />
+    <Property Name="ImageLocation" Type="varchar2" MaxLength="300" />
+    <Property Name="Inactive" Type="number" Precision="1" Scale="0" Nullable="false" />
+    <Property Name="MsModificationDate" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Roles">
+    <Key>
+      <PropertyRef Name="RoleID" />
+    </Key>
+    <Property Name="RoleID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="RoleDescription" Type="varchar2" MaxLength="50" Nullable="false" />
+    <Property Name="MsModificationDate" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SalespersonContacts">
+    <Key>
+      <PropertyRef Name="SalesPersonContactID" />
+    </Key>
+    <Property Name="SalesPersonContactID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="SalesPersonID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="ContactID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="MsModificationDate" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SalesPersonRegions">
+    <Key>
+      <PropertyRef Name="SalesPersonRegionID" />
+    </Key>
+    <Property Name="SalesPersonRegionID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="SalesPersonID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="PlantID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="MsModificationDate" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ScheduleDetails">
+    <Key>
+      <PropertyRef Name="ScheduleID" />
+    </Key>
+    <Property Name="ScheduleID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="PourScheduleID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="year" Type="number" Precision="38" Scale="0" />
+    <Property Name="monthYds" Type="number" Precision="38" Scale="0" />
+    <Property Name="monthPercent" Type="number" Precision="38" Scale="0" />
+    <Property Name="Month" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="MsModificationDate" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ScheduleItems">
+    <Key>
+      <PropertyRef Name="ScheduleItemID" />
+    </Key>
+    <Property Name="ScheduleItemID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="ScheduleID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="Quantity" Type="number" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="Month" Type="date" Nullable="false" />
+    <Property Name="MsModificationDate" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Schedules">
+    <Key>
+      <PropertyRef Name="ScheduleID" />
+    </Key>
+    <Property Name="ScheduleID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="ProjectProductID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="Active" Type="number" Precision="1" Scale="0" Nullable="false" />
+    <Property Name="MsModificationDate" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Sources">
+    <Key>
+      <PropertyRef Name="SourceID" />
+    </Key>
+    <Property Name="SourceID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="CompanyID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="SourceName" Type="varchar2" MaxLength="25" Nullable="false" />
+    <Property Name="Inserted" Type="date" />
+    <Property Name="Modified" Type="date" />
+    <Property Name="Inactive" Type="number" Precision="1" Scale="0" Nullable="false" />
+    <Property Name="MsModificationDate" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SourceSystem">
+    <Key>
+      <PropertyRef Name="SourceSystemID" />
+    </Key>
+    <Property Name="SourceSystemID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="SystemName" Type="varchar2" MaxLength="50" Nullable="false" />
+    <Property Name="MsModificationDate" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="StandardClauses">
+    <Key>
+      <PropertyRef Name="StandardClauseID" />
+    </Key>
+    <Property Name="StandardClauseID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="Name" Type="varchar2" MaxLength="50" Nullable="false" />
+    <Property Name="StandardClauseText" Type="varchar2" MaxLength="2000" Nullable="false" />
+    <Property Name="ProductLineID" Type="number" Precision="38" Scale="0" />
+    <Property Name="PlantID" Type="number" Precision="38" Scale="0" />
+    <Property Name="ProductID" Type="number" Precision="38" Scale="0" />
+    <Property Name="Inactive" Type="number" Precision="1" Scale="0" Nullable="false" />
+    <Property Name="CompanyID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="ProductUsageID" Type="number" Precision="38" Scale="0" />
+    <Property Name="MsModificationDate" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Statuses">
+    <Key>
+      <PropertyRef Name="StatusID" />
+    </Key>
+    <Property Name="StatusID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="StatusName" Type="varchar2" MaxLength="12" Nullable="false" />
+    <Property Name="Inserted" Type="date" Nullable="false" />
+    <Property Name="Modified" Type="date" Nullable="false" />
+    <Property Name="MsModificationDate" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Surcharges">
+    <Key>
+      <PropertyRef Name="SurchargeID" />
+    </Key>
+    <Property Name="SurchargeID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="CompanyID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="SurchargeName" Type="varchar2" MaxLength="100" Nullable="false" />
+    <Property Name="Rate" Type="number" Precision="6" Scale="2" Nullable="false" />
+    <Property Name="UOMID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="Active" Type="number" Precision="1" Scale="0" Nullable="false" />
+    <Property Name="QuoteDefault" Type="number" Precision="1" Scale="0" Nullable="false" />
+    <Property Name="QuoteSelectable" Type="number" Precision="1" Scale="0" Nullable="false" />
+    <Property Name="PlantID" Type="number" Precision="38" Scale="0" />
+    <Property Name="LocalSurchargeID" Type="varchar2" MaxLength="50" />
+    <Property Name="MsModificationDate" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TemplatedProducts">
+    <Key>
+      <PropertyRef Name="TemplatedProductID" />
+    </Key>
+    <Property Name="TemplatedProductID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="ProductTemplateID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="ProductTypeID" Type="number" Precision="38" Scale="0" />
+    <Property Name="ProductID" Type="number" Precision="38" Scale="0" />
+    <Property Name="PlantID" Type="number" Precision="38" Scale="0" />
+    <Property Name="ProductUsageID" Type="number" Precision="38" Scale="0" />
+    <Property Name="LineOfBusinessID" Type="number" Precision="38" Scale="0" />
+    <Property Name="ProductLineID" Type="number" Precision="38" Scale="0" />
+    <Property Name="Qty" Type="number" Precision="10" Scale="2" />
+    <Property Name="Price" Type="number" Precision="10" Scale="2" />
+    <Property Name="Freight" Type="number" Precision="10" Scale="2" />
+    <Property Name="FreightPay" Type="number" Precision="10" Scale="2" />
+    <Property Name="Description" Type="varchar2" MaxLength="100" />
+    <Property Name="IncludeInForecast" Type="number" Precision="1" Scale="0" />
+    <Property Name="Note" Type="varchar2" MaxLength="200" />
+    <Property Name="Category" Type="varchar2" MaxLength="50" />
+    <Property Name="MsModificationDate" Type="date" Nullable="false" />
+    <Property Name="UOMID" Type="number" Precision="38" Scale="0" />
+    <Property Name="PriceExtensionCode" Type="char" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="Terms_Discount">
+    <Key>
+      <PropertyRef Name="Terms_Discount_ID" />
+    </Key>
+    <Property Name="Terms_Discount_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="CompanyID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="Discount_Days" Type="number" Precision="38" Scale="0" />
+    <Property Name="Discount_Amount" Type="number" Precision="18" Scale="5" Nullable="false" />
+    <Property Name="Net_Days" Type="number" Precision="38" Scale="0" />
+    <Property Name="Description" Type="varchar2" MaxLength="50" />
+    <Property Name="Discount_Taxes" Type="number" Precision="1" Scale="0" Nullable="false" />
+    <Property Name="Percent_Flag" Type="number" Precision="1" Scale="0" Nullable="false" />
+    <Property Name="MsModificationDate" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TimeCalendar">
+    <Key>
+      <PropertyRef Name="CalendarDate" />
+    </Key>
+    <Property Name="CalendarDateId" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="CalendarDate" Type="date" Nullable="false" />
+    <Property Name="DayEnd" Type="date" />
+    <Property Name="FirstDayOfMonth" Type="date" Nullable="false" />
+    <Property Name="LastDayOfMonth" Type="date" Nullable="false" />
+    <Property Name="MonthEnd" Type="date" />
+    <Property Name="FirstDayOfQtr" Type="date" Nullable="false" />
+    <Property Name="LastDayOfQtr" Type="date" Nullable="false" />
+    <Property Name="QuarterEnd" Type="date" />
+    <Property Name="Month" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="Day" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="Year" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="DayOfWeek" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="DayOfQtr" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="DayOfYear" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="WeekOfYear" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="Quarter" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="LastDayOfMonthFlag" Type="varchar2" MaxLength="1" Nullable="false" />
+    <Property Name="FirstDayOfQtrFlag" Type="varchar2" MaxLength="1" Nullable="false" />
+    <Property Name="LastDayOfQtrFlag" Type="varchar2" MaxLength="1" Nullable="false" />
+    <Property Name="MonthAbbrev" Type="varchar2" MaxLength="3" Nullable="false" />
+    <Property Name="DayAbbrev" Type="varchar2" MaxLength="3" Nullable="false" />
+    <Property Name="MonthName" Type="varchar2" MaxLength="9" Nullable="false" />
+    <Property Name="DayName" Type="varchar2" MaxLength="9" Nullable="false" />
+    <Property Name="CompanyHoliday" Type="number" Precision="1" Scale="0" Nullable="false" />
+    <Property Name="BusinessDay" Type="number" Precision="1" Scale="0" Nullable="false" />
+    <Property Name="MonthYearAbbrev" Type="varchar2" MaxLength="8" Nullable="false" />
+    <Property Name="QtrYearAbbrev" Type="varchar2" MaxLength="8" Nullable="false" />
+    <Property Name="MsModificationDate" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Unit_Of_Measure">
+    <Key>
+      <PropertyRef Name="Unit_Of_Measure_ID" />
+    </Key>
+    <Property Name="Unit_Of_Measure_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="CompanyID" Type="number" Precision="38" Scale="0" />
+    <Property Name="Imperial_Description" Type="varchar2" MaxLength="100" Nullable="false" />
+    <Property Name="Metric_Description" Type="varchar2" MaxLength="100" />
+    <Property Name="Imperial_To_Metric_Conv_Factor" Type="number" Precision="18" Scale="7" />
+    <Property Name="Conversion_Factor_Type_ID" Type="number" Precision="38" Scale="0" />
+    <Property Name="Conversion_Factor_Value" Type="number" Precision="18" Scale="7" />
+    <Property Name="ConnectionCode" Type="varchar2" MaxLength="50" />
+    <Property Name="UOM" Type="varchar2" MaxLength="50" />
+    <Property Name="MsModificationDate" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UserRoles">
+    <Key>
+      <PropertyRef Name="UserRoleID" />
+    </Key>
+    <Property Name="UserRoleID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="RoleID" Type="number" Precision="38" Scale="0" />
+    <Property Name="UserID" Type="number" Precision="38" Scale="0" />
+    <Property Name="MsModificationDate" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="CompanyID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="UserName" Type="varchar2" MaxLength="50" />
+    <Property Name="FirstName" Type="varchar2" MaxLength="50" />
+    <Property Name="LastName" Type="varchar2" MaxLength="50" />
+    <Property Name="Active" Type="number" Precision="1" Scale="0" />
+    <Property Name="InsertDate" Type="date" />
+    <Property Name="EmailAddress" Type="varchar2" MaxLength="100" Nullable="false" />
+    <Property Name="Password" Type="long raw" />
+    <Property Name="CellPhoneNumber" Type="varchar2" MaxLength="14" />
+    <Property Name="PhoneNumber" Type="varchar2" MaxLength="20" />
+    <Property Name="FaxNumber" Type="varchar2" MaxLength="20" />
+    <Property Name="SalesmanCode" Type="varchar2" MaxLength="10" />
+    <Property Name="ReportsToID" Type="number" Precision="38" Scale="0" />
+    <Property Name="DeviationTypeID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="DeviationAmount" Type="number" Precision="11" Scale="2" />
+    <Property Name="Address1" Type="varchar2" MaxLength="100" />
+    <Property Name="Address2" Type="varchar2" MaxLength="100" />
+    <Property Name="City" Type="varchar2" MaxLength="50" />
+    <Property Name="ST" Type="varchar2" MaxLength="50" />
+    <Property Name="Zip" Type="varchar2" MaxLength="50" />
+    <Property Name="Latitude" Type="number" Precision="9" Scale="5" />
+    <Property Name="Longitude" Type="number" Precision="9" Scale="5" />
+    <Property Name="UsesSAML" Type="number" Precision="1" Scale="0" Nullable="false" />
+    <Property Name="Country" Type="varchar2" MaxLength="100" />
+    <Property Name="DefaultMailMessage" Type="varchar2" MaxLength="2000" />
+    <Property Name="MsModificationDate" Type="date" Nullable="false" />
+    <Property Name="AdministratorID" Type="number" Precision="38" Scale="0" />
+  </EntityType>
+  <EntityType Name="usersDivisions">
+    <Key>
+      <PropertyRef Name="UserDivisionID" />
+    </Key>
+    <Property Name="UserDivisionID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="UserID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="LocationDivisionID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="MsModificationDate" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ValueAdd">
+    <Key>
+      <PropertyRef Name="ValueAddID" />
+    </Key>
+    <Property Name="ValueAddID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="ProductLineID" Type="number" Precision="38" Scale="0" />
+    <Property Name="ProductTypeID" Type="number" Precision="38" Scale="0" />
+    <Property Name="ProductID" Type="number" Precision="38" Scale="0" />
+    <Property Name="StartDate" Type="date" Nullable="false" />
+    <Property Name="EndDate" Type="date" />
+    <Property Name="MsModificationDate" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="VehicleTypes">
+    <Key>
+      <PropertyRef Name="VehicleTypeID" />
+    </Key>
+    <Property Name="VehicleTypeID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="CompanyID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="Description" Type="varchar2" MaxLength="200" Nullable="false" />
+    <Property Name="Abbreviation" Type="varchar2" MaxLength="50" Nullable="false" />
+    <Property Name="LocalVehicleTypeId" Type="varchar2" MaxLength="10" Nullable="false" />
+    <Property Name="MsModificationDate" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ZoneCodes">
+    <Key>
+      <PropertyRef Name="ZoneCodeID" />
+    </Key>
+    <Property Name="ZoneCodeID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="CompanyID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="ZoneCodeName" Type="varchar2" MaxLength="50" Nullable="false" />
+    <Property Name="SystemCode" Type="varchar2" MaxLength="20" Nullable="false" />
+    <Property Name="MsModificationDate" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="OracleEntitiesStoreContainer">
+    <EntitySet Name="AccountsReceivable" EntityType="Self.AccountsReceivable" Schema="MOBILESALES" store:Type="Tables" />
+    <EntitySet Name="AdditionalProducts" EntityType="Self.AdditionalProducts" Schema="MOBILESALES" store:Type="Tables" />
+    <EntitySet Name="AgeRanges" EntityType="Self.AgeRanges" Schema="MOBILESALES" store:Type="Tables" />
+    <EntitySet Name="BatchEvents" EntityType="Self.BatchEvents" Schema="MOBILESALES" store:Type="Tables" />
+    <EntitySet Name="BidderQuoteDetails" EntityType="Self.BidderQuoteDetails" Schema="MOBILESALES" store:Type="Tables" />
+    <EntitySet Name="BidderQuotes" EntityType="Self.BidderQuotes" Schema="MOBILESALES" store:Type="Tables" />
+    <EntitySet Name="BudgetedYards" EntityType="Self.BudgetedYards" Schema="MOBILESALES" store:Type="Tables" />
+    <EntitySet Name="Companies" EntityType="Self.Companies" Schema="MOBILESALES" store:Type="Tables" />
+    <EntitySet Name="CompanyBidStatuses" EntityType="Self.CompanyBidStatuses" Schema="MOBILESALES" store:Type="Tables" />
+    <EntitySet Name="CompanyOrderStatuses" EntityType="Self.CompanyOrderStatuses" Schema="MOBILESALES" store:Type="Tables" />
+    <EntitySet Name="CompanyProjectProductStatuses" EntityType="Self.CompanyProjectProductStatuses" Schema="MOBILESALES" store:Type="Tables" />
+    <EntitySet Name="CompanyProjectStatuses" EntityType="Self.CompanyProjectStatuses" Schema="MOBILESALES" store:Type="Tables" />
+    <EntitySet Name="CompanyQuoteStatuses" EntityType="Self.CompanyQuoteStatuses" Schema="MOBILESALES" store:Type="Tables" />
+    <EntitySet Name="CompanyUsers" EntityType="Self.CompanyUsers" Schema="MOBILESALES" store:Type="Tables" />
+    <EntitySet Name="CompetitorPlants" EntityType="Self.CompetitorPlants" Schema="MOBILESALES" store:Type="Tables" />
+    <EntitySet Name="Competitors" EntityType="Self.Competitors" Schema="MOBILESALES" store:Type="Tables" />
+    <EntitySet Name="Contact" EntityType="Self.Contact" Schema="MOBILESALES" store:Type="Tables" />
+    <EntitySet Name="ContactNotes" EntityType="Self.ContactNotes" Schema="MOBILESALES" store:Type="Tables" />
+    <EntitySet Name="CreditStatuses" EntityType="Self.CreditStatuses" Schema="MOBILESALES" store:Type="Tables" />
+    <EntitySet Name="CustomerEvents" EntityType="Self.CustomerEvents" Schema="MOBILESALES" store:Type="Tables" />
+    <EntitySet Name="CustomerEventTypes" EntityType="Self.CustomerEventTypes" Schema="MOBILESALES" store:Type="Tables" />
+    <EntitySet Name="CustomerTypes" EntityType="Self.CustomerTypes" Schema="MOBILESALES" store:Type="Tables" />
+    <EntitySet Name="DeviationTypes" EntityType="Self.DeviationTypes" Schema="MOBILESALES" store:Type="Tables" />
+    <EntitySet Name="Divisions" EntityType="Self.Divisions" Schema="MOBILESALES" store:Type="Tables" />
+    <EntitySet Name="Employee" EntityType="Self.Employee" Schema="MOBILESALES" store:Type="Tables" />
+    <EntitySet Name="ErrorLog" EntityType="Self.ErrorLog" Schema="MOBILESALES" store:Type="Tables" />
+    <EntitySet Name="EventFrequency" EntityType="Self.EventFrequency" Schema="MOBILESALES" store:Type="Tables" />
+    <EntitySet Name="EventStatus" EntityType="Self.EventStatus" Schema="MOBILESALES" store:Type="Tables" />
+    <EntitySet Name="LinesOfBusiness" EntityType="Self.LinesOfBusiness" Schema="MOBILESALES" store:Type="Tables" />
+    <EntitySet Name="Locations_Divisions_Lookup" EntityType="Self.Locations_Divisions_Lookup" Schema="MOBILESALES" store:Type="Tables" />
+    <EntitySet Name="Logins" EntityType="Self.Logins" Schema="MOBILESALES" store:Type="Tables" />
+    <EntitySet Name="LostReasons" EntityType="Self.LostReasons" Schema="MOBILESALES" store:Type="Tables" />
+    <EntitySet Name="ManagersSalesmen" EntityType="Self.ManagersSalesmen" Schema="MOBILESALES" store:Type="Tables" />
+    <EntitySet Name="OrderDetails" EntityType="Self.OrderDetails" Schema="MOBILESALES" store:Type="Tables" />
+    <EntitySet Name="Orders" EntityType="Self.Orders" Schema="MOBILESALES" store:Type="Tables" />
+    <EntitySet Name="PaymentTerms" EntityType="Self.PaymentTerms" Schema="MOBILESALES" store:Type="Tables" />
+    <EntitySet Name="Plant" EntityType="Self.Plant" Schema="MOBILESALES" store:Type="Tables" />
+    <EntitySet Name="PlantLinesOfBusiness" EntityType="Self.PlantLinesOfBusiness" Schema="MOBILESALES" store:Type="Tables" />
+    <EntitySet Name="PlantProductPrices" EntityType="Self.PlantProductPrices" Schema="MOBILESALES" store:Type="Tables" />
+    <EntitySet Name="PourSchedule" EntityType="Self.PourSchedule" Schema="MOBILESALES" store:Type="Tables" />
+    <EntitySet Name="Product" EntityType="Self.Product" Schema="MOBILESALES" store:Type="Tables" />
+    <EntitySet Name="ProductLines" EntityType="Self.ProductLines" Schema="MOBILESALES" store:Type="Tables" />
+    <EntitySet Name="ProductTemplates" EntityType="Self.ProductTemplates" Schema="MOBILESALES" store:Type="Tables" />
+    <EntitySet Name="ProductTypes" EntityType="Self.ProductTypes" Schema="MOBILESALES" store:Type="Tables" />
+    <EntitySet Name="ProductUsage" EntityType="Self.ProductUsage" Schema="MOBILESALES" store:Type="Tables" />
+    <EntitySet Name="ProjectBidderCharges" EntityType="Self.ProjectBidderCharges" Schema="MOBILESALES" store:Type="Tables" />
+    <EntitySet Name="ProjectBidderNotes" EntityType="Self.ProjectBidderNotes" Schema="MOBILESALES" store:Type="Tables" />
+    <EntitySet Name="ProjectBidderProducts" EntityType="Self.ProjectBidderProducts" Schema="MOBILESALES" store:Type="Tables" />
+    <EntitySet Name="ProjectBidders" EntityType="Self.ProjectBidders" Schema="MOBILESALES" store:Type="Tables" />
+    <EntitySet Name="ProjectBidderStatuses" EntityType="Self.ProjectBidderStatuses" Schema="MOBILESALES" store:Type="Tables" />
+    <EntitySet Name="ProjectCharges" EntityType="Self.ProjectCharges" Schema="MOBILESALES" store:Type="Tables" />
+    <EntitySet Name="ProjectChargeTypes" EntityType="Self.ProjectChargeTypes" Schema="MOBILESALES" store:Type="Tables" />
+    <EntitySet Name="ProjectDistances" EntityType="Self.ProjectDistances" Schema="MOBILESALES" store:Type="Tables" />
+    <EntitySet Name="ProjectHistorySummary" EntityType="Self.ProjectHistorySummary" Schema="MOBILESALES" store:Type="Tables" />
+    <EntitySet Name="ProjectMapQtyRanges" EntityType="Self.ProjectMapQtyRanges" Schema="MOBILESALES" store:Type="Tables" />
+    <EntitySet Name="ProjectNotes" EntityType="Self.ProjectNotes" Schema="MOBILESALES" store:Type="Tables" />
+    <EntitySet Name="ProjectProducts" EntityType="Self.ProjectProducts" Schema="MOBILESALES" store:Type="Tables" />
+    <EntitySet Name="Projects" EntityType="Self.Projects" Schema="MOBILESALES" store:Type="Tables" />
+    <EntitySet Name="ProjectTypes" EntityType="Self.ProjectTypes" Schema="MOBILESALES" store:Type="Tables" />
+    <EntitySet Name="ProspectNotes" EntityType="Self.ProspectNotes" Schema="MOBILESALES" store:Type="Tables" />
+    <EntitySet Name="ProspectQuantities" EntityType="Self.ProspectQuantities" Schema="MOBILESALES" store:Type="Tables" />
+    <EntitySet Name="ProspectRegions" EntityType="Self.ProspectRegions" Schema="MOBILESALES" store:Type="Tables" />
+    <EntitySet Name="Prospects" EntityType="Self.Prospects" Schema="MOBILESALES" store:Type="Tables" />
+    <EntitySet Name="QuoteDetails" EntityType="Self.QuoteDetails" Schema="MOBILESALES" store:Type="Tables" />
+    <EntitySet Name="QuoteGuids" EntityType="Self.QuoteGuids" Schema="MOBILESALES" store:Type="Tables" />
+    <EntitySet Name="Quotes" EntityType="Self.Quotes" Schema="MOBILESALES" store:Type="Tables" />
+    <EntitySet Name="QuoteSections" EntityType="Self.QuoteSections" Schema="MOBILESALES" store:Type="Tables" />
+    <EntitySet Name="QuoteStandardClauses" EntityType="Self.QuoteStandardClauses" Schema="MOBILESALES" store:Type="Tables" />
+    <EntitySet Name="QuoteStatuses" EntityType="Self.QuoteStatuses" Schema="MOBILESALES" store:Type="Tables" />
+    <EntitySet Name="QuoteSurcharges" EntityType="Self.QuoteSurcharges" Schema="MOBILESALES" store:Type="Tables" />
+    <EntitySet Name="QuoteTypes" EntityType="Self.QuoteTypes" Schema="MOBILESALES" store:Type="Tables" />
+    <EntitySet Name="Roles" EntityType="Self.Roles" Schema="MOBILESALES" store:Type="Tables" />
+    <EntitySet Name="SalespersonContacts" EntityType="Self.SalespersonContacts" Schema="MOBILESALES" store:Type="Tables" />
+    <EntitySet Name="SalesPersonRegions" EntityType="Self.SalesPersonRegions" Schema="MOBILESALES" store:Type="Tables" />
+    <EntitySet Name="ScheduleDetails" EntityType="Self.ScheduleDetails" Schema="MOBILESALES" store:Type="Tables" />
+    <EntitySet Name="ScheduleItems" EntityType="Self.ScheduleItems" Schema="MOBILESALES" store:Type="Tables" />
+    <EntitySet Name="Schedules" EntityType="Self.Schedules" Schema="MOBILESALES" store:Type="Tables" />
+    <EntitySet Name="Sources" EntityType="Self.Sources" Schema="MOBILESALES" store:Type="Tables" />
+    <EntitySet Name="SourceSystem" EntityType="Self.SourceSystem" Schema="MOBILESALES" store:Type="Tables" />
+    <EntitySet Name="StandardClauses" EntityType="Self.StandardClauses" Schema="MOBILESALES" store:Type="Tables" />
+    <EntitySet Name="Statuses" EntityType="Self.Statuses" Schema="MOBILESALES" store:Type="Tables" />
+    <EntitySet Name="Surcharges" EntityType="Self.Surcharges" Schema="MOBILESALES" store:Type="Tables" />
+    <EntitySet Name="TemplatedProducts" EntityType="Self.TemplatedProducts" Schema="MOBILESALES" store:Type="Tables" />
+    <EntitySet Name="Terms_Discount" EntityType="Self.Terms_Discount" Schema="MOBILESALES" store:Type="Tables" />
+    <EntitySet Name="TimeCalendar" EntityType="Self.TimeCalendar" Schema="MOBILESALES" store:Type="Tables" />
+    <EntitySet Name="Unit_Of_Measure" EntityType="Self.Unit_Of_Measure" Schema="MOBILESALES" store:Type="Tables" />
+    <EntitySet Name="UserRoles" EntityType="Self.UserRoles" Schema="MOBILESALES" store:Type="Tables" />
+    <EntitySet Name="Users" EntityType="Self.Users" Schema="MOBILESALES" store:Type="Tables" />
+    <EntitySet Name="usersDivisions" EntityType="Self.usersDivisions" Schema="MOBILESALES" store:Type="Tables" />
+    <EntitySet Name="ValueAdd" EntityType="Self.ValueAdd" Schema="MOBILESALES" store:Type="Tables" />
+    <EntitySet Name="VehicleTypes" EntityType="Self.VehicleTypes" Schema="MOBILESALES" store:Type="Tables" />
+    <EntitySet Name="ZoneCodes" EntityType="Self.ZoneCodes" Schema="MOBILESALES" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

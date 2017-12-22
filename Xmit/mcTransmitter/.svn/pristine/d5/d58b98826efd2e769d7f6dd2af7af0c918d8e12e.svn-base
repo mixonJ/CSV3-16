@@ -1,0 +1,52 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Configuration;
+using System.Net.Http;
+using System.Net.Http.Headers;
+using System.Web.Management;
+using System.Linq;
+using mcTransmitter.DTOs;
+
+
+//namespace mcTransmitter {
+//    public class mcXmit : WebEventProvider {
+
+//        private HttpClient GetClient() {
+//            var client = new HttpClient {BaseAddress = new Uri(ConfigurationManager.AppSettings["ServiceUrl"])};
+//            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+//            return client;
+//        }
+
+//        public mcXmit() : base() {
+//        }
+
+//        public override void Flush() {
+//            //  not required
+//        }
+
+//        //public override void ProcessEvent(WebBaseEvent raisedEvent) {
+//        //    var client = GetClient();
+//        //    var context = new ScoutV2Entities();
+//        //    var data = context.ProspectChanges.Include("Prospect").ToList();
+//        //    var rec = new RemoteUpdateDto {
+//        //        Key = SecurityUtils.CreateUserSecurityKey("dannydenny", "robertthompson", 1)
+//        //    };
+//        //    var coll = new Collection<Dictionary<string, string>>();
+//        //    foreach (var p in data.Select(x => x.Prospect).ToList()) {
+//        //        var dic = new Dictionary<string, string> {
+//        //            {"Table", "Prospects"},
+//        //            {"RecordID", p.ProspectID.ToString()}
+//        //        };
+//        //        coll.Add(dic);
+//        //    }
+//        //    rec.Records = coll;
+//        //    var retVal = client.PostAsJsonAsync("api/RemoteProcessing/UpdateFromRemote", rec).Result;
+//        //    retVal.EnsureSuccessStatusCode();
+//        //}
+
+//        public override void Shutdown() {
+//            //  not required
+//        }
+//    }
+//}

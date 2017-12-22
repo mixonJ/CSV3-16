@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="d1933169869b4642a2cf551e81986bd6" Name="Diagram1" ZoomLevel="18">
+        <EntityTypeShape EntityType="OracleEntities.AccountsReceivable" Width="1.5" PointX="0.5" PointY="14.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="OracleEntities.AgeRanx" Width="1.5" PointX="0.5" PointY="21.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="OracleEntities.BatchEvent" Width="1.5" PointX="0.5" PointY="24.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="OracleEntities.BidderQuoteDetail" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OracleEntities.BidderQuote" Width="1.5" PointX="5" PointY="29.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="OracleEntities.BudgetedYard" Width="1.5" PointX="52.5" PointY="32.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OracleEntities.CompanyBidStatus" Width="1.5" PointX="27.625" PointY="15.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="OracleEntities.CompanyOrderStatus" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OracleEntities.CompanyProjectProductStatus" Width="1.5" PointX="0.5" PointY="27.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="OracleEntities.CompanyProjectStatus" Width="1.5" PointX="0.5" PointY="30" IsExpanded="true" />
+        <EntityTypeShape EntityType="OracleEntities.CompanyQuoteStatus" Width="1.5" PointX="0.5" PointY="32.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="OracleEntities.CreditStatus" Width="1.5" PointX="0.5" PointY="44.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="OracleEntities.CustomerEventType" Width="1.5" PointX="0.5" PointY="47.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="OracleEntities.CustomerType" Width="1.5" PointX="0.5" PointY="50.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="OracleEntities.DeviationType" Width="1.5" PointX="7.25" PointY="42.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="OracleEntities.Division" Width="1.5" PointX="0.5" PointY="53.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="OracleEntities.ErrorLog" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OracleEntities.EventFrequency" Width="1.5" PointX="24.125" PointY="32.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OracleEntities.EventStatu" Width="1.5" PointX="29.875" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OracleEntities.LinesOfBusiness" Width="1.5" PointX="23.875" PointY="38.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="OracleEntities.Locations_Divisions_Lookup" Width="1.5" PointX="12.5" PointY="35.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="OracleEntities.Login" Width="1.5" PointX="11.75" PointY="45.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="OracleEntities.LostReason" Width="1.5" PointX="23.75" PointY="42" IsExpanded="true" />
+        <EntityTypeShape EntityType="OracleEntities.ManagersSalesman" Width="1.5" PointX="11.75" PointY="47.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="OracleEntities.Order" Width="1.5" PointX="35.125" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="OracleEntities.PaymentTerm" Width="1.5" PointX="19.5" PointY="43.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="OracleEntities.PlantProductPrice" Width="1.5" PointX="33.75" PointY="39.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="OracleEntities.ProductUsage" Width="1.5" PointX="17" PointY="53.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="OracleEntities.ProjectBidderCharge" Width="1.5" PointX="8.75" PointY="38.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OracleEntities.ProjectBidderNote" Width="1.5" PointX="11.75" PointY="38.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="OracleEntities.ProjectBidderStatus" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OracleEntities.ProjectCharge" Width="1.5" PointX="6.5" PointY="48.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OracleEntities.ProjectChargeType" Width="1.5" PointX="4.25" PointY="42.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="OracleEntities.ProjectHistorySummary" Width="1.5" PointX="17.875" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="OracleEntities.ProjectMapQtyRanx" Width="1.5" PointX="2.125" PointY="37.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="OracleEntities.ProjectType" Width="1.5" PointX="11.375" PointY="22.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="OracleEntities.ProspectNote" Width="1.5" PointX="37.5" PointY="34.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="OracleEntities.ProspectQuantity" Width="1.5" PointX="17.875" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="OracleEntities.ProspectRegion" Width="1.5" PointX="17.875" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OracleEntities.QuoteDetail" Width="1.5" PointX="42.75" PointY="41.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="OracleEntities.QuoteGuid" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OracleEntities.QuoteStandardClaus" Width="1.5" PointX="43" PointY="36.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="OracleEntities.QuoteStatus" Width="1.5" PointX="22.375" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="OracleEntities.QuoteSurcharge" Width="1.5" PointX="28.875" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="OracleEntities.Role" Width="1.5" PointX="12.5" PointY="32.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="OracleEntities.SalespersonContact" Width="1.5" PointX="20" PointY="51.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="OracleEntities.SalesPersonRegion" Width="1.5" PointX="11.75" PointY="51.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="OracleEntities.ScheduleDetail" Width="1.5" PointX="34.375" PointY="20.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OracleEntities.ScheduleItem" Width="1.5" PointX="38.875" PointY="13.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="OracleEntities.SourceSystem" Width="1.5" PointX="27.625" PointY="27.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OracleEntities.Status" Width="1.5" PointX="25.375" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OracleEntities.UserRole" Width="1.5" PointX="14.75" PointY="46.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="OracleEntities.usersDivision" Width="1.5" PointX="14.75" PointY="43.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="OracleEntities.ValueAdd" Width="1.5" PointX="37.375" PointY="0.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="OracleEntities.VehicleType" Width="1.5" PointX="34.25" PointY="26.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="OracleEntities.ZoneCode" Width="1.5" PointX="30" PointY="31.125" IsExpanded="true" />
+        <AssociationConnector Association="OracleEntities.FK_CompanyBidStatuses_Statuses" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="OracleEntities.AdditionalProduct" Width="1.5" PointX="50.25" PointY="40.125" />
+        <EntityTypeShape EntityType="OracleEntities.Competitor" Width="1.5" PointX="31.625" PointY="4.875" />
+        <EntityTypeShape EntityType="OracleEntities.CustomerEvent" Width="1.5" PointX="44.375" PointY="4.125" />
+        <EntityTypeShape EntityType="OracleEntities.Employee" Width="1.5" PointX="17.875" PointY="29.875" />
+        <EntityTypeShape EntityType="OracleEntities.PourSchedule" Width="1.5" PointX="46.625" PointY="20" />
+        <EntityTypeShape EntityType="OracleEntities.Product" Width="1.5" PointX="25.375" PointY="21.5" />
+        <EntityTypeShape EntityType="OracleEntities.ProductType" Width="1.5" PointX="23.125" PointY="22.625" />
+        <EntityTypeShape EntityType="OracleEntities.QuoteType" Width="1.5" PointX="17.875" PointY="38" />
+        <EntityTypeShape EntityType="OracleEntities.Source" Width="1.5" PointX="17.875" PointY="26.375" />
+        <EntityTypeShape EntityType="OracleEntities.StandardClaus" Width="1.5" PointX="45" PointY="42.75" />
+        <EntityTypeShape EntityType="OracleEntities.Terms_Discount" Width="1.5" PointX="17.875" PointY="15" />
+        <EntityTypeShape EntityType="OracleEntities.TimeCalendar" Width="1.5" PointX="7.875" PointY="0.875" />
+        <EntityTypeShape EntityType="OracleEntities.OrderDetail" Width="1.5" PointX="37.375" PointY="9.75" />
+        <EntityTypeShape EntityType="OracleEntities.Schedule" Width="1.5" PointX="46.625" PointY="14.625" />
+        <EntityTypeShape EntityType="OracleEntities.QuoteSection" Width="1.5" PointX="3.375" PointY="6.75" />
+        <EntityTypeShape EntityType="OracleEntities.Unit_Of_Measure" Width="1.5" PointX="30.75" PointY="40.625" />
+        <EntityTypeShape EntityType="OracleEntities.Plant" Width="1.5" PointX="28.5" PointY="37.75" />
+        <EntityTypeShape EntityType="OracleEntities.PlantLinesOfBusiness" Width="1.5" PointX="33.75" PointY="44.25" />
+        <EntityTypeShape EntityType="OracleEntities.ProductLine" Width="1.5" PointX="20.875" PointY="8.75" />
+        <EntityTypeShape EntityType="OracleEntities.Surcharge" Width="1.5" PointX="20.125" PointY="4" />
+        <EntityTypeShape EntityType="OracleEntities.CompanyUser" Width="1.5" PointX="34.625" PointY="7.875" />
+        <EntityTypeShape EntityType="OracleEntities.User" Width="1.5" PointX="40.25" PointY="36.25" />
+        <EntityTypeShape EntityType="OracleEntities.CompetitorPlant" Width="1.5" PointX="52.75" PointY="36.875" />
+        <EntityTypeShape EntityType="OracleEntities.ProductTemplate" Width="1.5" PointX="36.875" PointY="17" />
+        <EntityTypeShape EntityType="OracleEntities.TemplatedProduct" Width="1.5" PointX="41.125" PointY="8" />
+        <EntityTypeShape EntityType="OracleEntities.Prospect" Width="1.5" PointX="55.5" PointY="33.5" />
+        <EntityTypeShape EntityType="OracleEntities.ContactNote" Width="1.5" PointX="57.75" PointY="42.125" />
+        <EntityTypeShape EntityType="OracleEntities.Contact" Width="1.5" PointX="57.75" PointY="33.625" />
+        <EntityTypeShape EntityType="OracleEntities.Project" Width="1.5" PointX="42.125" PointY="19.75" />
+        <EntityTypeShape EntityType="OracleEntities.ProjectProduct" Width="1.5" PointX="47.375" PointY="4.5" />
+        <EntityTypeShape EntityType="OracleEntities.ProjectNote" Width="1.5" PointX="44.375" PointY="11.625" />
+        <EntityTypeShape EntityType="OracleEntities.ProjectBidder" Width="1.5" PointX="60.75" PointY="36.5" />
+        <EntityTypeShape EntityType="OracleEntities.ProjectBidderProduct" Width="1.5" PointX="50.125" PointY="2.875" />
+        <EntityTypeShape EntityType="OracleEntities.Quote" Width="1.5" PointX="50.125" PointY="10.25" />
+        <EntityTypeShape EntityType="OracleEntities.ProjectDistance" Width="1.5" PointX="0.75" PointY="7.75" />
+        <EntityTypeShape EntityType="OracleEntities.Company" Width="1.5" PointX="38" PointY="37.875" />
+        <AssociationConnector Association="OracleEntities.FK_Users_Companies" />
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

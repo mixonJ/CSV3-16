@@ -1,0 +1,16 @@
+﻿namespace mcTransmitter.DTOs {
+    public class Apex_SLORDNAM_Dto : IKey {
+        #region IKey Members
+
+        public string Key {
+            get;
+            set;
+        }
+
+        #endregion
+
+        public string CustomerID { get; set; }
+        public string OrderID { get; set; }
+        public string JobID { get; set; }
+    }
+}

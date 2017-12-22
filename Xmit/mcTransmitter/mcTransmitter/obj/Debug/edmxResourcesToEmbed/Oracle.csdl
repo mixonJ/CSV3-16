@@ -1,0 +1,1479 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="OracleEntities" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="AccountsReceivable">
+    <Key>
+      <PropertyRef Name="AccountsReceivableID" />
+    </Key>
+    <Property Name="AccountsReceivableID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="ProspectID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="AgeRangeID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="Dollars" Type="Decimal" Precision="11" Scale="2" Nullable="false" />
+    <Property Name="CompanyID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="MsModificationDate" Type="DateTime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AgeRanx">
+    <Key>
+      <PropertyRef Name="AgeRangeID" />
+    </Key>
+    <Property Name="AgeRangeID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="CompanyID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="RangeStart" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="RangeEnd" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MsModificationDate" Type="DateTime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BatchEvent">
+    <Key>
+      <PropertyRef Name="BatchEventsID" />
+    </Key>
+    <Property Name="BatchPerformedDate" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="BatchEventsID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="CompanyID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="MsModificationDate" Type="DateTime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BidderQuoteDetail">
+    <Key>
+      <PropertyRef Name="BidderQuoteDetailID" />
+    </Key>
+    <Property Name="BidderQuoteDetailID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="BidderQuoteID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Price" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MsModificationDate" Type="DateTime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BidderQuote">
+    <Key>
+      <PropertyRef Name="BidderQuoteID" />
+    </Key>
+    <Property Name="BidderQuoteID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="Attention" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="SalespersonName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="SalespersonID" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="Address1" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Paymentterms" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="PaymenttermsValue" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="Jobname" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="DateQuoted" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ProjectBidderID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="Division" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ExpirationDate" Type="DateTime" />
+    <Property Name="ProjectID" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="MsModificationDate" Type="DateTime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BudgetedYard">
+    <Key>
+      <PropertyRef Name="BudgetedYardsID" />
+    </Key>
+    <Property Name="BudgetedYardsID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="UserID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="Year" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="Month" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="BudgetedYards" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="BudgetedRevenue" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="ValueAddID" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="MsModificationDate" Type="DateTime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CompanyBidStatus">
+    <Key>
+      <PropertyRef Name="CompanyBidStatusID" />
+    </Key>
+    <Property Name="CompanyBidStatusID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="CompanyBidStatusName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CompanyID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="SystemCode" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MSStatusID" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="MsModificationDate" Type="DateTime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CompanyOrderStatus">
+    <Key>
+      <PropertyRef Name="CompanyOrderStatusID" />
+    </Key>
+    <Property Name="CompanyOrderStatusID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="CompanyOrderStatusName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CompanyID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="MsModificationDate" Type="DateTime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CompanyProjectProductStatus">
+    <Key>
+      <PropertyRef Name="CompanyProjectProductStatusID" />
+    </Key>
+    <Property Name="CompanyProjectProductStatusID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="ProjectProductStatusName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CompanyID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="MsModificationDate" Type="DateTime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CompanyProjectStatus">
+    <Key>
+      <PropertyRef Name="CompanyProjectStatusID" />
+    </Key>
+    <Property Name="CompanyProjectStatusID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="CompanyProjectStatusName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CompanyID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="MsModificationDate" Type="DateTime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CompanyQuoteStatus">
+    <Key>
+      <PropertyRef Name="CompanyQuoteStatusID" />
+    </Key>
+    <Property Name="CompanyQuoteStatusID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="CompanyQuoteStatusName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CompanyID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="MsModificationDate" Type="DateTime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CreditStatus">
+    <Key>
+      <PropertyRef Name="CreditStatusID" />
+    </Key>
+    <Property Name="CreditStatusID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="CompanyID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="Code" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ColorCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="MsModificationDate" Type="DateTime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CustomerEventType">
+    <Key>
+      <PropertyRef Name="EventTypeID" />
+    </Key>
+    <Property Name="EventTypeID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="CompanyID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="EventType" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MsModificationDate" Type="DateTime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CustomerType">
+    <Key>
+      <PropertyRef Name="CustomerTypeID" />
+    </Key>
+    <Property Name="CustomerTypeID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="CompanyID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="CustomerTypeName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MsModificationDate" Type="DateTime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DeviationType">
+    <Key>
+      <PropertyRef Name="DeviationTypeID" />
+    </Key>
+    <Property Name="DeviationTypeID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="DeviationTypeName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MsModificationDate" Type="DateTime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Division">
+    <Key>
+      <PropertyRef Name="DivisionID" />
+    </Key>
+    <Property Name="DivisionID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="DivisionName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CompanyID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="Address1" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Address2" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="City" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ST" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Zip" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Country" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="MsModificationDate" Type="DateTime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ErrorLog">
+    <Key>
+      <PropertyRef Name="ErrorID" />
+    </Key>
+    <Property Name="ErrorID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="CompanyID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="ErrorMessage" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="ErrorMethod" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="ErrorSource" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="ErrorDate" Type="DateTime" Nullable="false" />
+    <Property Name="MsModificationDate" Type="DateTime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="EventFrequency">
+    <Key>
+      <PropertyRef Name="EventFrequencyID" />
+    </Key>
+    <Property Name="EventFrequencyID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="CompanyID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="EventFrequency1" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MsModificationDate" Type="DateTime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="EventStatu">
+    <Key>
+      <PropertyRef Name="EventStatusID" />
+    </Key>
+    <Property Name="EventStatusID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="EventStatus" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="MsModificationDate" Type="DateTime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LinesOfBusiness">
+    <Key>
+      <PropertyRef Name="LineOfBusinessID" />
+    </Key>
+    <Property Name="LineOfBusinessID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CompanyID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="LineOfBusinessCode" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MsModificationDate" Type="DateTime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Locations_Divisions_Lookup">
+    <Key>
+      <PropertyRef Name="RecordID" />
+    </Key>
+    <Property Name="RecordID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="DivisionID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="Division_Name" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Location1_Code" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Location1_Name" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="MsModificationDate" Type="DateTime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Login">
+    <Key>
+      <PropertyRef Name="LoginID" />
+    </Key>
+    <Property Name="LoginID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="UserID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="LoginDate" Type="DateTime" Nullable="false" />
+    <Property Name="MsModificationDate" Type="DateTime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LostReason">
+    <Key>
+      <PropertyRef Name="LostReasonID" />
+    </Key>
+    <Property Name="LostReasonID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="CompanyID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="LostReason1" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Inserted" Type="DateTime" Nullable="false" />
+    <Property Name="Modified" Type="DateTime" Nullable="false" />
+    <Property Name="MsModificationDate" Type="DateTime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ManagersSalesman">
+    <Key>
+      <PropertyRef Name="ManagerUserID" />
+    </Key>
+    <Property Name="ManagerUserID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="ManagerID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="SalesmanID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="MsModificationDate" Type="DateTime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Order">
+    <Key>
+      <PropertyRef Name="OrderID" />
+    </Key>
+    <Property Name="OrderID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="CompanyID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="ProjectID" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="year" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="month" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="YardsActual" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="MaterialCost" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="DollarsActual" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="OrderDate" Type="DateTime" />
+    <Property Name="ShipDate" Type="DateTime" />
+    <Property Name="YardsTicketed" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="OnJobTime" Type="DateTime" />
+    <Property Name="LocationID" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="ProspectID" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="DispatchOrderID" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="DispatchOrderNumber" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="SalesmanCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Inserted" Type="DateTime" />
+    <Property Name="Modified" Type="DateTime" />
+    <Property Name="MsModificationDate" Type="DateTime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PaymentTerm">
+    <Key>
+      <PropertyRef Name="Terms_Discount_ID" />
+    </Key>
+    <Property Name="Terms_Discount_ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="CompanyID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MsModificationDate" Type="DateTime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PlantProductPrice">
+    <Key>
+      <PropertyRef Name="PlantProductPriceID" />
+    </Key>
+    <Property Name="PlantProductPriceID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="PlantID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="ProductID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="ListPrice" Type="Decimal" Precision="9" Scale="2" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PriceListID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="MsModificationDate" Type="DateTime" Nullable="false" />
+    <Property Name="PriceExtensionCode" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="ProductUsage">
+    <Key>
+      <PropertyRef Name="ProductUsageID" />
+    </Key>
+    <Property Name="ProductUsageID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="CompanyID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="ProductUsageName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ProductLineID" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="MsModificationDate" Type="DateTime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProjectBidderCharge">
+    <Key>
+      <PropertyRef Name="ProjectBidderChargeID" />
+    </Key>
+    <Property Name="ProjectBidderChargeID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="ProjectBidderID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="ProductLineID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="ProjectChargeID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="MsModificationDate" Type="DateTime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProjectBidderNote">
+    <Key>
+      <PropertyRef Name="NoteID" />
+    </Key>
+    <Property Name="NoteID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="ProjectBidderID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="Note" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Inserted" Type="DateTime" Nullable="false" />
+    <Property Name="CreatedBy" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="MsModificationDate" Type="DateTime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProjectBidderStatus">
+    <Key>
+      <PropertyRef Name="ProjectBidderStatusID" />
+    </Key>
+    <Property Name="ProjectBidderStatusID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="StatusName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MsModificationDate" Type="DateTime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProjectCharge">
+    <Key>
+      <PropertyRef Name="ChargeID" />
+    </Key>
+    <Property Name="ChargeID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="ChargeName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ChargeType" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="ChargeCode" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CompanyID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="MsModificationDate" Type="DateTime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProjectChargeType">
+    <Key>
+      <PropertyRef Name="ChargeTypeID" />
+    </Key>
+    <Property Name="ChargeTypeID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="ChargeTypeName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MsModificationDate" Type="DateTime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProjectHistorySummary">
+    <Key>
+      <PropertyRef Name="ProjectHistorySummaryID" />
+    </Key>
+    <Property Name="ProjectHistorySummaryID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="ProspectID" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="PROJ_CODE" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="PROJ_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SETUP_DATE" Type="DateTime" />
+    <Property Name="EXPIR_DATE" Type="DateTime" />
+    <Property Name="Orders" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="Tickets" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="Yards" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="AvgPrice" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="Amount" Type="Decimal" Precision="12" Scale="2" />
+    <Property Name="MsModificationDate" Type="DateTime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProjectMapQtyRanx">
+    <Key>
+      <PropertyRef Name="ProjectMapQtyRangeID" />
+    </Key>
+    <Property Name="ProjectMapQtyRangeID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="CompanyID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="Min" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="Max" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="DisplayText" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MsModificationDate" Type="DateTime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProjectType">
+    <Key>
+      <PropertyRef Name="ProjectTypeID" />
+    </Key>
+    <Property Name="ProjectTypeID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="CompanyID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="ConnectionCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SANL_Code" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="ProjectTypeName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ShortName" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="Inserted" Type="DateTime" Nullable="false" />
+    <Property Name="Modified" Type="DateTime" Nullable="false" />
+    <Property Name="MsModificationDate" Type="DateTime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProspectNote">
+    <Key>
+      <PropertyRef Name="ProspectNoteID" />
+    </Key>
+    <Property Name="ProspectNoteID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="ProspectID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="Note" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="Inserted" Type="DateTime" Nullable="false" />
+    <Property Name="CreatedBy" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="Subject" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="Source" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MsModificationDate" Type="DateTime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProspectQuantity">
+    <Key>
+      <PropertyRef Name="ProspectQuantityID" />
+    </Key>
+    <Property Name="ProspectQuantityID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="ProspectID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="ProductID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="Quantity" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="MsModificationDate" Type="DateTime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProspectRegion">
+    <Key>
+      <PropertyRef Name="ProspectRegionID" />
+    </Key>
+    <Property Name="ProspectRegionID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="ProspectID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="PlantID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="MsModificationDate" Type="DateTime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="QuoteDetail">
+    <Key>
+      <PropertyRef Name="QuoteDetailID" />
+    </Key>
+    <Property Name="QuoteDetailID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="QuoteID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="ProjectProductID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="Price" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="Qty" Type="Decimal" Precision="16" Scale="2" Nullable="false" />
+    <Property Name="Freight" Type="Decimal" Precision="9" Scale="2" Nullable="false" />
+    <Property Name="FreightPay" Type="Decimal" Precision="9" Scale="2" Nullable="false" />
+    <Property Name="ListPrice" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="CustomerPrice" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="MsModificationDate" Type="DateTime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="QuoteGuid">
+    <Key>
+      <PropertyRef Name="QuoteGuidID" />
+    </Key>
+    <Property Name="QuoteGuidID" Type="String" MaxLength="36" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="QuoteHtml" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MsModificationDate" Type="DateTime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="QuoteStandardClaus">
+    <Key>
+      <PropertyRef Name="QuoteStandardClauseID" />
+    </Key>
+    <Property Name="QuoteStandardClauseID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="QuoteID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="StandardClauseID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="MsModificationDate" Type="DateTime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="QuoteStatus">
+    <Key>
+      <PropertyRef Name="QuoteStatusID" />
+    </Key>
+    <Property Name="QuoteStatusID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="QuoteStatusName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="SortOrder" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="MsModificationDate" Type="DateTime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="QuoteSurcharge">
+    <Key>
+      <PropertyRef Name="QuoteSurchargeID" />
+    </Key>
+    <Property Name="QuoteSurchargeID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="QuoteID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="SurchargeID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="Rate" Type="Decimal" Precision="6" Scale="2" Nullable="false" />
+    <Property Name="MsModificationDate" Type="DateTime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Role">
+    <Key>
+      <PropertyRef Name="RoleID" />
+    </Key>
+    <Property Name="RoleID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="RoleDescription" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MsModificationDate" Type="DateTime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SalespersonContact">
+    <Key>
+      <PropertyRef Name="SalesPersonContactID" />
+    </Key>
+    <Property Name="SalesPersonContactID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="SalesPersonID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="ContactID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="MsModificationDate" Type="DateTime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SalesPersonRegion">
+    <Key>
+      <PropertyRef Name="SalesPersonRegionID" />
+    </Key>
+    <Property Name="SalesPersonRegionID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="SalesPersonID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="PlantID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="MsModificationDate" Type="DateTime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ScheduleDetail">
+    <Key>
+      <PropertyRef Name="ScheduleID" />
+    </Key>
+    <Property Name="ScheduleID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="PourScheduleID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="year" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="monthYds" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="monthPercent" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="Month" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="MsModificationDate" Type="DateTime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ScheduleItem">
+    <Key>
+      <PropertyRef Name="ScheduleItemID" />
+    </Key>
+    <Property Name="ScheduleItemID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="ScheduleID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="Quantity" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="Month" Type="DateTime" Nullable="false" />
+    <Property Name="MsModificationDate" Type="DateTime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SourceSystem">
+    <Key>
+      <PropertyRef Name="SourceSystemID" />
+    </Key>
+    <Property Name="SourceSystemID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="SystemName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MsModificationDate" Type="DateTime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Status">
+    <Key>
+      <PropertyRef Name="StatusID" />
+    </Key>
+    <Property Name="StatusID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="StatusName" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Inserted" Type="DateTime" Nullable="false" />
+    <Property Name="Modified" Type="DateTime" Nullable="false" />
+    <Property Name="MsModificationDate" Type="DateTime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UserRole">
+    <Key>
+      <PropertyRef Name="UserRoleID" />
+    </Key>
+    <Property Name="UserRoleID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="RoleID" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="UserID" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="MsModificationDate" Type="DateTime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="usersDivision">
+    <Key>
+      <PropertyRef Name="UserDivisionID" />
+    </Key>
+    <Property Name="UserDivisionID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="UserID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="LocationDivisionID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="MsModificationDate" Type="DateTime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ValueAdd">
+    <Key>
+      <PropertyRef Name="ValueAddID" />
+    </Key>
+    <Property Name="ValueAddID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="ProductLineID" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="ProductTypeID" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="ProductID" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="StartDate" Type="DateTime" Nullable="false" />
+    <Property Name="EndDate" Type="DateTime" />
+    <Property Name="MsModificationDate" Type="DateTime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="VehicleType">
+    <Key>
+      <PropertyRef Name="VehicleTypeID" />
+    </Key>
+    <Property Name="VehicleTypeID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="CompanyID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Abbreviation" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LocalVehicleTypeId" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MsModificationDate" Type="DateTime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ZoneCode">
+    <Key>
+      <PropertyRef Name="ZoneCodeID" />
+    </Key>
+    <Property Name="ZoneCodeID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="CompanyID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="ZoneCodeName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="SystemCode" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MsModificationDate" Type="DateTime" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="AccountsReceivables" EntityType="Self.AccountsReceivable" />
+    <EntitySet Name="AgeRanges" EntityType="Self.AgeRanx" />
+    <EntitySet Name="BatchEvents" EntityType="Self.BatchEvent" />
+    <EntitySet Name="BidderQuoteDetails" EntityType="Self.BidderQuoteDetail" />
+    <EntitySet Name="BidderQuotes" EntityType="Self.BidderQuote" />
+    <EntitySet Name="BudgetedYards" EntityType="Self.BudgetedYard" />
+    <EntitySet Name="CompanyBidStatuses" EntityType="Self.CompanyBidStatus" />
+    <EntitySet Name="CompanyOrderStatuses" EntityType="Self.CompanyOrderStatus" />
+    <EntitySet Name="CompanyProjectProductStatuses" EntityType="Self.CompanyProjectProductStatus" />
+    <EntitySet Name="CompanyProjectStatuses" EntityType="Self.CompanyProjectStatus" />
+    <EntitySet Name="CompanyQuoteStatuses" EntityType="Self.CompanyQuoteStatus" />
+    <EntitySet Name="CreditStatuses" EntityType="Self.CreditStatus" />
+    <EntitySet Name="CustomerEventTypes" EntityType="Self.CustomerEventType" />
+    <EntitySet Name="CustomerTypes" EntityType="Self.CustomerType" />
+    <EntitySet Name="DeviationTypes" EntityType="Self.DeviationType" />
+    <EntitySet Name="Divisions" EntityType="Self.Division" />
+    <EntitySet Name="ErrorLogs" EntityType="Self.ErrorLog" />
+    <EntitySet Name="EventFrequencies" EntityType="Self.EventFrequency" />
+    <EntitySet Name="EventStatus" EntityType="Self.EventStatu" />
+    <EntitySet Name="LinesOfBusinesses" EntityType="Self.LinesOfBusiness" />
+    <EntitySet Name="Locations_Divisions_Lookup" EntityType="Self.Locations_Divisions_Lookup" />
+    <EntitySet Name="Logins" EntityType="Self.Login" />
+    <EntitySet Name="LostReasons" EntityType="Self.LostReason" />
+    <EntitySet Name="ManagersSalesmen" EntityType="Self.ManagersSalesman" />
+    <EntitySet Name="Orders" EntityType="Self.Order" />
+    <EntitySet Name="PaymentTerms" EntityType="Self.PaymentTerm" />
+    <EntitySet Name="PlantProductPrices" EntityType="Self.PlantProductPrice" />
+    <EntitySet Name="ProductUsages" EntityType="Self.ProductUsage" />
+    <EntitySet Name="ProjectBidderCharges" EntityType="Self.ProjectBidderCharge" />
+    <EntitySet Name="ProjectBidderNotes" EntityType="Self.ProjectBidderNote" />
+    <EntitySet Name="ProjectBidderStatuses" EntityType="Self.ProjectBidderStatus" />
+    <EntitySet Name="ProjectCharges" EntityType="Self.ProjectCharge" />
+    <EntitySet Name="ProjectChargeTypes" EntityType="Self.ProjectChargeType" />
+    <EntitySet Name="ProjectHistorySummaries" EntityType="Self.ProjectHistorySummary" />
+    <EntitySet Name="ProjectMapQtyRanges" EntityType="Self.ProjectMapQtyRanx" />
+    <EntitySet Name="ProjectTypes" EntityType="Self.ProjectType" />
+    <EntitySet Name="ProspectNotes" EntityType="Self.ProspectNote" />
+    <EntitySet Name="ProspectQuantities" EntityType="Self.ProspectQuantity" />
+    <EntitySet Name="ProspectRegions" EntityType="Self.ProspectRegion" />
+    <EntitySet Name="QuoteDetails" EntityType="Self.QuoteDetail" />
+    <EntitySet Name="QuoteGuids" EntityType="Self.QuoteGuid" />
+    <EntitySet Name="QuoteStandardClauses" EntityType="Self.QuoteStandardClaus" />
+    <EntitySet Name="QuoteStatuses" EntityType="Self.QuoteStatus" />
+    <EntitySet Name="QuoteSurcharges" EntityType="Self.QuoteSurcharge" />
+    <EntitySet Name="Roles" EntityType="Self.Role" />
+    <EntitySet Name="SalespersonContacts" EntityType="Self.SalespersonContact" />
+    <EntitySet Name="SalesPersonRegions" EntityType="Self.SalesPersonRegion" />
+    <EntitySet Name="ScheduleDetails" EntityType="Self.ScheduleDetail" />
+    <EntitySet Name="ScheduleItems" EntityType="Self.ScheduleItem" />
+    <EntitySet Name="SourceSystems" EntityType="Self.SourceSystem" />
+    <EntitySet Name="Statuses" EntityType="Self.Status" />
+    <EntitySet Name="UserRoles" EntityType="Self.UserRole" />
+    <EntitySet Name="usersDivisions" EntityType="Self.usersDivision" />
+    <EntitySet Name="ValueAdds" EntityType="Self.ValueAdd" />
+    <EntitySet Name="VehicleTypes" EntityType="Self.VehicleType" />
+    <EntitySet Name="ZoneCodes" EntityType="Self.ZoneCode" />
+    <EntitySet Name="AdditionalProducts" EntityType="OracleEntities.AdditionalProduct" />
+    <EntitySet Name="Competitors" EntityType="OracleEntities.Competitor" />
+    <EntitySet Name="CustomerEvents" EntityType="OracleEntities.CustomerEvent" />
+    <EntitySet Name="Employees" EntityType="OracleEntities.Employee" />
+    <EntitySet Name="PourSchedules" EntityType="OracleEntities.PourSchedule" />
+    <EntitySet Name="Products" EntityType="OracleEntities.Product" />
+    <EntitySet Name="ProductTypes" EntityType="OracleEntities.ProductType" />
+    <EntitySet Name="QuoteTypes" EntityType="OracleEntities.QuoteType" />
+    <EntitySet Name="Sources" EntityType="OracleEntities.Source" />
+    <EntitySet Name="StandardClauses" EntityType="OracleEntities.StandardClaus" />
+    <EntitySet Name="Terms_Discount" EntityType="OracleEntities.Terms_Discount" />
+    <EntitySet Name="TimeCalendars" EntityType="OracleEntities.TimeCalendar" />
+    <EntitySet Name="OrderDetails" EntityType="OracleEntities.OrderDetail" />
+    <EntitySet Name="Schedules" EntityType="OracleEntities.Schedule" />
+    <EntitySet Name="QuoteSections" EntityType="OracleEntities.QuoteSection" />
+    <EntitySet Name="Unit_Of_Measure" EntityType="OracleEntities.Unit_Of_Measure" />
+    <EntitySet Name="Plants" EntityType="OracleEntities.Plant" />
+    <EntitySet Name="PlantLinesOfBusinesses" EntityType="OracleEntities.PlantLinesOfBusiness" />
+    <EntitySet Name="ProductLines" EntityType="OracleEntities.ProductLine" />
+    <EntitySet Name="Surcharges" EntityType="OracleEntities.Surcharge" />
+    <EntitySet Name="CompanyUsers" EntityType="OracleEntities.CompanyUser" />
+    <EntitySet Name="Users" EntityType="OracleEntities.User" />
+    <EntitySet Name="CompetitorPlants" EntityType="OracleEntities.CompetitorPlant" />
+    <EntitySet Name="ProductTemplates" EntityType="OracleEntities.ProductTemplate" />
+    <EntitySet Name="TemplatedProducts" EntityType="OracleEntities.TemplatedProduct" />
+    <EntitySet Name="Prospects" EntityType="OracleEntities.Prospect" />
+    <EntitySet Name="ContactNotes" EntityType="OracleEntities.ContactNote" />
+    <EntitySet Name="Contacts" EntityType="OracleEntities.Contact" />
+    <EntitySet Name="Projects" EntityType="OracleEntities.Project" />
+    <EntitySet Name="ProjectProducts" EntityType="OracleEntities.ProjectProduct" />
+    <EntitySet Name="ProjectNotes" EntityType="OracleEntities.ProjectNote" />
+    <EntitySet Name="ProjectBidders" EntityType="OracleEntities.ProjectBidder" />
+    <EntitySet Name="ProjectBidderProducts" EntityType="OracleEntities.ProjectBidderProduct" />
+    <EntitySet Name="Quotes" EntityType="OracleEntities.Quote" />
+    <EntitySet Name="ProjectDistances" EntityType="OracleEntities.ProjectDistance" />
+    <EntitySet Name="Companies" EntityType="OracleEntities.Company" />
+  </EntityContainer>
+  <EntityType Name="AdditionalProduct">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="ProductName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Description" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="CostPerUnit" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Active" Type="Boolean" Nullable="false" />
+    <Property Name="DivisionID" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="ProductID" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="CompanyID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="MsModificationDate" Type="DateTime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Competitor">
+    <Key>
+      <PropertyRef Name="CompetitorID" />
+    </Key>
+    <Property Name="CompetitorID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="CompanyID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="CompetitorName" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="Inserted" Type="DateTime" Nullable="false" />
+    <Property Name="Modified" Type="DateTime" Nullable="false" />
+    <Property Name="Inactive" Type="Boolean" Nullable="false" />
+    <Property Name="UserID" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="Address1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Address2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="State" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Zip" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Longitude" Type="Decimal" Precision="10" Scale="7" />
+    <Property Name="Latitude" Type="Decimal" Precision="10" Scale="7" />
+    <Property Name="Country" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="MsModificationDate" Type="DateTime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CustomerEvent">
+    <Key>
+      <PropertyRef Name="CustomerEventID" />
+    </Key>
+    <Property Name="CustomerEventID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="Private" Type="Boolean" />
+    <Property Name="OwnerID" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="EventTypeID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="EventStartDate" Type="DateTime" Nullable="false" />
+    <Property Name="EventEndDate" Type="DateTime" />
+    <Property Name="CompletedDate" Type="DateTime" />
+    <Property Name="Description" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="ContactID" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="UserID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="EventFrequencyID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="ProjectID" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="MasterEventID" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="EventStatusID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="Subject" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ProspectID" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="RecurrenceEndDate" Type="DateTime" />
+    <Property Name="MsModificationDate" Type="DateTime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Employee">
+    <Key>
+      <PropertyRef Name="Employee_ID" />
+    </Key>
+    <Property Name="Employee_ID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="Employee_Type_ID" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="Home_Plant_ID" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="Employee_Number" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="Hire_Date" Type="DateTime" Nullable="false" />
+    <Property Name="Last_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="First_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Middle_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Complete_Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Addrees_1" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Address_2" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Address_3" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Address_4" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Address_5" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Address_6" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Address_7" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Home_Phone" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Business_Phone" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Cell_Phone" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Pager" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Email_Address" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Social_Security_Number" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Birth_Date" Type="DateTime" />
+    <Property Name="Pay_Rate" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Inactive_Flag" Type="Boolean" Nullable="false" />
+    <Property Name="User_Profile_ID" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="Punch_Out_Flag" Type="Boolean" />
+    <Property Name="TWFormat_File_Concrete" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="TWFormat_File_Aggregate" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="TWFormat_File_Block" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="CompanyID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="MsModificationDate" Type="DateTime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PourSchedule">
+    <Key>
+      <PropertyRef Name="PourID" />
+    </Key>
+    <Property Name="PourID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="ProjectID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="C____DEFAULTschedule" Type="Boolean" />
+    <Property Name="ProjectProductID" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="PourScheduleName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MsModificationDate" Type="DateTime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="ProductID" />
+    </Key>
+    <Property Name="ProductID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="CompanyID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="ProductName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Active" Type="Boolean" />
+    <Property Name="AU_ID" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="UnitOfMeasureID" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="ProductTypeID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="ConnectionCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ITEM_CAT" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+    <Property Name="Product_Code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Inserted" Type="DateTime" />
+    <Property Name="Modified" Type="DateTime" />
+    <Property Name="extProduct_Code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IsSellable" Type="Boolean" Nullable="false" />
+    <Property Name="MsModificationDate" Type="DateTime" Nullable="false" />
+    <Property Name="ProductShortName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="ProductType">
+    <Key>
+      <PropertyRef Name="ProductTypeID" />
+    </Key>
+    <Property Name="ProductTypeID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="CompanyID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="ProductTypeName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ProductTypeCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ProductLineID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="ListPrice" Type="Decimal" Nullable="false" Precision="9" Scale="2" />
+    <Property Name="UOMID" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="Inactive" Type="Boolean" Nullable="false" />
+    <Property Name="MsModificationDate" Type="DateTime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="QuoteType">
+    <Key>
+      <PropertyRef Name="QuoteTypeID" />
+    </Key>
+    <Property Name="QuoteTypeID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="CompanyID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="QuoteTypeName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Section1" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" />
+    <Property Name="Section2" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" />
+    <Property Name="Section3" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" />
+    <Property Name="ImageLocation" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="Inactive" Type="Boolean" Nullable="false" />
+    <Property Name="MsModificationDate" Type="DateTime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Source">
+    <Key>
+      <PropertyRef Name="SourceID" />
+    </Key>
+    <Property Name="SourceID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="CompanyID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="SourceName" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="Inserted" Type="DateTime" />
+    <Property Name="Modified" Type="DateTime" />
+    <Property Name="Inactive" Type="Boolean" Nullable="false" />
+    <Property Name="MsModificationDate" Type="DateTime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="StandardClaus">
+    <Key>
+      <PropertyRef Name="StandardClauseID" />
+    </Key>
+    <Property Name="StandardClauseID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="StandardClauseText" Type="String" Nullable="false" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="ProductLineID" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="PlantID" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="ProductID" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="Inactive" Type="Boolean" Nullable="false" />
+    <Property Name="CompanyID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="ProductUsageID" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="MsModificationDate" Type="DateTime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Terms_Discount">
+    <Key>
+      <PropertyRef Name="Terms_Discount_ID" />
+    </Key>
+    <Property Name="Terms_Discount_ID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="CompanyID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="Discount_Days" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="Discount_Amount" Type="Decimal" Nullable="false" Precision="18" Scale="5" />
+    <Property Name="Net_Days" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Discount_Taxes" Type="Boolean" Nullable="false" />
+    <Property Name="Percent_Flag" Type="Boolean" Nullable="false" />
+    <Property Name="MsModificationDate" Type="DateTime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TimeCalendar">
+    <Key>
+      <PropertyRef Name="CalendarDate" />
+    </Key>
+    <Property Name="CalendarDateId" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="CalendarDate" Type="DateTime" Nullable="false" />
+    <Property Name="DayEnd" Type="DateTime" />
+    <Property Name="FirstDayOfMonth" Type="DateTime" Nullable="false" />
+    <Property Name="LastDayOfMonth" Type="DateTime" Nullable="false" />
+    <Property Name="MonthEnd" Type="DateTime" />
+    <Property Name="FirstDayOfQtr" Type="DateTime" Nullable="false" />
+    <Property Name="LastDayOfQtr" Type="DateTime" Nullable="false" />
+    <Property Name="QuarterEnd" Type="DateTime" />
+    <Property Name="Month" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="Day" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="Year" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="DayOfWeek" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="DayOfQtr" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="DayOfYear" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="WeekOfYear" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="Quarter" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="LastDayOfMonthFlag" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="FirstDayOfQtrFlag" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="LastDayOfQtrFlag" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="MonthAbbrev" Type="String" Nullable="false" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="DayAbbrev" Type="String" Nullable="false" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="MonthName" Type="String" Nullable="false" MaxLength="9" FixedLength="false" Unicode="false" />
+    <Property Name="DayName" Type="String" Nullable="false" MaxLength="9" FixedLength="false" Unicode="false" />
+    <Property Name="CompanyHoliday" Type="Boolean" Nullable="false" />
+    <Property Name="BusinessDay" Type="Boolean" Nullable="false" />
+    <Property Name="MonthYearAbbrev" Type="String" Nullable="false" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="QtrYearAbbrev" Type="String" Nullable="false" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="MsModificationDate" Type="DateTime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="OrderDetail">
+    <Key>
+      <PropertyRef Name="OrderDetailID" />
+    </Key>
+    <Property Name="OrderDetailID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="OrderID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="ProductID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="Quantity" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
+    <Property Name="UnitPrice" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
+    <Property Name="Mix" Type="Boolean" Nullable="false" />
+    <Property Name="MsModificationDate" Type="DateTime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Schedule">
+    <Key>
+      <PropertyRef Name="ScheduleID" />
+    </Key>
+    <Property Name="ScheduleID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="ProjectProductID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="Active" Type="Boolean" Nullable="false" />
+    <Property Name="MsModificationDate" Type="DateTime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="QuoteSection">
+    <Key>
+      <PropertyRef Name="QuoteSectionID" />
+    </Key>
+    <Property Name="QuoteSectionID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="QuoteTypeID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="SectionContent" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="PositionTop" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="PositionLeft" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="Height" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="Width" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="IsProducts" Type="Boolean" Nullable="false" />
+    <Property Name="IsSurcharges" Type="Boolean" Nullable="false" />
+    <Property Name="IsLogo" Type="Boolean" Nullable="false" />
+    <Property Name="IsCompanyInfo" Type="Boolean" Nullable="false" />
+    <Property Name="IsCustomerInfo" Type="Boolean" Nullable="false" />
+    <Property Name="IsSignature" Type="Boolean" Nullable="false" />
+    <Property Name="IsExpiration" Type="Boolean" Nullable="false" />
+    <Property Name="IsQuoteNumber" Type="Boolean" Nullable="false" />
+    <Property Name="ProductColumns" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MsModificationDate" Type="DateTime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Unit_Of_Measure">
+    <Key>
+      <PropertyRef Name="Unit_Of_Measure_ID" />
+    </Key>
+    <Property Name="Unit_Of_Measure_ID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="CompanyID" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="Imperial_Description" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Metric_Description" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Imperial_To_Metric_Conv_Factor" Type="Decimal" Precision="18" Scale="7" />
+    <Property Name="Conversion_Factor_Type_ID" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="Conversion_Factor_Value" Type="Decimal" Precision="18" Scale="7" />
+    <Property Name="ConnectionCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="UOM" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MsModificationDate" Type="DateTime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Plant">
+    <Key>
+      <PropertyRef Name="PlantID" />
+    </Key>
+    <Property Name="PlantID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="Description" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="SystechCompNbr" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="CSPlantCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="CSShortName" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="CSPlantName" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="Inserted" Type="DateTime" Nullable="false" />
+    <Property Name="Modified" Type="DateTime" Nullable="false" />
+    <Property Name="Inactive_Flag" Type="Boolean" Nullable="false" />
+    <Property Name="DivisionID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="LineOfBusinessID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="PlantCost" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="DeliveryCost" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="MaterialCost" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="SGACost" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="Address1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Address2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="State" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Zip" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Longitude" Type="Decimal" Precision="10" Scale="7" />
+    <Property Name="Latitude" Type="Decimal" Precision="10" Scale="7" />
+    <Property Name="Country" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="MsModificationDate" Type="DateTime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PlantLinesOfBusiness">
+    <Key>
+      <PropertyRef Name="PlantLineOfBusinessID" />
+    </Key>
+    <Property Name="PlantLineOfBusinessID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="LineOfBusinessID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="PlantID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="MsModificationDate" Type="DateTime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProductLine">
+    <Key>
+      <PropertyRef Name="ProductLineID" />
+    </Key>
+    <Property Name="ProductLineID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="CompanyID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="ProductLineCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ProductLineName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Active" Type="Boolean" Nullable="false" />
+    <Property Name="extProductLineCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LineOfBusinessID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="MsModificationDate" Type="DateTime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Surcharge">
+    <Key>
+      <PropertyRef Name="SurchargeID" />
+    </Key>
+    <Property Name="SurchargeID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="CompanyID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="SurchargeName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Rate" Type="Decimal" Nullable="false" Precision="6" Scale="2" />
+    <Property Name="UOMID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="Active" Type="Boolean" Nullable="false" />
+    <Property Name="QuoteDefault" Type="Boolean" Nullable="false" />
+    <Property Name="QuoteSelectable" Type="Boolean" Nullable="false" />
+    <Property Name="PlantID" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="LocalSurchargeID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MsModificationDate" Type="DateTime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CompanyUser">
+    <Key>
+      <PropertyRef Name="CompanyUserID" />
+    </Key>
+    <Property Name="CompanyUserID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="CompanyID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="UserID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="SalesmanCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="MsModificationDate" Type="DateTime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="CompanyID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Active" Type="Boolean" />
+    <Property Name="InsertDate" Type="DateTime" />
+    <Property Name="EmailAddress" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Password" Type="Binary" MaxLength="2147483647" FixedLength="false" />
+    <Property Name="CellPhoneNumber" Type="String" MaxLength="14" FixedLength="false" Unicode="false" />
+    <Property Name="PhoneNumber" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="FaxNumber" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="SalesmanCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="ReportsToID" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="DeviationTypeID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="DeviationAmount" Type="Decimal" Precision="11" Scale="2" />
+    <Property Name="Address1" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Address2" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ST" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Zip" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Latitude" Type="Decimal" Precision="9" Scale="5" />
+    <Property Name="Longitude" Type="Decimal" Precision="9" Scale="5" />
+    <Property Name="UsesSAML" Type="Boolean" Nullable="false" />
+    <Property Name="Country" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="DefaultMailMessage" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="MsModificationDate" Type="DateTime" Nullable="false" />
+    <Property Name="AdministratorID" Type="Decimal" Precision="38" Scale="0" />
+  </EntityType>
+  <EntityType Name="CompetitorPlant">
+    <Key>
+      <PropertyRef Name="CompetitorPlantID" />
+    </Key>
+    <Property Name="CompetitorPlantID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="CompetitorID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="PlantName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Inserted" Type="DateTime" Nullable="false" />
+    <Property Name="Modified" Type="DateTime" Nullable="false" />
+    <Property Name="Inactive_Flag" Type="Boolean" Nullable="false" />
+    <Property Name="PlantCost" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="DeliveryCost" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="MaterialCost" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="SGACost" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="Address1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Address2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="State" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Zip" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Longitude" Type="Decimal" Precision="10" Scale="7" />
+    <Property Name="Latitude" Type="Decimal" Precision="10" Scale="7" />
+    <Property Name="LineOfBusinessID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="DivisionID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="Country" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="MsModificationDate" Type="DateTime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProductTemplate">
+    <Key>
+      <PropertyRef Name="ProductTemplateID" />
+    </Key>
+    <Property Name="ProductTemplateID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="TemplateName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CompanyUserID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="Inactive" Type="Boolean" Nullable="false" />
+    <Property Name="MsModificationDate" Type="DateTime" Nullable="false" />
+    <Property Name="Shared" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TemplatedProduct">
+    <Key>
+      <PropertyRef Name="TemplatedProductID" />
+    </Key>
+    <Property Name="TemplatedProductID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="ProductTemplateID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="ProductTypeID" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="ProductID" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="PlantID" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="ProductUsageID" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="LineOfBusinessID" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="ProductLineID" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="Qty" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="Price" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="Freight" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="FreightPay" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="Description" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="IncludeInForecast" Type="Boolean" />
+    <Property Name="Note" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Category" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MsModificationDate" Type="DateTime" Nullable="false" />
+    <Property Name="UOMID" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="PriceExtensionCode" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Prospect">
+    <Key>
+      <PropertyRef Name="ProspectID" />
+    </Key>
+    <Property Name="ProspectID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="Private" Type="Boolean" />
+    <Property Name="OwnerID" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="CompanyID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="ProspectName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Inserted" Type="DateTime" Nullable="false" />
+    <Property Name="Modified" Type="DateTime" Nullable="false" />
+    <Property Name="ProspectCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ConnectionCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LocalCustNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LocalCustName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IsCustomer" Type="Boolean" Nullable="false" />
+    <Property Name="Credit_Status_ID" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="CustomerStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Sales" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Margin" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="MaterialMargin" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="JobCount" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="Address1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Address2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="City" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="State" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Zip" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="Phone" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="HighestBalance" Type="Decimal" Precision="12" Scale="2" />
+    <Property Name="AvgInvoiceAmt" Type="Decimal" Precision="12" Scale="2" />
+    <Property Name="AvgDaysToPay" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="AvgDaysPastDue" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="TotalDue" Type="Decimal" Precision="12" Scale="2" />
+    <Property Name="ZeroTo30Days" Type="Decimal" Precision="12" Scale="2" />
+    <Property Name="ThirtyOneTo60Days" Type="Decimal" Precision="12" Scale="2" />
+    <Property Name="SixtyOneTo90Days" Type="Decimal" Precision="12" Scale="2" />
+    <Property Name="NinetyOneTo120Days" Type="Decimal" Precision="12" Scale="2" />
+    <Property Name="Over120Days" Type="Decimal" Precision="12" Scale="2" />
+    <Property Name="CustomerTypeID" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="StatementFrequency" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="FinanceRate" Type="Decimal" Precision="5" Scale="2" />
+    <Property Name="PaymentTermsID" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="SalesmanCode" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="Fax" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="WebSite" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AvgRevenue" Type="Decimal" Precision="12" Scale="2" />
+    <Property Name="NumberofEmployees" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="CompanyOriginDate" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="BusinessTypeID" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="Notes" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Country" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="PORequired" Type="Boolean" />
+    <Property Name="MsModificationDate" Type="DateTime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ContactNote">
+    <Key>
+      <PropertyRef Name="ContactNoteID" />
+    </Key>
+    <Property Name="ContactNoteID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="ContactID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="Note" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="Inserted" Type="DateTime" Nullable="false" />
+    <Property Name="CreatedBy" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="Subject" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="Source" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MsModificationDate" Type="DateTime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Contact">
+    <Key>
+      <PropertyRef Name="ContactID" />
+    </Key>
+    <Property Name="ContactID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="Private" Type="Boolean" />
+    <Property Name="OwnerID" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="FirstName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="LastName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ProspectID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MobilePhone" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Phone" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Fax" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FullName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="StartingYearatCompany" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="Department" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Address2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="State" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Zip" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Salutation" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Notes" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Inserted" Type="DateTime" />
+    <Property Name="Modified" Type="DateTime" />
+    <Property Name="Country" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="MsModificationDate" Type="DateTime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Project">
+    <Key>
+      <PropertyRef Name="ProjectID" />
+    </Key>
+    <Property Name="ProjectID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="Private" Type="Boolean" />
+    <Property Name="OwnerID" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="CompanyID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="ProjectName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ProjectTypeID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="StatusID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="StatusChangeDate" Type="DateTime" Nullable="false" />
+    <Property Name="SourceID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="Active" Type="Boolean" Nullable="false" />
+    <Property Name="Address1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Address2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="County" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="State" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ZipCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PlantID" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="SalespersonID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="BidDate" Type="DateTime" />
+    <Property Name="LostReasonID" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="LostToID" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="LostNote" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="Inserted" Type="DateTime" Nullable="false" />
+    <Property Name="Modified" Type="DateTime" />
+    <Property Name="PrevStatus" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="Exported" Type="Boolean" />
+    <Property Name="WinningProjectBidderID" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="StartDate" Type="DateTime" />
+    <Property Name="EndDate" Type="DateTime" />
+    <Property Name="TotalYards" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="ConnectionCode" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="CustCode" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ProjectCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Longitude" Type="Decimal" Precision="9" Scale="5" />
+    <Property Name="Latitude" Type="Decimal" Precision="9" Scale="5" />
+    <Property Name="GeofenceID" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="Country" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ProjectDescription" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ZoneCodeID" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="MsModificationDate" Type="DateTime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProjectProduct">
+    <Key>
+      <PropertyRef Name="ProjectProductID" />
+    </Key>
+    <Property Name="ProjectProductID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="ProjectID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="Qty" Type="Decimal" Nullable="false" Precision="16" Scale="2" />
+    <Property Name="UOMID" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="Inserted" Type="DateTime" Nullable="false" />
+    <Property Name="Modified" Type="DateTime" Nullable="false" />
+    <Property Name="Price" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="ProductLineID" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="ProductTypeID" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="ProductID" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="PsiID" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="ProductUsageID" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="Note" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Forecasted" Type="Boolean" />
+    <Property Name="PlantID" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="Freight" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="FreightPay" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="CompetitorPrice" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="Category" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Description" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="LineOfBusinessID" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="StatusID" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="MsModificationDate" Type="DateTime" Nullable="false" />
+    <Property Name="LostReasonID" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="LostToID" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="LostNote" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="PriceExtensionCode" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+  </EntityType>
+  <EntityType Name="ProjectNote">
+    <Key>
+      <PropertyRef Name="NoteID" />
+    </Key>
+    <Property Name="NoteID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="ProjectID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="Note" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="Inserted" Type="DateTime" Nullable="false" />
+    <Property Name="CreatedBy" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="MsModificationDate" Type="DateTime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProjectBidder">
+    <Key>
+      <PropertyRef Name="ProjectBidderID" />
+    </Key>
+    <Property Name="ProjectBidderID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="ProjectID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="ProspectID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="Quoted" Type="Boolean" />
+    <Property Name="StatusSub" Type="Boolean" />
+    <Property Name="QuoteDate" Type="DateTime" />
+    <Property Name="NotLIkeLIst" Type="Boolean" />
+    <Property Name="StatusID" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="PlantID" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="ProjectCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="StartDate" Type="DateTime" />
+    <Property Name="EndDate" Type="DateTime" />
+    <Property Name="PONumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MinLoadCharge" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="SundryCharge" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="SeasonalCharge" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="UnloadCharge" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="CustJobNbr" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MsModificationDate" Type="DateTime" Nullable="false" />
+    <Property Name="EffectiveDate" Type="DateTime" />
+  </EntityType>
+  <EntityType Name="ProjectBidderProduct">
+    <Key>
+      <PropertyRef Name="ProjectBidderProductID" />
+    </Key>
+    <Property Name="ProjectBidderProductID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="ProjectBidderID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="ProjectProductID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="Price" Type="Decimal" Nullable="false" Precision="9" Scale="2" />
+    <Property Name="Inserted" Type="DateTime" Nullable="false" />
+    <Property Name="Modified" Type="DateTime" Nullable="false" />
+    <Property Name="SameAsList" Type="Boolean" />
+    <Property Name="Forecasted" Type="Boolean" />
+    <Property Name="Freight" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="FreightPay" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="ListPrice" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="CustomerPrice" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="Exported" Type="Boolean" Nullable="false" />
+    <Property Name="Quantity" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="StatusID" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="LineNbr" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="MsModificationDate" Type="DateTime" Nullable="false" />
+    <Property Name="PreviousPrice" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="PreviousDeliveredPrice" Type="Decimal" Precision="9" Scale="2" />
+  </EntityType>
+  <EntityType Name="Quote">
+    <Key>
+      <PropertyRef Name="QuoteID" />
+    </Key>
+    <Property Name="QuoteID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="ProjectBidderID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="ContactID" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="TermsID" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="Attention" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Phone" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="CellPhone" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Fax" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="QuoteDate" Type="DateTime" Nullable="false" />
+    <Property Name="FirmUntilDate" Type="DateTime" Nullable="false" />
+    <Property Name="QuoteSequenceNumber" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="QuoteTypeID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="DateCreated" Type="DateTime" Nullable="false" />
+    <Property Name="DateLastModified" Type="DateTime" Nullable="false" />
+    <Property Name="CustomerQuoteID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Exported" Type="Boolean" Nullable="false" />
+    <Property Name="EscalationDate" Type="DateTime" />
+    <Property Name="QuoteNote" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="EscalationAmount" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="QuoteStatusID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="Notes" Type="String" MaxLength="3000" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedByID" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="OrderDate" Type="DateTime" />
+    <Property Name="StartOrderDate" Type="DateTime" />
+    <Property Name="ExpireOrderDate" Type="DateTime" />
+    <Property Name="VehicleTypeID_1" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="VehicleTypeID_2" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="VehicleTypeID_3" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="VehicleTypeID_4" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="VehicleTypeID_5" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="CustomerOrderID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="PurchaseOrder" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="BeginDate" Type="DateTime" />
+    <Property Name="ApexNoteID" Type="Boolean" />
+    <Property Name="AllowBeforeStart" Type="Boolean" />
+    <Property Name="AllowAfterEnd" Type="Boolean" />
+    <Property Name="AllowExceedQty" Type="Boolean" />
+    <Property Name="AllowExceedLoads" Type="Boolean" />
+    <Property Name="AllowAfterComplete" Type="Boolean" />
+    <Property Name="MsModificationDate" Type="DateTime" Nullable="false" />
+    <Property Name="SalespersonID" Type="Decimal" Precision="38" Scale="0" />
+  </EntityType>
+  <EntityType Name="ProjectDistance">
+    <Key>
+      <PropertyRef Name="ProjectDistanceID" />
+    </Key>
+    <Property Name="ProjectDistanceID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="ProjectID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="PlantID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="Miles" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="Kilometers" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="MsModificationDate" Type="DateTime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Company">
+    <Key>
+      <PropertyRef Name="CompanyID" />
+    </Key>
+    <Property Name="CompanyID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="CompanyName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Address1" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Address2" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="City" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ST" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Zip" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Phone1" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+    <Property Name="Phone2" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+    <Property Name="Fax" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+    <Property Name="ServiceUrl" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="QuoteImage" Type="Binary" MaxLength="2147483647" FixedLength="false" />
+    <Property Name="SourceSystemID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="ChannelID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="InstanceID" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="CompanyCode" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="UsesCategories" Type="Boolean" />
+    <Property Name="MaxQuantity" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="DefaultUomID" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="Cert509" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" />
+    <Property Name="UsesSAML" Type="Boolean" Nullable="false" />
+    <Property Name="TimeoutRedirect" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="ChangeProjectCode" Type="Boolean" Nullable="false" />
+    <Property Name="UsesPriceIntegration" Type="Boolean" Nullable="false" />
+    <Property Name="UsesSalesOrders" Type="Boolean" Nullable="false" />
+    <Property Name="Country" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="MsModificationDate" Type="DateTime" Nullable="false" />
+  </EntityType>
+</Schema>

@@ -1,0 +1,19 @@
+﻿using System.Collections.ObjectModel;
+using mcTransmitter;
+
+namespace ScoutII.DTOs {
+    public class JobExportDto : IKey {
+        #region IKey Members
+
+        public string Key {
+            get;
+            set;
+        }
+
+        #endregion
+
+        public Collection<string> JobFiles { get; set; } 
+
+        public string FileName { get; set; }
+    }
+}

@@ -1,0 +1,22 @@
+﻿using System.Collections.ObjectModel;
+
+namespace mcTransmitter.DTOs {
+    public class ApexExport_Dto : IKey {
+        #region IKey Members
+
+        public string Key {
+            get;
+            set;
+        }
+
+        #endregion
+        public Apex_SLJOB_Dto JobDto { get; set; }
+        public Collection<Apex_SLJOBDET_Dto> JobDetCollection { get; set; }
+        public Collection<Apex_SLJOBPRD_Dto> JobPrdCollection { get; set; }
+        public Apex_SLORDNAM_Dto SlordnamDto { get; set; }
+        public Collection<Apex_SLORDER_Dto> SlorderCollection { get; set; }
+        public string JobId { get; set; }
+    }
+}
+
+

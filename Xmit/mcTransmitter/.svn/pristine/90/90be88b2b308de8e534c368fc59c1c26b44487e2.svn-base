@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+  <startup>
+    <supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.5" />
+  </startup>
+  <configSections>
+    <section name="entityFramework" type="System.Data.Entity.Internal.ConfigFile.EntityFrameworkSection, EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" requirePermission="false" />
+  </configSections>
+  <connectionStrings>
+    <add name="ScoutV2Entities" connectionString="metadata=res://*/ScoutContext.csdl|res://*/ScoutContext.ssdl|res://*/ScoutContext.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=323-L-JOHN\SqlExpress;initial catalog=ScoutV2;integrated security=True;multipleactiveresultsets=True;application name=mcTransmitter&quot;" providerName="System.Data.EntityClient" />
+    <add name="ApexEntities" connectionString="metadata=res://*/Apex.csdl|res://*/Apex.ssdl|res://*/Apex.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=323-BOOTH-SVR2;initial catalog=ApexMOBILESales;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework&quot;" providerName="System.Data.EntityClient" />
+</connectionStrings>
+    <appSettings>
+        <add key="destinationFolder" value="" />
+        <add key="ServiceUrl" value="http://localhost:65198/" />
+    </appSettings>
+</configuration>

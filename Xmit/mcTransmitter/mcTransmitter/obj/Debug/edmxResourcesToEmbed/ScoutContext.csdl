@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ScoutV2Model" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="ScoutV2Entities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="ProspectChanges" EntityType="ScoutV2Model.ProspectChange" />
+    <EntitySet Name="Prospects" EntityType="ScoutV2Model.Prospect" />
+    <AssociationSet Name="FK_ProspectChanges_Prospects" Association="ScoutV2Model.FK_ProspectChanges_Prospects">
+      <End Role="Prospects" EntitySet="Prospects" />
+      <End Role="ProspectChanges" EntitySet="ProspectChanges" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="ProspectChange">
+    <Key>
+      <PropertyRef Name="ProspectChangeID" />
+    </Key>
+    <Property Name="ProspectChangeID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="ProspectID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Prospect" Relationship="ScoutV2Model.FK_ProspectChanges_Prospects" FromRole="ProspectChanges" ToRole="Prospects" />
+  </EntityType>
+  <EntityType Name="Prospect">
+    <Key>
+      <PropertyRef Name="ProspectID" />
+    </Key>
+    <Property Name="ProspectID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Private" Type="Boolean" />
+    <Property Name="OwnerID" Type="Int32" />
+    <Property Name="CompanyID" Type="Int32" Nullable="false" />
+    <Property Name="ProspectName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Inserted" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Modified" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="ProspectCode" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="ConnectionCode" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="LocalCustNumber" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="LocalCustName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Credit_Status_ID" Type="Int32" />
+    <Property Name="CustomerStatus" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Sales" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Margin" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="MaterialMargin" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="JobCount" Type="Int32" />
+    <Property Name="Address1" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Address2" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="City" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="State" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="Zip" Type="String" MaxLength="15" Unicode="false" FixedLength="false" />
+    <Property Name="Phone" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="HighestBalance" Type="Decimal" Precision="12" Scale="2" />
+    <Property Name="AvgInvoiceAmt" Type="Decimal" Precision="12" Scale="2" />
+    <Property Name="AvgDaysToPay" Type="Int32" />
+    <Property Name="AvgDaysPastDue" Type="Int32" />
+    <Property Name="TotalDue" Type="Decimal" Precision="12" Scale="2" />
+    <Property Name="ZeroTo30Days" Type="Decimal" Precision="12" Scale="2" />
+    <Property Name="ThirtyOneTo60Days" Type="Decimal" Precision="12" Scale="2" />
+    <Property Name="SixtyOneTo90Days" Type="Decimal" Precision="12" Scale="2" />
+    <Property Name="NinetyOneTo120Days" Type="Decimal" Precision="12" Scale="2" />
+    <Property Name="Over120Days" Type="Decimal" Precision="12" Scale="2" />
+    <Property Name="CustomerTypeID" Type="Int32" />
+    <Property Name="StatementFrequency" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="FinanceRate" Type="Decimal" Precision="5" Scale="2" />
+    <Property Name="PaymentTermsID" Type="Int32" />
+    <Property Name="SalesmanCode" Type="String" MaxLength="15" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="ProspectChanges" Relationship="ScoutV2Model.FK_ProspectChanges_Prospects" FromRole="Prospects" ToRole="ProspectChanges" />
+  </EntityType>
+  <Association Name="FK_ProspectChanges_Prospects">
+    <End Role="Prospects" Type="ScoutV2Model.Prospect" Multiplicity="1" />
+    <End Role="ProspectChanges" Type="ScoutV2Model.ProspectChange" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Prospects">
+        <PropertyRef Name="ProspectID" />
+      </Principal>
+      <Dependent Role="ProspectChanges">
+        <PropertyRef Name="ProspectID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

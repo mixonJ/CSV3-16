@@ -1,0 +1,30 @@
+﻿using System;
+
+namespace mcTransmitter.DTOs {
+    public class Apex_SLORDER_Dto : IKey {
+        #region IKey Members
+
+        public string Key {
+            get;
+            set;
+        }
+
+        #endregion
+
+        public string CustomerID { get; set; }
+        public string OrderID { get; set; }
+        public string LocationID { get; set; }
+        public string ProductID { get; set; }
+        public string Item { get; set; }
+        public string JobID { get; set; }
+        public string JobCostID { get; set; }
+        public string ProductName { get; set; }
+        public double Price { get; set; }
+        public double Frt1FreightRate { get; set; }
+        public double Frt1FreightPay { get; set; }
+        public double OrderQty { get; set; }
+        public string MatlUnitID { get; set; }
+        public string UpdateProdDesc { get; set; }
+        public DateTime ExpireDate { get; set; }
+    }
+}

@@ -1,0 +1,333 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ApexModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="ApexEntities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="Sljobs" EntityType="ApexModel.Sljob" />
+    <EntitySet Name="Sljobdets" EntityType="ApexModel.Sljobdet" />
+    <EntitySet Name="Sljobprds" EntityType="ApexModel.Sljobprd" />
+    <EntitySet Name="Slorders" EntityType="ApexModel.Slorder" />
+    <EntitySet Name="Slordnams" EntityType="ApexModel.Slordnam" />
+    <EntitySet Name="Slcusts" EntityType="ApexModel.Slcust" />
+    <EntitySet Name="Slprospes" EntityType="ApexModel.Slprospe" />
+    <EntitySet Name="Sycontacs" EntityType="ApexModel.Sycontac" />
+    <EntitySet Name="Sygeofence" EntityType="ApexModel.Sygeofence" />
+  </EntityContainer>
+  <EntityType Name="Sygeofence">
+    <Key>
+      <PropertyRef Name="GeofenceID" />
+    </Key>
+    <Property Type="Double" Name="Latitude" Nullable="false" />
+    <Property Type="Double" Name="Longitude" Nullable="false" />
+    <Property Type="Int32" Name="GeofenceID" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Sljob">
+    <Key>
+      <PropertyRef Name="JobID" />
+    </Key>
+    <Property Type="DateTime" Name="BidDate" Nullable="false" />
+    <Property Type="DateTime" Name="BeginDate" Nullable="false" />
+    <Property Type="DateTime" Name="OrderDate" Nullable="false" />
+    <Property Type="String" Name="Description1" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Description2" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="JobID" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="SalespersonID" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TypeID" Nullable="false" MaxLength="1" FixedLength="true" Unicode="true" />
+    <Property Type="String" Name="ShipAddress1" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ShipAddress2" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ShipCity" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ShipState" Nullable="false" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ShipZip" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ShipCounty" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Double" Name="Latitude" Nullable="false" />
+    <Property Type="Double" Name="Longitude" Nullable="false" />
+    <Property Type="Int32" Name="GeofenceID" Nullable="false" />
+    <Property Type="String" Name="BidResults" Nullable="false" MaxLength="1" FixedLength="true" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Sljobdet">
+    <Key>
+      <PropertyRef Name="JobID" />
+      <PropertyRef Name="JobCostID" />
+    </Key>
+    <Property Type="String" Name="JobID" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="JobCostID" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Description1" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Sljobprd">
+    <Key>
+      <PropertyRef Name="LocationID" />
+      <PropertyRef Name="ProductID" />
+      <PropertyRef Name="JobID" />
+      <PropertyRef Name="JobCostID" />
+    </Key>
+    <Property Type="String" Name="JobID" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="JobCostID" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ProductID" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="LocationID" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ProductName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Double" Name="Price" Nullable="false" />
+    <Property Type="Double" Name="OrderQty" Nullable="false" />
+    <Property Type="String" Name="MatlUnitID" Nullable="false" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="UpdateProdDesc" Nullable="false" MaxLength="1" Unicode="true" />
+    <Property Type="Double" Name="Frt1FreightPay" Nullable="false" />
+    <Property Type="Double" Name="Frt2FreightPay" Nullable="false" />
+    <Property Type="Double" Name="Frt3FreightPay" Nullable="false" />
+    <Property Type="Double" Name="Frt4FreightPay" Nullable="false" />
+    <Property Type="Double" Name="Frt5FreightPay" Nullable="false" />
+    <Property Type="Double" Name="Frt6FreightPay" Nullable="false" />
+    <Property Type="Double" Name="Frt7FreightPay" Nullable="false" />
+    <Property Type="Double" Name="Frt8FreightPay" Nullable="false" />
+    <Property Type="Double" Name="Frt9FreightPay" Nullable="false" />
+    <Property Type="Double" Name="Frt10FreightPay" Nullable="false" />
+    <Property Type="Double" Name="Frt11FreightPay" Nullable="false" />
+    <Property Type="Double" Name="Frt12FreightPay" Nullable="false" />
+    <Property Type="Double" Name="Frt13FreightPay" Nullable="false" />
+    <Property Type="Double" Name="Frt14FreightPay" Nullable="false" />
+    <Property Type="Double" Name="Frt15FreightPay" Nullable="false" />
+    <Property Type="Double" Name="Frt16FreightPay" Nullable="false" />
+    <Property Type="Double" Name="Frt17FreightPay" Nullable="false" />
+    <Property Type="Double" Name="Frt18FreightPay" Nullable="false" />
+    <Property Type="Double" Name="Frt19FreightPay" Nullable="false" />
+    <Property Type="Double" Name="Frt20FreightPay" Nullable="false" />
+    <Property Type="Double" Name="Frt21FreightPay" Nullable="false" />
+    <Property Type="Double" Name="Frt22FreightPay" Nullable="false" />
+    <Property Type="Double" Name="Frt23FreightPay" Nullable="false" />
+    <Property Type="Double" Name="Frt24FreightPay" Nullable="false" />
+    <Property Type="Double" Name="Frt25FreightPay" Nullable="false" />
+    <Property Type="String" Name="Frt1FreightRateType" Nullable="false" MaxLength="1" Unicode="true" />
+    <Property Type="String" Name="Frt2FreightRateType" Nullable="false" MaxLength="1" Unicode="true" />
+    <Property Type="String" Name="Frt3FreightRateType" Nullable="false" MaxLength="1" Unicode="true" />
+    <Property Type="String" Name="Frt4FreightRateType" Nullable="false" MaxLength="1" Unicode="true" />
+    <Property Type="String" Name="Frt5FreightRateType" Nullable="false" MaxLength="1" Unicode="true" />
+    <Property Type="String" Name="Frt6FreightRateType" Nullable="false" MaxLength="1" Unicode="true" />
+    <Property Type="String" Name="Frt7FreightRateType" Nullable="false" MaxLength="1" Unicode="true" />
+    <Property Type="String" Name="Frt8FreightRateType" Nullable="false" MaxLength="1" Unicode="true" />
+    <Property Type="String" Name="Frt9FreightRateType" Nullable="false" MaxLength="1" Unicode="true" />
+    <Property Type="String" Name="Frt10FreightRateType" Nullable="false" MaxLength="1" Unicode="true" />
+    <Property Type="String" Name="Frt11FreightRateType" Nullable="false" MaxLength="1" Unicode="true" />
+    <Property Type="String" Name="Frt12FreightRateType" Nullable="false" MaxLength="1" Unicode="true" />
+    <Property Type="String" Name="Frt13FreightRateType" Nullable="false" MaxLength="1" Unicode="true" />
+    <Property Type="String" Name="Frt14FreightRateType" Nullable="false" MaxLength="1" Unicode="true" />
+    <Property Type="String" Name="Frt15FreightRateType" Nullable="false" MaxLength="1" Unicode="true" />
+    <Property Type="String" Name="Frt16FreightRateType" Nullable="false" MaxLength="1" Unicode="true" />
+    <Property Type="String" Name="Frt17FreightRateType" Nullable="false" MaxLength="1" Unicode="true" />
+    <Property Type="String" Name="Frt18FreightRateType" Nullable="false" MaxLength="1" Unicode="true" />
+    <Property Type="String" Name="Frt19FreightRateType" Nullable="false" MaxLength="1" Unicode="true" />
+    <Property Type="String" Name="Frt20FreightRateType" Nullable="false" MaxLength="1" Unicode="true" />
+    <Property Type="String" Name="Frt21FreightRateType" Nullable="false" MaxLength="1" Unicode="true" />
+    <Property Type="String" Name="Frt22FreightRateType" Nullable="false" MaxLength="1" Unicode="true" />
+    <Property Type="String" Name="Frt23FreightRateType" Nullable="false" MaxLength="1" Unicode="true" />
+    <Property Type="String" Name="Frt24FreightRateType" Nullable="false" MaxLength="1" Unicode="true" />
+    <Property Type="String" Name="Frt25FreightRateType" Nullable="false" MaxLength="1" Unicode="true" />
+    <Property Type="Double" Name="Frt1FreightRate" Nullable="false" />
+    <Property Type="Double" Name="Frt2FreightRate" Nullable="false" />
+    <Property Type="Double" Name="Frt3FreightRate" Nullable="false" />
+    <Property Type="Double" Name="Frt4FreightRate" Nullable="false" />
+    <Property Type="Double" Name="Frt5FreightRate" Nullable="false" />
+    <Property Type="Double" Name="Frt6FreightRate" Nullable="false" />
+    <Property Type="Double" Name="Frt7FreightRate" Nullable="false" />
+    <Property Type="Double" Name="Frt8FreightRate" Nullable="false" />
+    <Property Type="Double" Name="Frt9FreightRate" Nullable="false" />
+    <Property Type="Double" Name="Frt10FreightRate" Nullable="false" />
+    <Property Type="Double" Name="Frt11FreightRate" Nullable="false" />
+    <Property Type="Double" Name="Frt12FreightRate" Nullable="false" />
+    <Property Type="Double" Name="Frt13FreightRate" Nullable="false" />
+    <Property Type="Double" Name="Frt14FreightRate" Nullable="false" />
+    <Property Type="Double" Name="Frt15FreightRate" Nullable="false" />
+    <Property Type="Double" Name="Frt16FreightRate" Nullable="false" />
+    <Property Type="Double" Name="Frt17FreightRate" Nullable="false" />
+    <Property Type="Double" Name="Frt18FreightRate" Nullable="false" />
+    <Property Type="Double" Name="Frt19FreightRate" Nullable="false" />
+    <Property Type="Double" Name="Frt20FreightRate" Nullable="false" />
+    <Property Type="Double" Name="Frt21FreightRate" Nullable="false" />
+    <Property Type="Double" Name="Frt22FreightRate" Nullable="false" />
+    <Property Type="Double" Name="Frt23FreightRate" Nullable="false" />
+    <Property Type="Double" Name="Frt24FreightRate" Nullable="false" />
+    <Property Type="Double" Name="Frt25FreightRate" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Slorder">
+    <Key>
+      <PropertyRef Name="CustomerID" />
+      <PropertyRef Name="OrderID" />
+      <PropertyRef Name="LocationID" />
+      <PropertyRef Name="ProductID" />
+      <PropertyRef Name="Item" />
+    </Key>
+    <Property Type="String" Name="CustomerID" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="OrderID" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="LocationID" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ProductID" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Item" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="JobID" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="JobCostID" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ProductName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Double" Name="Price" Nullable="false" />
+    <Property Type="Double" Name="OrderQty" Nullable="false" />
+    <Property Type="String" Name="UpdateProdDesc" Nullable="false" MaxLength="1" Unicode="true" />
+    <Property Type="Double" Name="Frt1FreightPay" Nullable="false" />
+    <Property Type="Double" Name="Frt2FreightPay" Nullable="false" />
+    <Property Type="Double" Name="Frt3FreightPay" Nullable="false" />
+    <Property Type="Double" Name="Frt4FreightPay" Nullable="false" />
+    <Property Type="Double" Name="Frt5FreightPay" Nullable="false" />
+    <Property Type="Double" Name="Frt6FreightPay" Nullable="false" />
+    <Property Type="Double" Name="Frt7FreightPay" Nullable="false" />
+    <Property Type="Double" Name="Frt8FreightPay" Nullable="false" />
+    <Property Type="Double" Name="Frt9FreightPay" Nullable="false" />
+    <Property Type="Double" Name="Frt10FreightPay" Nullable="false" />
+    <Property Type="Double" Name="Frt11FreightPay" Nullable="false" />
+    <Property Type="Double" Name="Frt12FreightPay" Nullable="false" />
+    <Property Type="Double" Name="Frt13FreightPay" Nullable="false" />
+    <Property Type="Double" Name="Frt14FreightPay" Nullable="false" />
+    <Property Type="Double" Name="Frt15FreightPay" Nullable="false" />
+    <Property Type="Double" Name="Frt16FreightPay" Nullable="false" />
+    <Property Type="Double" Name="Frt17FreightPay" Nullable="false" />
+    <Property Type="Double" Name="Frt18FreightPay" Nullable="false" />
+    <Property Type="Double" Name="Frt19FreightPay" Nullable="false" />
+    <Property Type="Double" Name="Frt20FreightPay" Nullable="false" />
+    <Property Type="Double" Name="Frt21FreightPay" Nullable="false" />
+    <Property Type="Double" Name="Frt22FreightPay" Nullable="false" />
+    <Property Type="Double" Name="Frt23FreightPay" Nullable="false" />
+    <Property Type="Double" Name="Frt24FreightPay" Nullable="false" />
+    <Property Type="Double" Name="Frt25FreightPay" Nullable="false" />
+    <Property Type="String" Name="Frt1FreightRateType" Nullable="false" MaxLength="1" Unicode="true" />
+    <Property Type="String" Name="Frt2FreightRateType" Nullable="false" MaxLength="1" Unicode="true" />
+    <Property Type="String" Name="Frt3FreightRateType" Nullable="false" MaxLength="1" Unicode="true" />
+    <Property Type="String" Name="Frt4FreightRateType" Nullable="false" MaxLength="1" Unicode="true" />
+    <Property Type="String" Name="Frt5FreightRateType" Nullable="false" MaxLength="1" Unicode="true" />
+    <Property Type="String" Name="Frt6FreightRateType" Nullable="false" MaxLength="1" Unicode="true" />
+    <Property Type="String" Name="Frt7FreightRateType" Nullable="false" MaxLength="1" Unicode="true" />
+    <Property Type="String" Name="Frt8FreightRateType" Nullable="false" MaxLength="1" Unicode="true" />
+    <Property Type="String" Name="Frt9FreightRateType" Nullable="false" MaxLength="1" Unicode="true" />
+    <Property Type="String" Name="Frt10FreightRateType" Nullable="false" MaxLength="1" Unicode="true" />
+    <Property Type="String" Name="Frt11FreightRateType" Nullable="false" MaxLength="1" Unicode="true" />
+    <Property Type="String" Name="Frt12FreightRateType" Nullable="false" MaxLength="1" Unicode="true" />
+    <Property Type="String" Name="Frt13FreightRateType" Nullable="false" MaxLength="1" Unicode="true" />
+    <Property Type="String" Name="Frt14FreightRateType" Nullable="false" MaxLength="1" Unicode="true" />
+    <Property Type="String" Name="Frt15FreightRateType" Nullable="false" MaxLength="1" Unicode="true" />
+    <Property Type="String" Name="Frt16FreightRateType" Nullable="false" MaxLength="1" Unicode="true" />
+    <Property Type="String" Name="Frt17FreightRateType" Nullable="false" MaxLength="1" Unicode="true" />
+    <Property Type="String" Name="Frt18FreightRateType" Nullable="false" MaxLength="1" Unicode="true" />
+    <Property Type="String" Name="Frt19FreightRateType" Nullable="false" MaxLength="1" Unicode="true" />
+    <Property Type="String" Name="Frt20FreightRateType" Nullable="false" MaxLength="1" Unicode="true" />
+    <Property Type="String" Name="Frt21FreightRateType" Nullable="false" MaxLength="1" Unicode="true" />
+    <Property Type="String" Name="Frt22FreightRateType" Nullable="false" MaxLength="1" Unicode="true" />
+    <Property Type="String" Name="Frt23FreightRateType" Nullable="false" MaxLength="1" Unicode="true" />
+    <Property Type="String" Name="Frt24FreightRateType" Nullable="false" MaxLength="1" Unicode="true" />
+    <Property Type="String" Name="Frt25FreightRateType" Nullable="false" MaxLength="1" Unicode="true" />
+    <Property Type="Double" Name="Frt1FreightRate" Nullable="false" />
+    <Property Type="Double" Name="Frt2FreightRate" Nullable="false" />
+    <Property Type="Double" Name="Frt3FreightRate" Nullable="false" />
+    <Property Type="Double" Name="Frt4FreightRate" Nullable="false" />
+    <Property Type="Double" Name="Frt5FreightRate" Nullable="false" />
+    <Property Type="Double" Name="Frt6FreightRate" Nullable="false" />
+    <Property Type="Double" Name="Frt7FreightRate" Nullable="false" />
+    <Property Type="Double" Name="Frt8FreightRate" Nullable="false" />
+    <Property Type="Double" Name="Frt9FreightRate" Nullable="false" />
+    <Property Type="Double" Name="Frt10FreightRate" Nullable="false" />
+    <Property Type="Double" Name="Frt11FreightRate" Nullable="false" />
+    <Property Type="Double" Name="Frt12FreightRate" Nullable="false" />
+    <Property Type="Double" Name="Frt13FreightRate" Nullable="false" />
+    <Property Type="Double" Name="Frt14FreightRate" Nullable="false" />
+    <Property Type="Double" Name="Frt15FreightRate" Nullable="false" />
+    <Property Type="Double" Name="Frt16FreightRate" Nullable="false" />
+    <Property Type="Double" Name="Frt17FreightRate" Nullable="false" />
+    <Property Type="Double" Name="Frt18FreightRate" Nullable="false" />
+    <Property Type="Double" Name="Frt19FreightRate" Nullable="false" />
+    <Property Type="Double" Name="Frt20FreightRate" Nullable="false" />
+    <Property Type="Double" Name="Frt21FreightRate" Nullable="false" />
+    <Property Type="Double" Name="Frt22FreightRate" Nullable="false" />
+    <Property Type="Double" Name="Frt23FreightRate" Nullable="false" />
+    <Property Type="Double" Name="Frt24FreightRate" Nullable="false" />
+    <Property Type="Double" Name="Frt25FreightRate" Nullable="false" />
+    <Property Type="DateTime" Name="ExpireDate" Nullable="false" />
+    <Property Type="DateTime" Name="SchedStartDate" Nullable="false" />
+    <Property Type="DateTime" Name="SchedStartTime" Nullable="false" />
+    <Property Type="String" Name="MatlUnitID" Nullable="false" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="PurchaseOrder" Nullable="false" MaxLength="50" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Slordnam">
+    <Key>
+      <PropertyRef Name="CustomerID" />
+      <PropertyRef Name="OrderID" />
+    </Key>
+    <Property Type="Int32" Name="GeofenceID" Nullable="false" />
+    <Property Type="String" Name="CustomerID" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="OrderID" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="JobID" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Description1" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Description2" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="QuoteFlag" Nullable="false" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="OrderFlag" Nullable="false" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ShipAddress1" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ShipAddress2" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ShipCity" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ShipCounty" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ShipState" Nullable="false" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ShipZip" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Contact" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="FreightFOB" Nullable="false" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Phone" Nullable="false" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Fax" Nullable="false" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Email" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="SalespersonID" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="QuoteDate" Nullable="false" />
+    <Property Type="DateTime" Name="ExpireDate" Nullable="false" />
+    <Property Type="DateTime" Name="BidDate" Nullable="false" />
+    <Property Type="String" Name="UfCustomerOrder1" Nullable="false" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="SchedStartDate" Nullable="false" />
+    <Property Type="DateTime" Name="SchedStartTime" Nullable="false" />
+    <Property Type="DateTime" Name="OrderDate" Nullable="false" />
+    <Property Type="DateTime" Name="OrderTime" Nullable="false" />
+    <Property Type="String" Name="OrigQuoteID" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="VehicleType1" Nullable="false" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="VehicleType2" Nullable="false" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="VehicleType3" Nullable="false" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="VehicleType4" Nullable="false" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="VehicleType5" Nullable="false" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="PurchaseOrder" Nullable="false" MaxLength="50" Unicode="true" />
+    <Property Type="DateTime" Name="BeginDate" Nullable="false" />
+    <Property Type="String" Name="AllowBeforeStart" Nullable="false" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="AllowAfterEnd" Nullable="false" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="AllowExceedQty" Nullable="false" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="AllowExceedLoads" Nullable="false" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="AllowAfterComplete" Nullable="false" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="BidResults" Nullable="false" MaxLength="1" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Slcust">
+    <Key>
+      <PropertyRef Name="CustomerID" />
+    </Key>
+    <Property Type="String" Name="CustomerID" Nullable="false" annotation:StoreGeneratedPattern="None" />
+  </EntityType>
+  <EntityType Name="Slprospe">
+    <Key>
+      <PropertyRef Name="CustomerID" />
+    </Key>
+    <Property Type="String" Name="CustomerID" Nullable="false" annotation:StoreGeneratedPattern="None" />
+    <Property Type="String" Name="Name" Nullable="false" />
+    <Property Type="String" Name="Description" Nullable="false" />
+    <Property Type="String" Name="Address1" Nullable="false" />
+    <Property Type="String" Name="Address2" Nullable="false" />
+    <Property Type="String" Name="City" Nullable="false" />
+    <Property Type="String" Name="State" Nullable="false" />
+    <Property Type="String" Name="Zip" Nullable="false" />
+    <Property Type="String" Name="Phone" Nullable="false" />
+    <Property Type="String" Name="Fax" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Sycontac">
+    <Key>
+      <PropertyRef Name="Name" />
+      <PropertyRef Name="CustomerID" />
+    </Key>
+    <Property Type="String" Name="Name" Nullable="false" annotation:StoreGeneratedPattern="None" />
+    <Property Type="String" Name="CustomerID" Nullable="false" />
+    <Property Type="String" Name="Address1" Nullable="false" />
+    <Property Type="String" Name="Address2" Nullable="false" />
+    <Property Type="String" Name="City" Nullable="false" />
+    <Property Type="String" Name="State" Nullable="false" />
+    <Property Type="String" Name="Zip" Nullable="false" />
+    <Property Type="String" Name="Email" Nullable="false" />
+    <Property Type="String" Name="Phone" Nullable="false" />
+    <Property Type="String" Name="Phone2" Nullable="false" />
+    <Property Type="String" Name="Fax" Nullable="false" />
+    <Property Type="String" Name="Title" Nullable="false" />
+  </EntityType>
+</Schema>

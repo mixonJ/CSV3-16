@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ScoutV2ModelStoreContainer" CdmEntityContainer="ScoutV2Entities">
+    <EntitySetMapping Name="ProspectChanges">
+      <EntityTypeMapping TypeName="ScoutV2Model.ProspectChange">
+        <MappingFragment StoreEntitySet="ProspectChanges">
+          <ScalarProperty Name="ProspectChangeID" ColumnName="ProspectChangeID" />
+          <ScalarProperty Name="ProspectID" ColumnName="ProspectID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Prospects">
+      <EntityTypeMapping TypeName="ScoutV2Model.Prospect">
+        <MappingFragment StoreEntitySet="Prospects">
+          <ScalarProperty Name="ProspectID" ColumnName="ProspectID" />
+          <ScalarProperty Name="Private" ColumnName="Private" />
+          <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="ProspectName" ColumnName="ProspectName" />
+          <ScalarProperty Name="Inserted" ColumnName="Inserted" />
+          <ScalarProperty Name="Modified" ColumnName="Modified" />
+          <ScalarProperty Name="ProspectCode" ColumnName="ProspectCode" />
+          <ScalarProperty Name="ConnectionCode" ColumnName="ConnectionCode" />
+          <ScalarProperty Name="LocalCustNumber" ColumnName="LocalCustNumber" />
+          <ScalarProperty Name="LocalCustName" ColumnName="LocalCustName" />
+          <ScalarProperty Name="Credit_Status_ID" ColumnName="Credit_Status_ID" />
+          <ScalarProperty Name="CustomerStatus" ColumnName="CustomerStatus" />
+          <ScalarProperty Name="Sales" ColumnName="Sales" />
+          <ScalarProperty Name="Margin" ColumnName="Margin" />
+          <ScalarProperty Name="MaterialMargin" ColumnName="MaterialMargin" />
+          <ScalarProperty Name="JobCount" ColumnName="JobCount" />
+          <ScalarProperty Name="Address1" ColumnName="Address1" />
+          <ScalarProperty Name="Address2" ColumnName="Address2" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="Zip" ColumnName="Zip" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="HighestBalance" ColumnName="HighestBalance" />
+          <ScalarProperty Name="AvgInvoiceAmt" ColumnName="AvgInvoiceAmt" />
+          <ScalarProperty Name="AvgDaysToPay" ColumnName="AvgDaysToPay" />
+          <ScalarProperty Name="AvgDaysPastDue" ColumnName="AvgDaysPastDue" />
+          <ScalarProperty Name="TotalDue" ColumnName="TotalDue" />
+          <ScalarProperty Name="ZeroTo30Days" ColumnName="ZeroTo30Days" />
+          <ScalarProperty Name="ThirtyOneTo60Days" ColumnName="ThirtyOneTo60Days" />
+          <ScalarProperty Name="SixtyOneTo90Days" ColumnName="SixtyOneTo90Days" />
+          <ScalarProperty Name="NinetyOneTo120Days" ColumnName="NinetyOneTo120Days" />
+          <ScalarProperty Name="Over120Days" ColumnName="Over120Days" />
+          <ScalarProperty Name="CustomerTypeID" ColumnName="CustomerTypeID" />
+          <ScalarProperty Name="StatementFrequency" ColumnName="StatementFrequency" />
+          <ScalarProperty Name="FinanceRate" ColumnName="FinanceRate" />
+          <ScalarProperty Name="PaymentTermsID" ColumnName="PaymentTermsID" />
+          <ScalarProperty Name="SalesmanCode" ColumnName="SalesmanCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

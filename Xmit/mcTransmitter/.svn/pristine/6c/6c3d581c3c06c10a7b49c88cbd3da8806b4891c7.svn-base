@@ -1,0 +1,7 @@
+﻿namespace mcTransmitter.DTOs {
+    public class Apex_SLJOBDET_Dto {
+        public string JobID { get; set; }
+        public string JobCostID { get; set; }
+        public string Description1 { get; set; }
+    }
+}

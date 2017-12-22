@@ -1,0 +1,1479 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="OracleEntitiesStoreContainer" CdmEntityContainer="Entities">
+    <EntitySetMapping Name="AccountsReceivables">
+      <EntityTypeMapping TypeName="OracleEntities.AccountsReceivable">
+        <MappingFragment StoreEntitySet="AccountsReceivable">
+          <ScalarProperty Name="AccountsReceivableID" ColumnName="AccountsReceivableID" />
+          <ScalarProperty Name="ProspectID" ColumnName="ProspectID" />
+          <ScalarProperty Name="AgeRangeID" ColumnName="AgeRangeID" />
+          <ScalarProperty Name="Dollars" ColumnName="Dollars" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="MsModificationDate" ColumnName="MsModificationDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AgeRanges">
+      <EntityTypeMapping TypeName="OracleEntities.AgeRanx">
+        <MappingFragment StoreEntitySet="AgeRanges">
+          <ScalarProperty Name="AgeRangeID" ColumnName="AgeRangeID" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="RangeStart" ColumnName="RangeStart" />
+          <ScalarProperty Name="RangeEnd" ColumnName="RangeEnd" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="MsModificationDate" ColumnName="MsModificationDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BatchEvents">
+      <EntityTypeMapping TypeName="OracleEntities.BatchEvent">
+        <MappingFragment StoreEntitySet="BatchEvents">
+          <ScalarProperty Name="BatchPerformedDate" ColumnName="BatchPerformedDate" />
+          <ScalarProperty Name="BatchEventsID" ColumnName="BatchEventsID" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="MsModificationDate" ColumnName="MsModificationDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BidderQuoteDetails">
+      <EntityTypeMapping TypeName="OracleEntities.BidderQuoteDetail">
+        <MappingFragment StoreEntitySet="BidderQuoteDetails">
+          <ScalarProperty Name="BidderQuoteDetailID" ColumnName="BidderQuoteDetailID" />
+          <ScalarProperty Name="BidderQuoteID" ColumnName="BidderQuoteID" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="MsModificationDate" ColumnName="MsModificationDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BidderQuotes">
+      <EntityTypeMapping TypeName="OracleEntities.BidderQuote">
+        <MappingFragment StoreEntitySet="BidderQuotes">
+          <ScalarProperty Name="BidderQuoteID" ColumnName="BidderQuoteID" />
+          <ScalarProperty Name="Attention" ColumnName="Attention" />
+          <ScalarProperty Name="SalespersonName" ColumnName="SalespersonName" />
+          <ScalarProperty Name="SalespersonID" ColumnName="SalespersonID" />
+          <ScalarProperty Name="Address1" ColumnName="Address1" />
+          <ScalarProperty Name="Paymentterms" ColumnName="Paymentterms" />
+          <ScalarProperty Name="PaymenttermsValue" ColumnName="PaymenttermsValue" />
+          <ScalarProperty Name="Jobname" ColumnName="Jobname" />
+          <ScalarProperty Name="DateQuoted" ColumnName="DateQuoted" />
+          <ScalarProperty Name="ProjectBidderID" ColumnName="ProjectBidderID" />
+          <ScalarProperty Name="Division" ColumnName="Division" />
+          <ScalarProperty Name="ExpirationDate" ColumnName="ExpirationDate" />
+          <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
+          <ScalarProperty Name="MsModificationDate" ColumnName="MsModificationDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BudgetedYards">
+      <EntityTypeMapping TypeName="OracleEntities.BudgetedYard">
+        <MappingFragment StoreEntitySet="BudgetedYards">
+          <ScalarProperty Name="BudgetedYardsID" ColumnName="BudgetedYardsID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="Year" ColumnName="Year" />
+          <ScalarProperty Name="Month" ColumnName="Month" />
+          <ScalarProperty Name="BudgetedYards" ColumnName="BudgetedYards" />
+          <ScalarProperty Name="BudgetedRevenue" ColumnName="BudgetedRevenue" />
+          <ScalarProperty Name="ValueAddID" ColumnName="ValueAddID" />
+          <ScalarProperty Name="MsModificationDate" ColumnName="MsModificationDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CompanyBidStatuses">
+      <EntityTypeMapping TypeName="OracleEntities.CompanyBidStatus">
+        <MappingFragment StoreEntitySet="CompanyBidStatuses">
+          <ScalarProperty Name="CompanyBidStatusID" ColumnName="CompanyBidStatusID" />
+          <ScalarProperty Name="CompanyBidStatusName" ColumnName="CompanyBidStatusName" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="SystemCode" ColumnName="SystemCode" />
+          <ScalarProperty Name="MSStatusID" ColumnName="MSStatusID" />
+          <ScalarProperty Name="MsModificationDate" ColumnName="MsModificationDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CompanyOrderStatuses">
+      <EntityTypeMapping TypeName="OracleEntities.CompanyOrderStatus">
+        <MappingFragment StoreEntitySet="CompanyOrderStatuses">
+          <ScalarProperty Name="CompanyOrderStatusID" ColumnName="CompanyOrderStatusID" />
+          <ScalarProperty Name="CompanyOrderStatusName" ColumnName="CompanyOrderStatusName" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="MsModificationDate" ColumnName="MsModificationDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CompanyProjectProductStatuses">
+      <EntityTypeMapping TypeName="OracleEntities.CompanyProjectProductStatus">
+        <MappingFragment StoreEntitySet="CompanyProjectProductStatuses">
+          <ScalarProperty Name="CompanyProjectProductStatusID" ColumnName="CompanyProjectProductStatusID" />
+          <ScalarProperty Name="ProjectProductStatusName" ColumnName="ProjectProductStatusName" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="MsModificationDate" ColumnName="MsModificationDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CompanyProjectStatuses">
+      <EntityTypeMapping TypeName="OracleEntities.CompanyProjectStatus">
+        <MappingFragment StoreEntitySet="CompanyProjectStatuses">
+          <ScalarProperty Name="CompanyProjectStatusID" ColumnName="CompanyProjectStatusID" />
+          <ScalarProperty Name="CompanyProjectStatusName" ColumnName="CompanyProjectStatusName" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="MsModificationDate" ColumnName="MsModificationDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CompanyQuoteStatuses">
+      <EntityTypeMapping TypeName="OracleEntities.CompanyQuoteStatus">
+        <MappingFragment StoreEntitySet="CompanyQuoteStatuses">
+          <ScalarProperty Name="CompanyQuoteStatusID" ColumnName="CompanyQuoteStatusID" />
+          <ScalarProperty Name="CompanyQuoteStatusName" ColumnName="CompanyQuoteStatusName" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="MsModificationDate" ColumnName="MsModificationDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CreditStatuses">
+      <EntityTypeMapping TypeName="OracleEntities.CreditStatus">
+        <MappingFragment StoreEntitySet="CreditStatuses">
+          <ScalarProperty Name="CreditStatusID" ColumnName="CreditStatusID" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="ColorCode" ColumnName="ColorCode" />
+          <ScalarProperty Name="MsModificationDate" ColumnName="MsModificationDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CustomerEventTypes">
+      <EntityTypeMapping TypeName="OracleEntities.CustomerEventType">
+        <MappingFragment StoreEntitySet="CustomerEventTypes">
+          <ScalarProperty Name="EventTypeID" ColumnName="EventTypeID" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="EventType" ColumnName="EventType" />
+          <ScalarProperty Name="MsModificationDate" ColumnName="MsModificationDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CustomerTypes">
+      <EntityTypeMapping TypeName="OracleEntities.CustomerType">
+        <MappingFragment StoreEntitySet="CustomerTypes">
+          <ScalarProperty Name="CustomerTypeID" ColumnName="CustomerTypeID" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="CustomerTypeName" ColumnName="CustomerTypeName" />
+          <ScalarProperty Name="MsModificationDate" ColumnName="MsModificationDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DeviationTypes">
+      <EntityTypeMapping TypeName="OracleEntities.DeviationType">
+        <MappingFragment StoreEntitySet="DeviationTypes">
+          <ScalarProperty Name="DeviationTypeID" ColumnName="DeviationTypeID" />
+          <ScalarProperty Name="DeviationTypeName" ColumnName="DeviationTypeName" />
+          <ScalarProperty Name="MsModificationDate" ColumnName="MsModificationDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Divisions">
+      <EntityTypeMapping TypeName="OracleEntities.Division">
+        <MappingFragment StoreEntitySet="Divisions">
+          <ScalarProperty Name="DivisionID" ColumnName="DivisionID" />
+          <ScalarProperty Name="DivisionName" ColumnName="DivisionName" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="Address1" ColumnName="Address1" />
+          <ScalarProperty Name="Address2" ColumnName="Address2" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="ST" ColumnName="ST" />
+          <ScalarProperty Name="Zip" ColumnName="Zip" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="MsModificationDate" ColumnName="MsModificationDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ErrorLogs">
+      <EntityTypeMapping TypeName="OracleEntities.ErrorLog">
+        <MappingFragment StoreEntitySet="ErrorLog">
+          <ScalarProperty Name="ErrorID" ColumnName="ErrorID" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="ErrorMessage" ColumnName="ErrorMessage" />
+          <ScalarProperty Name="ErrorMethod" ColumnName="ErrorMethod" />
+          <ScalarProperty Name="ErrorSource" ColumnName="ErrorSource" />
+          <ScalarProperty Name="ErrorDate" ColumnName="ErrorDate" />
+          <ScalarProperty Name="MsModificationDate" ColumnName="MsModificationDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EventFrequencies">
+      <EntityTypeMapping TypeName="OracleEntities.EventFrequency">
+        <MappingFragment StoreEntitySet="EventFrequency">
+          <ScalarProperty Name="EventFrequencyID" ColumnName="EventFrequencyID" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="EventFrequency1" ColumnName="EventFrequency" />
+          <ScalarProperty Name="MsModificationDate" ColumnName="MsModificationDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EventStatus">
+      <EntityTypeMapping TypeName="OracleEntities.EventStatu">
+        <MappingFragment StoreEntitySet="EventStatus">
+          <ScalarProperty Name="EventStatusID" ColumnName="EventStatusID" />
+          <ScalarProperty Name="EventStatus" ColumnName="EventStatus" />
+          <ScalarProperty Name="MsModificationDate" ColumnName="MsModificationDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LinesOfBusinesses">
+      <EntityTypeMapping TypeName="OracleEntities.LinesOfBusiness">
+        <MappingFragment StoreEntitySet="LinesOfBusiness">
+          <ScalarProperty Name="LineOfBusinessID" ColumnName="LineOfBusinessID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="LineOfBusinessCode" ColumnName="LineOfBusinessCode" />
+          <ScalarProperty Name="MsModificationDate" ColumnName="MsModificationDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Locations_Divisions_Lookup">
+      <EntityTypeMapping TypeName="OracleEntities.Locations_Divisions_Lookup">
+        <MappingFragment StoreEntitySet="Locations_Divisions_Lookup">
+          <ScalarProperty Name="RecordID" ColumnName="RecordID" />
+          <ScalarProperty Name="DivisionID" ColumnName="DivisionID" />
+          <ScalarProperty Name="Division_Name" ColumnName="Division_Name" />
+          <ScalarProperty Name="Location1_Code" ColumnName="Location1_Code" />
+          <ScalarProperty Name="Location1_Name" ColumnName="Location1_Name" />
+          <ScalarProperty Name="MsModificationDate" ColumnName="MsModificationDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Logins">
+      <EntityTypeMapping TypeName="OracleEntities.Login">
+        <MappingFragment StoreEntitySet="Logins">
+          <ScalarProperty Name="LoginID" ColumnName="LoginID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="LoginDate" ColumnName="LoginDate" />
+          <ScalarProperty Name="MsModificationDate" ColumnName="MsModificationDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LostReasons">
+      <EntityTypeMapping TypeName="OracleEntities.LostReason">
+        <MappingFragment StoreEntitySet="LostReasons">
+          <ScalarProperty Name="LostReasonID" ColumnName="LostReasonID" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="LostReason1" ColumnName="LostReason" />
+          <ScalarProperty Name="Inserted" ColumnName="Inserted" />
+          <ScalarProperty Name="Modified" ColumnName="Modified" />
+          <ScalarProperty Name="MsModificationDate" ColumnName="MsModificationDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ManagersSalesmen">
+      <EntityTypeMapping TypeName="OracleEntities.ManagersSalesman">
+        <MappingFragment StoreEntitySet="ManagersSalesmen">
+          <ScalarProperty Name="ManagerUserID" ColumnName="ManagerUserID" />
+          <ScalarProperty Name="ManagerID" ColumnName="ManagerID" />
+          <ScalarProperty Name="SalesmanID" ColumnName="SalesmanID" />
+          <ScalarProperty Name="MsModificationDate" ColumnName="MsModificationDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Orders">
+      <EntityTypeMapping TypeName="OracleEntities.Order">
+        <MappingFragment StoreEntitySet="Orders">
+          <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
+          <ScalarProperty Name="year" ColumnName="year" />
+          <ScalarProperty Name="month" ColumnName="month" />
+          <ScalarProperty Name="YardsActual" ColumnName="YardsActual" />
+          <ScalarProperty Name="MaterialCost" ColumnName="MaterialCost" />
+          <ScalarProperty Name="DollarsActual" ColumnName="DollarsActual" />
+          <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
+          <ScalarProperty Name="ShipDate" ColumnName="ShipDate" />
+          <ScalarProperty Name="YardsTicketed" ColumnName="YardsTicketed" />
+          <ScalarProperty Name="OnJobTime" ColumnName="OnJobTime" />
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+          <ScalarProperty Name="ProspectID" ColumnName="ProspectID" />
+          <ScalarProperty Name="DispatchOrderID" ColumnName="DispatchOrderID" />
+          <ScalarProperty Name="DispatchOrderNumber" ColumnName="DispatchOrderNumber" />
+          <ScalarProperty Name="SalesmanCode" ColumnName="SalesmanCode" />
+          <ScalarProperty Name="Inserted" ColumnName="Inserted" />
+          <ScalarProperty Name="Modified" ColumnName="Modified" />
+          <ScalarProperty Name="MsModificationDate" ColumnName="MsModificationDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PaymentTerms">
+      <EntityTypeMapping TypeName="OracleEntities.PaymentTerm">
+        <MappingFragment StoreEntitySet="PaymentTerms">
+          <ScalarProperty Name="Terms_Discount_ID" ColumnName="Terms_Discount_ID" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="MsModificationDate" ColumnName="MsModificationDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PlantProductPrices">
+      <EntityTypeMapping TypeName="OracleEntities.PlantProductPrice">
+        <MappingFragment StoreEntitySet="PlantProductPrices">
+          <ScalarProperty Name="PlantProductPriceID" ColumnName="PlantProductPriceID" />
+          <ScalarProperty Name="PlantID" ColumnName="PlantID" />
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+          <ScalarProperty Name="ListPrice" ColumnName="ListPrice" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="PriceListID" ColumnName="PriceListID" />
+          <ScalarProperty Name="MsModificationDate" ColumnName="MsModificationDate" />
+          <ScalarProperty Name="PriceExtensionCode" ColumnName="PriceExtensionCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProductUsages">
+      <EntityTypeMapping TypeName="OracleEntities.ProductUsage">
+        <MappingFragment StoreEntitySet="ProductUsage">
+          <ScalarProperty Name="ProductUsageID" ColumnName="ProductUsageID" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="ProductUsageName" ColumnName="ProductUsageName" />
+          <ScalarProperty Name="ProductLineID" ColumnName="ProductLineID" />
+          <ScalarProperty Name="MsModificationDate" ColumnName="MsModificationDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProjectBidderCharges">
+      <EntityTypeMapping TypeName="OracleEntities.ProjectBidderCharge">
+        <MappingFragment StoreEntitySet="ProjectBidderCharges">
+          <ScalarProperty Name="ProjectBidderChargeID" ColumnName="ProjectBidderChargeID" />
+          <ScalarProperty Name="ProjectBidderID" ColumnName="ProjectBidderID" />
+          <ScalarProperty Name="ProductLineID" ColumnName="ProductLineID" />
+          <ScalarProperty Name="ProjectChargeID" ColumnName="ProjectChargeID" />
+          <ScalarProperty Name="MsModificationDate" ColumnName="MsModificationDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProjectBidderNotes">
+      <EntityTypeMapping TypeName="OracleEntities.ProjectBidderNote">
+        <MappingFragment StoreEntitySet="ProjectBidderNotes">
+          <ScalarProperty Name="NoteID" ColumnName="NoteID" />
+          <ScalarProperty Name="ProjectBidderID" ColumnName="ProjectBidderID" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="Inserted" ColumnName="Inserted" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="MsModificationDate" ColumnName="MsModificationDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProjectBidderStatuses">
+      <EntityTypeMapping TypeName="OracleEntities.ProjectBidderStatus">
+        <MappingFragment StoreEntitySet="ProjectBidderStatuses">
+          <ScalarProperty Name="ProjectBidderStatusID" ColumnName="ProjectBidderStatusID" />
+          <ScalarProperty Name="StatusName" ColumnName="StatusName" />
+          <ScalarProperty Name="MsModificationDate" ColumnName="MsModificationDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProjectCharges">
+      <EntityTypeMapping TypeName="OracleEntities.ProjectCharge">
+        <MappingFragment StoreEntitySet="ProjectCharges">
+          <ScalarProperty Name="ChargeID" ColumnName="ChargeID" />
+          <ScalarProperty Name="ChargeName" ColumnName="ChargeName" />
+          <ScalarProperty Name="ChargeType" ColumnName="ChargeType" />
+          <ScalarProperty Name="ChargeCode" ColumnName="ChargeCode" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="MsModificationDate" ColumnName="MsModificationDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProjectChargeTypes">
+      <EntityTypeMapping TypeName="OracleEntities.ProjectChargeType">
+        <MappingFragment StoreEntitySet="ProjectChargeTypes">
+          <ScalarProperty Name="ChargeTypeID" ColumnName="ChargeTypeID" />
+          <ScalarProperty Name="ChargeTypeName" ColumnName="ChargeTypeName" />
+          <ScalarProperty Name="MsModificationDate" ColumnName="MsModificationDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProjectHistorySummaries">
+      <EntityTypeMapping TypeName="OracleEntities.ProjectHistorySummary">
+        <MappingFragment StoreEntitySet="ProjectHistorySummary">
+          <ScalarProperty Name="ProjectHistorySummaryID" ColumnName="ProjectHistorySummaryID" />
+          <ScalarProperty Name="ProspectID" ColumnName="ProspectID" />
+          <ScalarProperty Name="PROJ_CODE" ColumnName="PROJ_CODE" />
+          <ScalarProperty Name="PROJ_NAME" ColumnName="PROJ_NAME" />
+          <ScalarProperty Name="SETUP_DATE" ColumnName="SETUP_DATE" />
+          <ScalarProperty Name="EXPIR_DATE" ColumnName="EXPIR_DATE" />
+          <ScalarProperty Name="Orders" ColumnName="Orders" />
+          <ScalarProperty Name="Tickets" ColumnName="Tickets" />
+          <ScalarProperty Name="Yards" ColumnName="Yards" />
+          <ScalarProperty Name="AvgPrice" ColumnName="AvgPrice" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="MsModificationDate" ColumnName="MsModificationDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProjectMapQtyRanges">
+      <EntityTypeMapping TypeName="OracleEntities.ProjectMapQtyRanx">
+        <MappingFragment StoreEntitySet="ProjectMapQtyRanges">
+          <ScalarProperty Name="ProjectMapQtyRangeID" ColumnName="ProjectMapQtyRangeID" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="Min" ColumnName="Min" />
+          <ScalarProperty Name="Max" ColumnName="Max" />
+          <ScalarProperty Name="DisplayText" ColumnName="DisplayText" />
+          <ScalarProperty Name="MsModificationDate" ColumnName="MsModificationDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProjectTypes">
+      <EntityTypeMapping TypeName="OracleEntities.ProjectType">
+        <MappingFragment StoreEntitySet="ProjectTypes">
+          <ScalarProperty Name="ProjectTypeID" ColumnName="ProjectTypeID" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="ConnectionCode" ColumnName="ConnectionCode" />
+          <ScalarProperty Name="SANL_Code" ColumnName="SANL_Code" />
+          <ScalarProperty Name="ProjectTypeName" ColumnName="ProjectTypeName" />
+          <ScalarProperty Name="ShortName" ColumnName="ShortName" />
+          <ScalarProperty Name="Inserted" ColumnName="Inserted" />
+          <ScalarProperty Name="Modified" ColumnName="Modified" />
+          <ScalarProperty Name="MsModificationDate" ColumnName="MsModificationDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProspectNotes">
+      <EntityTypeMapping TypeName="OracleEntities.ProspectNote">
+        <MappingFragment StoreEntitySet="ProspectNotes">
+          <ScalarProperty Name="ProspectNoteID" ColumnName="ProspectNoteID" />
+          <ScalarProperty Name="ProspectID" ColumnName="ProspectID" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="Inserted" ColumnName="Inserted" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Subject" ColumnName="Subject" />
+          <ScalarProperty Name="Source" ColumnName="Source" />
+          <ScalarProperty Name="MsModificationDate" ColumnName="MsModificationDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProspectQuantities">
+      <EntityTypeMapping TypeName="OracleEntities.ProspectQuantity">
+        <MappingFragment StoreEntitySet="ProspectQuantities">
+          <ScalarProperty Name="ProspectQuantityID" ColumnName="ProspectQuantityID" />
+          <ScalarProperty Name="ProspectID" ColumnName="ProspectID" />
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="MsModificationDate" ColumnName="MsModificationDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProspectRegions">
+      <EntityTypeMapping TypeName="OracleEntities.ProspectRegion">
+        <MappingFragment StoreEntitySet="ProspectRegions">
+          <ScalarProperty Name="ProspectRegionID" ColumnName="ProspectRegionID" />
+          <ScalarProperty Name="ProspectID" ColumnName="ProspectID" />
+          <ScalarProperty Name="PlantID" ColumnName="PlantID" />
+          <ScalarProperty Name="MsModificationDate" ColumnName="MsModificationDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="QuoteDetails">
+      <EntityTypeMapping TypeName="OracleEntities.QuoteDetail">
+        <MappingFragment StoreEntitySet="QuoteDetails">
+          <ScalarProperty Name="QuoteDetailID" ColumnName="QuoteDetailID" />
+          <ScalarProperty Name="QuoteID" ColumnName="QuoteID" />
+          <ScalarProperty Name="ProjectProductID" ColumnName="ProjectProductID" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Qty" ColumnName="Qty" />
+          <ScalarProperty Name="Freight" ColumnName="Freight" />
+          <ScalarProperty Name="FreightPay" ColumnName="FreightPay" />
+          <ScalarProperty Name="ListPrice" ColumnName="ListPrice" />
+          <ScalarProperty Name="CustomerPrice" ColumnName="CustomerPrice" />
+          <ScalarProperty Name="MsModificationDate" ColumnName="MsModificationDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="QuoteGuids">
+      <EntityTypeMapping TypeName="OracleEntities.QuoteGuid">
+        <MappingFragment StoreEntitySet="QuoteGuids">
+          <ScalarProperty Name="QuoteGuidID" ColumnName="QuoteGuidID" />
+          <ScalarProperty Name="QuoteHtml" ColumnName="QuoteHtml" />
+          <ScalarProperty Name="MsModificationDate" ColumnName="MsModificationDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="QuoteStandardClauses">
+      <EntityTypeMapping TypeName="OracleEntities.QuoteStandardClaus">
+        <MappingFragment StoreEntitySet="QuoteStandardClauses">
+          <ScalarProperty Name="QuoteStandardClauseID" ColumnName="QuoteStandardClauseID" />
+          <ScalarProperty Name="QuoteID" ColumnName="QuoteID" />
+          <ScalarProperty Name="StandardClauseID" ColumnName="StandardClauseID" />
+          <ScalarProperty Name="MsModificationDate" ColumnName="MsModificationDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="QuoteStatuses">
+      <EntityTypeMapping TypeName="OracleEntities.QuoteStatus">
+        <MappingFragment StoreEntitySet="QuoteStatuses">
+          <ScalarProperty Name="QuoteStatusID" ColumnName="QuoteStatusID" />
+          <ScalarProperty Name="QuoteStatusName" ColumnName="QuoteStatusName" />
+          <ScalarProperty Name="SortOrder" ColumnName="SortOrder" />
+          <ScalarProperty Name="MsModificationDate" ColumnName="MsModificationDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="QuoteSurcharges">
+      <EntityTypeMapping TypeName="OracleEntities.QuoteSurcharge">
+        <MappingFragment StoreEntitySet="QuoteSurcharges">
+          <ScalarProperty Name="QuoteSurchargeID" ColumnName="QuoteSurchargeID" />
+          <ScalarProperty Name="QuoteID" ColumnName="QuoteID" />
+          <ScalarProperty Name="SurchargeID" ColumnName="SurchargeID" />
+          <ScalarProperty Name="Rate" ColumnName="Rate" />
+          <ScalarProperty Name="MsModificationDate" ColumnName="MsModificationDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Roles">
+      <EntityTypeMapping TypeName="OracleEntities.Role">
+        <MappingFragment StoreEntitySet="Roles">
+          <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+          <ScalarProperty Name="RoleDescription" ColumnName="RoleDescription" />
+          <ScalarProperty Name="MsModificationDate" ColumnName="MsModificationDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SalespersonContacts">
+      <EntityTypeMapping TypeName="OracleEntities.SalespersonContact">
+        <MappingFragment StoreEntitySet="SalespersonContacts">
+          <ScalarProperty Name="SalesPersonContactID" ColumnName="SalesPersonContactID" />
+          <ScalarProperty Name="SalesPersonID" ColumnName="SalesPersonID" />
+          <ScalarProperty Name="ContactID" ColumnName="ContactID" />
+          <ScalarProperty Name="MsModificationDate" ColumnName="MsModificationDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SalesPersonRegions">
+      <EntityTypeMapping TypeName="OracleEntities.SalesPersonRegion">
+        <MappingFragment StoreEntitySet="SalesPersonRegions">
+          <ScalarProperty Name="SalesPersonRegionID" ColumnName="SalesPersonRegionID" />
+          <ScalarProperty Name="SalesPersonID" ColumnName="SalesPersonID" />
+          <ScalarProperty Name="PlantID" ColumnName="PlantID" />
+          <ScalarProperty Name="MsModificationDate" ColumnName="MsModificationDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ScheduleDetails">
+      <EntityTypeMapping TypeName="OracleEntities.ScheduleDetail">
+        <MappingFragment StoreEntitySet="ScheduleDetails">
+          <ScalarProperty Name="ScheduleID" ColumnName="ScheduleID" />
+          <ScalarProperty Name="PourScheduleID" ColumnName="PourScheduleID" />
+          <ScalarProperty Name="year" ColumnName="year" />
+          <ScalarProperty Name="monthYds" ColumnName="monthYds" />
+          <ScalarProperty Name="monthPercent" ColumnName="monthPercent" />
+          <ScalarProperty Name="Month" ColumnName="Month" />
+          <ScalarProperty Name="MsModificationDate" ColumnName="MsModificationDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ScheduleItems">
+      <EntityTypeMapping TypeName="OracleEntities.ScheduleItem">
+        <MappingFragment StoreEntitySet="ScheduleItems">
+          <ScalarProperty Name="ScheduleItemID" ColumnName="ScheduleItemID" />
+          <ScalarProperty Name="ScheduleID" ColumnName="ScheduleID" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="Month" ColumnName="Month" />
+          <ScalarProperty Name="MsModificationDate" ColumnName="MsModificationDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SourceSystems">
+      <EntityTypeMapping TypeName="OracleEntities.SourceSystem">
+        <MappingFragment StoreEntitySet="SourceSystem">
+          <ScalarProperty Name="SourceSystemID" ColumnName="SourceSystemID" />
+          <ScalarProperty Name="SystemName" ColumnName="SystemName" />
+          <ScalarProperty Name="MsModificationDate" ColumnName="MsModificationDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Statuses">
+      <EntityTypeMapping TypeName="OracleEntities.Status">
+        <MappingFragment StoreEntitySet="Statuses">
+          <ScalarProperty Name="StatusID" ColumnName="StatusID" />
+          <ScalarProperty Name="StatusName" ColumnName="StatusName" />
+          <ScalarProperty Name="Inserted" ColumnName="Inserted" />
+          <ScalarProperty Name="Modified" ColumnName="Modified" />
+          <ScalarProperty Name="MsModificationDate" ColumnName="MsModificationDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserRoles">
+      <EntityTypeMapping TypeName="OracleEntities.UserRole">
+        <MappingFragment StoreEntitySet="UserRoles">
+          <ScalarProperty Name="UserRoleID" ColumnName="UserRoleID" />
+          <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="MsModificationDate" ColumnName="MsModificationDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="usersDivisions">
+      <EntityTypeMapping TypeName="OracleEntities.usersDivision">
+        <MappingFragment StoreEntitySet="usersDivisions">
+          <ScalarProperty Name="UserDivisionID" ColumnName="UserDivisionID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="LocationDivisionID" ColumnName="LocationDivisionID" />
+          <ScalarProperty Name="MsModificationDate" ColumnName="MsModificationDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ValueAdds">
+      <EntityTypeMapping TypeName="OracleEntities.ValueAdd">
+        <MappingFragment StoreEntitySet="ValueAdd">
+          <ScalarProperty Name="ValueAddID" ColumnName="ValueAddID" />
+          <ScalarProperty Name="ProductLineID" ColumnName="ProductLineID" />
+          <ScalarProperty Name="ProductTypeID" ColumnName="ProductTypeID" />
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+          <ScalarProperty Name="MsModificationDate" ColumnName="MsModificationDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VehicleTypes">
+      <EntityTypeMapping TypeName="OracleEntities.VehicleType">
+        <MappingFragment StoreEntitySet="VehicleTypes">
+          <ScalarProperty Name="VehicleTypeID" ColumnName="VehicleTypeID" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Abbreviation" ColumnName="Abbreviation" />
+          <ScalarProperty Name="LocalVehicleTypeId" ColumnName="LocalVehicleTypeId" />
+          <ScalarProperty Name="MsModificationDate" ColumnName="MsModificationDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ZoneCodes">
+      <EntityTypeMapping TypeName="OracleEntities.ZoneCode">
+        <MappingFragment StoreEntitySet="ZoneCodes">
+          <ScalarProperty Name="ZoneCodeID" ColumnName="ZoneCodeID" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="ZoneCodeName" ColumnName="ZoneCodeName" />
+          <ScalarProperty Name="SystemCode" ColumnName="SystemCode" />
+          <ScalarProperty Name="MsModificationDate" ColumnName="MsModificationDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AdditionalProducts">
+      <EntityTypeMapping TypeName="OracleEntities.AdditionalProduct">
+        <MappingFragment StoreEntitySet="AdditionalProducts">
+          <ScalarProperty Name="MsModificationDate" ColumnName="MsModificationDate" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+          <ScalarProperty Name="DivisionID" ColumnName="DivisionID" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="CostPerUnit" ColumnName="CostPerUnit" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Competitors">
+      <EntityTypeMapping TypeName="OracleEntities.Competitor">
+        <MappingFragment StoreEntitySet="Competitors">
+          <ScalarProperty Name="MsModificationDate" ColumnName="MsModificationDate" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+          <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+          <ScalarProperty Name="Zip" ColumnName="Zip" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Address2" ColumnName="Address2" />
+          <ScalarProperty Name="Address1" ColumnName="Address1" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="Inactive" ColumnName="Inactive" />
+          <ScalarProperty Name="Modified" ColumnName="Modified" />
+          <ScalarProperty Name="Inserted" ColumnName="Inserted" />
+          <ScalarProperty Name="CompetitorName" ColumnName="CompetitorName" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="CompetitorID" ColumnName="CompetitorID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CustomerEvents">
+      <EntityTypeMapping TypeName="OracleEntities.CustomerEvent">
+        <MappingFragment StoreEntitySet="CustomerEvents">
+          <ScalarProperty Name="MsModificationDate" ColumnName="MsModificationDate" />
+          <ScalarProperty Name="RecurrenceEndDate" ColumnName="RecurrenceEndDate" />
+          <ScalarProperty Name="ProspectID" ColumnName="ProspectID" />
+          <ScalarProperty Name="Subject" ColumnName="Subject" />
+          <ScalarProperty Name="EventStatusID" ColumnName="EventStatusID" />
+          <ScalarProperty Name="MasterEventID" ColumnName="MasterEventID" />
+          <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
+          <ScalarProperty Name="EventFrequencyID" ColumnName="EventFrequencyID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="ContactID" ColumnName="ContactID" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="CompletedDate" ColumnName="CompletedDate" />
+          <ScalarProperty Name="EventEndDate" ColumnName="EventEndDate" />
+          <ScalarProperty Name="EventStartDate" ColumnName="EventStartDate" />
+          <ScalarProperty Name="EventTypeID" ColumnName="EventTypeID" />
+          <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+          <ScalarProperty Name="Private" ColumnName="Private" />
+          <ScalarProperty Name="CustomerEventID" ColumnName="CustomerEventID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Employees">
+      <EntityTypeMapping TypeName="OracleEntities.Employee">
+        <MappingFragment StoreEntitySet="Employee">
+          <ScalarProperty Name="MsModificationDate" ColumnName="MsModificationDate" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="TWFormat_File_Block" ColumnName="TWFormat_File_Block" />
+          <ScalarProperty Name="TWFormat_File_Aggregate" ColumnName="TWFormat_File_Aggregate" />
+          <ScalarProperty Name="TWFormat_File_Concrete" ColumnName="TWFormat_File_Concrete" />
+          <ScalarProperty Name="Punch_Out_Flag" ColumnName="Punch_Out_Flag" />
+          <ScalarProperty Name="User_Profile_ID" ColumnName="User_Profile_ID" />
+          <ScalarProperty Name="Inactive_Flag" ColumnName="Inactive_Flag" />
+          <ScalarProperty Name="Pay_Rate" ColumnName="Pay_Rate" />
+          <ScalarProperty Name="Birth_Date" ColumnName="Birth_Date" />
+          <ScalarProperty Name="Social_Security_Number" ColumnName="Social_Security_Number" />
+          <ScalarProperty Name="Email_Address" ColumnName="Email_Address" />
+          <ScalarProperty Name="Pager" ColumnName="Pager" />
+          <ScalarProperty Name="Cell_Phone" ColumnName="Cell_Phone" />
+          <ScalarProperty Name="Business_Phone" ColumnName="Business_Phone" />
+          <ScalarProperty Name="Home_Phone" ColumnName="Home_Phone" />
+          <ScalarProperty Name="Address_7" ColumnName="Address_7" />
+          <ScalarProperty Name="Address_6" ColumnName="Address_6" />
+          <ScalarProperty Name="Address_5" ColumnName="Address_5" />
+          <ScalarProperty Name="Address_4" ColumnName="Address_4" />
+          <ScalarProperty Name="Address_3" ColumnName="Address_3" />
+          <ScalarProperty Name="Address_2" ColumnName="Address_2" />
+          <ScalarProperty Name="Addrees_1" ColumnName="Addrees_1" />
+          <ScalarProperty Name="Complete_Name" ColumnName="Complete_Name" />
+          <ScalarProperty Name="Middle_Name" ColumnName="Middle_Name" />
+          <ScalarProperty Name="First_Name" ColumnName="First_Name" />
+          <ScalarProperty Name="Last_Name" ColumnName="Last_Name" />
+          <ScalarProperty Name="Hire_Date" ColumnName="Hire_Date" />
+          <ScalarProperty Name="Employee_Number" ColumnName="Employee_Number" />
+          <ScalarProperty Name="Home_Plant_ID" ColumnName="Home_Plant_ID" />
+          <ScalarProperty Name="Employee_Type_ID" ColumnName="Employee_Type_ID" />
+          <ScalarProperty Name="Employee_ID" ColumnName="Employee_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PourSchedules">
+      <EntityTypeMapping TypeName="OracleEntities.PourSchedule">
+        <MappingFragment StoreEntitySet="PourSchedule">
+          <ScalarProperty Name="MsModificationDate" ColumnName="MsModificationDate" />
+          <ScalarProperty Name="PourScheduleName" ColumnName="PourScheduleName" />
+          <ScalarProperty Name="ProjectProductID" ColumnName="ProjectProductID" />
+          <ScalarProperty Name="C____DEFAULTschedule" ColumnName=", --DEFAULTschedule" />
+          <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
+          <ScalarProperty Name="PourID" ColumnName="PourID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Products">
+      <EntityTypeMapping TypeName="OracleEntities.Product">
+        <MappingFragment StoreEntitySet="Product">
+          <ScalarProperty Name="ProductShortName" ColumnName="ProductShortName" />
+          <ScalarProperty Name="MsModificationDate" ColumnName="MsModificationDate" />
+          <ScalarProperty Name="IsSellable" ColumnName="IsSellable" />
+          <ScalarProperty Name="extProduct_Code" ColumnName="extProduct_Code" />
+          <ScalarProperty Name="Modified" ColumnName="Modified" />
+          <ScalarProperty Name="Inserted" ColumnName="Inserted" />
+          <ScalarProperty Name="Product_Code" ColumnName="Product_Code" />
+          <ScalarProperty Name="ITEM_CAT" ColumnName="ITEM_CAT" />
+          <ScalarProperty Name="ConnectionCode" ColumnName="ConnectionCode" />
+          <ScalarProperty Name="ProductTypeID" ColumnName="ProductTypeID" />
+          <ScalarProperty Name="UnitOfMeasureID" ColumnName="UnitOfMeasureID" />
+          <ScalarProperty Name="AU_ID" ColumnName="AU_ID" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProductTypes">
+      <EntityTypeMapping TypeName="OracleEntities.ProductType">
+        <MappingFragment StoreEntitySet="ProductTypes">
+          <ScalarProperty Name="MsModificationDate" ColumnName="MsModificationDate" />
+          <ScalarProperty Name="Inactive" ColumnName="Inactive" />
+          <ScalarProperty Name="UOMID" ColumnName="UOMID" />
+          <ScalarProperty Name="ListPrice" ColumnName="ListPrice" />
+          <ScalarProperty Name="ProductLineID" ColumnName="ProductLineID" />
+          <ScalarProperty Name="ProductTypeCode" ColumnName="ProductTypeCode" />
+          <ScalarProperty Name="ProductTypeName" ColumnName="ProductTypeName" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="ProductTypeID" ColumnName="ProductTypeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="QuoteTypes">
+      <EntityTypeMapping TypeName="OracleEntities.QuoteType">
+        <MappingFragment StoreEntitySet="QuoteTypes">
+          <ScalarProperty Name="MsModificationDate" ColumnName="MsModificationDate" />
+          <ScalarProperty Name="Inactive" ColumnName="Inactive" />
+          <ScalarProperty Name="ImageLocation" ColumnName="ImageLocation" />
+          <ScalarProperty Name="Section3" ColumnName="Section3" />
+          <ScalarProperty Name="Section2" ColumnName="Section2" />
+          <ScalarProperty Name="Section1" ColumnName="Section1" />
+          <ScalarProperty Name="QuoteTypeName" ColumnName="QuoteTypeName" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="QuoteTypeID" ColumnName="QuoteTypeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sources">
+      <EntityTypeMapping TypeName="OracleEntities.Source">
+        <MappingFragment StoreEntitySet="Sources">
+          <ScalarProperty Name="MsModificationDate" ColumnName="MsModificationDate" />
+          <ScalarProperty Name="Inactive" ColumnName="Inactive" />
+          <ScalarProperty Name="Modified" ColumnName="Modified" />
+          <ScalarProperty Name="Inserted" ColumnName="Inserted" />
+          <ScalarProperty Name="SourceName" ColumnName="SourceName" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="SourceID" ColumnName="SourceID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StandardClauses">
+      <EntityTypeMapping TypeName="OracleEntities.StandardClaus">
+        <MappingFragment StoreEntitySet="StandardClauses">
+          <ScalarProperty Name="MsModificationDate" ColumnName="MsModificationDate" />
+          <ScalarProperty Name="ProductUsageID" ColumnName="ProductUsageID" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="Inactive" ColumnName="Inactive" />
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+          <ScalarProperty Name="PlantID" ColumnName="PlantID" />
+          <ScalarProperty Name="ProductLineID" ColumnName="ProductLineID" />
+          <ScalarProperty Name="StandardClauseText" ColumnName="StandardClauseText" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="StandardClauseID" ColumnName="StandardClauseID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Terms_Discount">
+      <EntityTypeMapping TypeName="OracleEntities.Terms_Discount">
+        <MappingFragment StoreEntitySet="Terms_Discount">
+          <ScalarProperty Name="MsModificationDate" ColumnName="MsModificationDate" />
+          <ScalarProperty Name="Percent_Flag" ColumnName="Percent_Flag" />
+          <ScalarProperty Name="Discount_Taxes" ColumnName="Discount_Taxes" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Net_Days" ColumnName="Net_Days" />
+          <ScalarProperty Name="Discount_Amount" ColumnName="Discount_Amount" />
+          <ScalarProperty Name="Discount_Days" ColumnName="Discount_Days" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="Terms_Discount_ID" ColumnName="Terms_Discount_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TimeCalendars">
+      <EntityTypeMapping TypeName="OracleEntities.TimeCalendar">
+        <MappingFragment StoreEntitySet="TimeCalendar">
+          <ScalarProperty Name="MsModificationDate" ColumnName="MsModificationDate" />
+          <ScalarProperty Name="QtrYearAbbrev" ColumnName="QtrYearAbbrev" />
+          <ScalarProperty Name="MonthYearAbbrev" ColumnName="MonthYearAbbrev" />
+          <ScalarProperty Name="BusinessDay" ColumnName="BusinessDay" />
+          <ScalarProperty Name="CompanyHoliday" ColumnName="CompanyHoliday" />
+          <ScalarProperty Name="DayName" ColumnName="DayName" />
+          <ScalarProperty Name="MonthName" ColumnName="MonthName" />
+          <ScalarProperty Name="DayAbbrev" ColumnName="DayAbbrev" />
+          <ScalarProperty Name="MonthAbbrev" ColumnName="MonthAbbrev" />
+          <ScalarProperty Name="LastDayOfQtrFlag" ColumnName="LastDayOfQtrFlag" />
+          <ScalarProperty Name="FirstDayOfQtrFlag" ColumnName="FirstDayOfQtrFlag" />
+          <ScalarProperty Name="LastDayOfMonthFlag" ColumnName="LastDayOfMonthFlag" />
+          <ScalarProperty Name="Quarter" ColumnName="Quarter" />
+          <ScalarProperty Name="WeekOfYear" ColumnName="WeekOfYear" />
+          <ScalarProperty Name="DayOfYear" ColumnName="DayOfYear" />
+          <ScalarProperty Name="DayOfQtr" ColumnName="DayOfQtr" />
+          <ScalarProperty Name="DayOfWeek" ColumnName="DayOfWeek" />
+          <ScalarProperty Name="Year" ColumnName="Year" />
+          <ScalarProperty Name="Day" ColumnName="Day" />
+          <ScalarProperty Name="Month" ColumnName="Month" />
+          <ScalarProperty Name="QuarterEnd" ColumnName="QuarterEnd" />
+          <ScalarProperty Name="LastDayOfQtr" ColumnName="LastDayOfQtr" />
+          <ScalarProperty Name="FirstDayOfQtr" ColumnName="FirstDayOfQtr" />
+          <ScalarProperty Name="MonthEnd" ColumnName="MonthEnd" />
+          <ScalarProperty Name="LastDayOfMonth" ColumnName="LastDayOfMonth" />
+          <ScalarProperty Name="FirstDayOfMonth" ColumnName="FirstDayOfMonth" />
+          <ScalarProperty Name="DayEnd" ColumnName="DayEnd" />
+          <ScalarProperty Name="CalendarDate" ColumnName="CalendarDate" />
+          <ScalarProperty Name="CalendarDateId" ColumnName="CalendarDateId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OrderDetails">
+      <EntityTypeMapping TypeName="OracleEntities.OrderDetail">
+        <MappingFragment StoreEntitySet="OrderDetails">
+          <ScalarProperty Name="MsModificationDate" ColumnName="MsModificationDate" />
+          <ScalarProperty Name="Mix" ColumnName="Mix" />
+          <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+          <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+          <ScalarProperty Name="OrderDetailID" ColumnName="OrderDetailID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Schedules">
+      <EntityTypeMapping TypeName="OracleEntities.Schedule">
+        <MappingFragment StoreEntitySet="Schedules">
+          <ScalarProperty Name="MsModificationDate" ColumnName="MsModificationDate" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="ProjectProductID" ColumnName="ProjectProductID" />
+          <ScalarProperty Name="ScheduleID" ColumnName="ScheduleID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="QuoteSections">
+      <EntityTypeMapping TypeName="OracleEntities.QuoteSection">
+        <MappingFragment StoreEntitySet="QuoteSections">
+          <ScalarProperty Name="MsModificationDate" ColumnName="MsModificationDate" />
+          <ScalarProperty Name="ProductColumns" ColumnName="ProductColumns" />
+          <ScalarProperty Name="IsQuoteNumber" ColumnName="IsQuoteNumber" />
+          <ScalarProperty Name="IsExpiration" ColumnName="IsExpiration" />
+          <ScalarProperty Name="IsSignature" ColumnName="IsSignature" />
+          <ScalarProperty Name="IsCustomerInfo" ColumnName="IsCustomerInfo" />
+          <ScalarProperty Name="IsCompanyInfo" ColumnName="IsCompanyInfo" />
+          <ScalarProperty Name="IsLogo" ColumnName="IsLogo" />
+          <ScalarProperty Name="IsSurcharges" ColumnName="IsSurcharges" />
+          <ScalarProperty Name="IsProducts" ColumnName="IsProducts" />
+          <ScalarProperty Name="Width" ColumnName="Width" />
+          <ScalarProperty Name="Height" ColumnName="Height" />
+          <ScalarProperty Name="PositionLeft" ColumnName="PositionLeft" />
+          <ScalarProperty Name="PositionTop" ColumnName="PositionTop" />
+          <ScalarProperty Name="SectionContent" ColumnName="SectionContent" />
+          <ScalarProperty Name="QuoteTypeID" ColumnName="QuoteTypeID" />
+          <ScalarProperty Name="QuoteSectionID" ColumnName="QuoteSectionID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Unit_Of_Measure">
+      <EntityTypeMapping TypeName="OracleEntities.Unit_Of_Measure">
+        <MappingFragment StoreEntitySet="Unit_Of_Measure">
+          <ScalarProperty Name="MsModificationDate" ColumnName="MsModificationDate" />
+          <ScalarProperty Name="UOM" ColumnName="UOM" />
+          <ScalarProperty Name="ConnectionCode" ColumnName="ConnectionCode" />
+          <ScalarProperty Name="Conversion_Factor_Value" ColumnName="Conversion_Factor_Value" />
+          <ScalarProperty Name="Conversion_Factor_Type_ID" ColumnName="Conversion_Factor_Type_ID" />
+          <ScalarProperty Name="Imperial_To_Metric_Conv_Factor" ColumnName="Imperial_To_Metric_Conv_Factor" />
+          <ScalarProperty Name="Metric_Description" ColumnName="Metric_Description" />
+          <ScalarProperty Name="Imperial_Description" ColumnName="Imperial_Description" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="Unit_Of_Measure_ID" ColumnName="Unit_Of_Measure_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Plants">
+      <EntityTypeMapping TypeName="OracleEntities.Plant">
+        <MappingFragment StoreEntitySet="Plant">
+          <ScalarProperty Name="MsModificationDate" ColumnName="MsModificationDate" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+          <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+          <ScalarProperty Name="Zip" ColumnName="Zip" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Address2" ColumnName="Address2" />
+          <ScalarProperty Name="Address1" ColumnName="Address1" />
+          <ScalarProperty Name="SGACost" ColumnName="SGACost" />
+          <ScalarProperty Name="MaterialCost" ColumnName="MaterialCost" />
+          <ScalarProperty Name="DeliveryCost" ColumnName="DeliveryCost" />
+          <ScalarProperty Name="PlantCost" ColumnName="PlantCost" />
+          <ScalarProperty Name="LineOfBusinessID" ColumnName="LineOfBusinessID" />
+          <ScalarProperty Name="DivisionID" ColumnName="DivisionID" />
+          <ScalarProperty Name="Inactive_Flag" ColumnName="Inactive_Flag" />
+          <ScalarProperty Name="Modified" ColumnName="Modified" />
+          <ScalarProperty Name="Inserted" ColumnName="Inserted" />
+          <ScalarProperty Name="CSPlantName" ColumnName="CSPlantName" />
+          <ScalarProperty Name="CSShortName" ColumnName="CSShortName" />
+          <ScalarProperty Name="CSPlantCode" ColumnName="CSPlantCode" />
+          <ScalarProperty Name="SystechCompNbr" ColumnName="SystechCompNbr" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="PlantID" ColumnName="PlantID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PlantLinesOfBusinesses">
+      <EntityTypeMapping TypeName="OracleEntities.PlantLinesOfBusiness">
+        <MappingFragment StoreEntitySet="PlantLinesOfBusiness">
+          <ScalarProperty Name="MsModificationDate" ColumnName="MsModificationDate" />
+          <ScalarProperty Name="PlantID" ColumnName="PlantID" />
+          <ScalarProperty Name="LineOfBusinessID" ColumnName="LineOfBusinessID" />
+          <ScalarProperty Name="PlantLineOfBusinessID" ColumnName="PlantLineOfBusinessID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProductLines">
+      <EntityTypeMapping TypeName="OracleEntities.ProductLine">
+        <MappingFragment StoreEntitySet="ProductLines">
+          <ScalarProperty Name="MsModificationDate" ColumnName="MsModificationDate" />
+          <ScalarProperty Name="LineOfBusinessID" ColumnName="LineOfBusinessID" />
+          <ScalarProperty Name="extProductLineCode" ColumnName="extProductLineCode" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="ProductLineName" ColumnName="ProductLineName" />
+          <ScalarProperty Name="ProductLineCode" ColumnName="ProductLineCode" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="ProductLineID" ColumnName="ProductLineID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Surcharges">
+      <EntityTypeMapping TypeName="OracleEntities.Surcharge">
+        <MappingFragment StoreEntitySet="Surcharges">
+          <ScalarProperty Name="MsModificationDate" ColumnName="MsModificationDate" />
+          <ScalarProperty Name="LocalSurchargeID" ColumnName="LocalSurchargeID" />
+          <ScalarProperty Name="PlantID" ColumnName="PlantID" />
+          <ScalarProperty Name="QuoteSelectable" ColumnName="QuoteSelectable" />
+          <ScalarProperty Name="QuoteDefault" ColumnName="QuoteDefault" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="UOMID" ColumnName="UOMID" />
+          <ScalarProperty Name="Rate" ColumnName="Rate" />
+          <ScalarProperty Name="SurchargeName" ColumnName="SurchargeName" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="SurchargeID" ColumnName="SurchargeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CompanyUsers">
+      <EntityTypeMapping TypeName="OracleEntities.CompanyUser">
+        <MappingFragment StoreEntitySet="CompanyUsers">
+          <ScalarProperty Name="MsModificationDate" ColumnName="MsModificationDate" />
+          <ScalarProperty Name="SalesmanCode" ColumnName="SalesmanCode" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="CompanyUserID" ColumnName="CompanyUserID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="OracleEntities.User">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="AdministratorID" ColumnName="AdministratorID" />
+          <ScalarProperty Name="MsModificationDate" ColumnName="MsModificationDate" />
+          <ScalarProperty Name="DefaultMailMessage" ColumnName="DefaultMailMessage" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="UsesSAML" ColumnName="UsesSAML" />
+          <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+          <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+          <ScalarProperty Name="Zip" ColumnName="Zip" />
+          <ScalarProperty Name="ST" ColumnName="ST" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Address2" ColumnName="Address2" />
+          <ScalarProperty Name="Address1" ColumnName="Address1" />
+          <ScalarProperty Name="DeviationAmount" ColumnName="DeviationAmount" />
+          <ScalarProperty Name="DeviationTypeID" ColumnName="DeviationTypeID" />
+          <ScalarProperty Name="ReportsToID" ColumnName="ReportsToID" />
+          <ScalarProperty Name="SalesmanCode" ColumnName="SalesmanCode" />
+          <ScalarProperty Name="FaxNumber" ColumnName="FaxNumber" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="CellPhoneNumber" ColumnName="CellPhoneNumber" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+          <ScalarProperty Name="InsertDate" ColumnName="InsertDate" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CompetitorPlants">
+      <EntityTypeMapping TypeName="OracleEntities.CompetitorPlant">
+        <MappingFragment StoreEntitySet="CompetitorPlants">
+          <ScalarProperty Name="MsModificationDate" ColumnName="MsModificationDate" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="DivisionID" ColumnName="DivisionID" />
+          <ScalarProperty Name="LineOfBusinessID" ColumnName="LineOfBusinessID" />
+          <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+          <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+          <ScalarProperty Name="Zip" ColumnName="Zip" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Address2" ColumnName="Address2" />
+          <ScalarProperty Name="Address1" ColumnName="Address1" />
+          <ScalarProperty Name="SGACost" ColumnName="SGACost" />
+          <ScalarProperty Name="MaterialCost" ColumnName="MaterialCost" />
+          <ScalarProperty Name="DeliveryCost" ColumnName="DeliveryCost" />
+          <ScalarProperty Name="PlantCost" ColumnName="PlantCost" />
+          <ScalarProperty Name="Inactive_Flag" ColumnName="Inactive_Flag" />
+          <ScalarProperty Name="Modified" ColumnName="Modified" />
+          <ScalarProperty Name="Inserted" ColumnName="Inserted" />
+          <ScalarProperty Name="PlantName" ColumnName="PlantName" />
+          <ScalarProperty Name="CompetitorID" ColumnName="CompetitorID" />
+          <ScalarProperty Name="CompetitorPlantID" ColumnName="CompetitorPlantID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProductTemplates">
+      <EntityTypeMapping TypeName="OracleEntities.ProductTemplate">
+        <MappingFragment StoreEntitySet="ProductTemplates">
+          <ScalarProperty Name="Shared" ColumnName="Shared" />
+          <ScalarProperty Name="MsModificationDate" ColumnName="MsModificationDate" />
+          <ScalarProperty Name="Inactive" ColumnName="Inactive" />
+          <ScalarProperty Name="CompanyUserID" ColumnName="CompanyUserID" />
+          <ScalarProperty Name="TemplateName" ColumnName="TemplateName" />
+          <ScalarProperty Name="ProductTemplateID" ColumnName="ProductTemplateID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TemplatedProducts">
+      <EntityTypeMapping TypeName="OracleEntities.TemplatedProduct">
+        <MappingFragment StoreEntitySet="TemplatedProducts">
+          <ScalarProperty Name="PriceExtensionCode" ColumnName="PriceExtensionCode" />
+          <ScalarProperty Name="UOMID" ColumnName="UOMID" />
+          <ScalarProperty Name="MsModificationDate" ColumnName="MsModificationDate" />
+          <ScalarProperty Name="Category" ColumnName="Category" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="IncludeInForecast" ColumnName="IncludeInForecast" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="FreightPay" ColumnName="FreightPay" />
+          <ScalarProperty Name="Freight" ColumnName="Freight" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Qty" ColumnName="Qty" />
+          <ScalarProperty Name="ProductLineID" ColumnName="ProductLineID" />
+          <ScalarProperty Name="LineOfBusinessID" ColumnName="LineOfBusinessID" />
+          <ScalarProperty Name="ProductUsageID" ColumnName="ProductUsageID" />
+          <ScalarProperty Name="PlantID" ColumnName="PlantID" />
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+          <ScalarProperty Name="ProductTypeID" ColumnName="ProductTypeID" />
+          <ScalarProperty Name="ProductTemplateID" ColumnName="ProductTemplateID" />
+          <ScalarProperty Name="TemplatedProductID" ColumnName="TemplatedProductID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Prospects">
+      <EntityTypeMapping TypeName="OracleEntities.Prospect">
+        <MappingFragment StoreEntitySet="Prospects">
+          <ScalarProperty Name="MsModificationDate" ColumnName="MsModificationDate" />
+          <ScalarProperty Name="PORequired" ColumnName="PORequired" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+          <ScalarProperty Name="BusinessTypeID" ColumnName="BusinessTypeID" />
+          <ScalarProperty Name="CompanyOriginDate" ColumnName="CompanyOriginDate" />
+          <ScalarProperty Name="NumberofEmployees" ColumnName="NumberofEmployees" />
+          <ScalarProperty Name="AvgRevenue" ColumnName="AvgRevenue" />
+          <ScalarProperty Name="WebSite" ColumnName="WebSite" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="SalesmanCode" ColumnName="SalesmanCode" />
+          <ScalarProperty Name="PaymentTermsID" ColumnName="PaymentTermsID" />
+          <ScalarProperty Name="FinanceRate" ColumnName="FinanceRate" />
+          <ScalarProperty Name="StatementFrequency" ColumnName="StatementFrequency" />
+          <ScalarProperty Name="CustomerTypeID" ColumnName="CustomerTypeID" />
+          <ScalarProperty Name="Over120Days" ColumnName="Over120Days" />
+          <ScalarProperty Name="NinetyOneTo120Days" ColumnName="NinetyOneTo120Days" />
+          <ScalarProperty Name="SixtyOneTo90Days" ColumnName="SixtyOneTo90Days" />
+          <ScalarProperty Name="ThirtyOneTo60Days" ColumnName="ThirtyOneTo60Days" />
+          <ScalarProperty Name="ZeroTo30Days" ColumnName="ZeroTo30Days" />
+          <ScalarProperty Name="TotalDue" ColumnName="TotalDue" />
+          <ScalarProperty Name="AvgDaysPastDue" ColumnName="AvgDaysPastDue" />
+          <ScalarProperty Name="AvgDaysToPay" ColumnName="AvgDaysToPay" />
+          <ScalarProperty Name="AvgInvoiceAmt" ColumnName="AvgInvoiceAmt" />
+          <ScalarProperty Name="HighestBalance" ColumnName="HighestBalance" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Zip" ColumnName="Zip" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Address2" ColumnName="Address2" />
+          <ScalarProperty Name="Address1" ColumnName="Address1" />
+          <ScalarProperty Name="JobCount" ColumnName="JobCount" />
+          <ScalarProperty Name="MaterialMargin" ColumnName="MaterialMargin" />
+          <ScalarProperty Name="Margin" ColumnName="Margin" />
+          <ScalarProperty Name="Sales" ColumnName="Sales" />
+          <ScalarProperty Name="CustomerStatus" ColumnName="CustomerStatus" />
+          <ScalarProperty Name="Credit_Status_ID" ColumnName="Credit_Status_ID" />
+          <ScalarProperty Name="IsCustomer" ColumnName="IsCustomer" />
+          <ScalarProperty Name="LocalCustName" ColumnName="LocalCustName" />
+          <ScalarProperty Name="LocalCustNumber" ColumnName="LocalCustNumber" />
+          <ScalarProperty Name="ConnectionCode" ColumnName="ConnectionCode" />
+          <ScalarProperty Name="ProspectCode" ColumnName="ProspectCode" />
+          <ScalarProperty Name="Modified" ColumnName="Modified" />
+          <ScalarProperty Name="Inserted" ColumnName="Inserted" />
+          <ScalarProperty Name="ProspectName" ColumnName="ProspectName" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+          <ScalarProperty Name="Private" ColumnName="Private" />
+          <ScalarProperty Name="ProspectID" ColumnName="ProspectID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ContactNotes">
+      <EntityTypeMapping TypeName="OracleEntities.ContactNote">
+        <MappingFragment StoreEntitySet="ContactNotes">
+          <ScalarProperty Name="MsModificationDate" ColumnName="MsModificationDate" />
+          <ScalarProperty Name="Source" ColumnName="Source" />
+          <ScalarProperty Name="Subject" ColumnName="Subject" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Inserted" ColumnName="Inserted" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="ContactID" ColumnName="ContactID" />
+          <ScalarProperty Name="ContactNoteID" ColumnName="ContactNoteID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Contacts">
+      <EntityTypeMapping TypeName="OracleEntities.Contact">
+        <MappingFragment StoreEntitySet="Contact">
+          <ScalarProperty Name="MsModificationDate" ColumnName="MsModificationDate" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="Modified" ColumnName="Modified" />
+          <ScalarProperty Name="Inserted" ColumnName="Inserted" />
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+          <ScalarProperty Name="Salutation" ColumnName="Salutation" />
+          <ScalarProperty Name="Zip" ColumnName="Zip" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Address2" ColumnName="Address2" />
+          <ScalarProperty Name="Department" ColumnName="Department" />
+          <ScalarProperty Name="StartingYearatCompany" ColumnName="StartingYearatCompany" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="MobilePhone" ColumnName="MobilePhone" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="ProspectID" ColumnName="ProspectID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+          <ScalarProperty Name="Private" ColumnName="Private" />
+          <ScalarProperty Name="ContactID" ColumnName="ContactID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Projects">
+      <EntityTypeMapping TypeName="OracleEntities.Project">
+        <MappingFragment StoreEntitySet="Projects">
+          <ScalarProperty Name="MsModificationDate" ColumnName="MsModificationDate" />
+          <ScalarProperty Name="ZoneCodeID" ColumnName="ZoneCodeID" />
+          <ScalarProperty Name="ProjectDescription" ColumnName="ProjectDescription" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="GeofenceID" ColumnName="GeofenceID" />
+          <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+          <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+          <ScalarProperty Name="ProjectCode" ColumnName="ProjectCode" />
+          <ScalarProperty Name="CustCode" ColumnName="CustCode" />
+          <ScalarProperty Name="ConnectionCode" ColumnName="ConnectionCode" />
+          <ScalarProperty Name="TotalYards" ColumnName="TotalYards" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="WinningProjectBidderID" ColumnName="WinningProjectBidderID" />
+          <ScalarProperty Name="Exported" ColumnName="Exported" />
+          <ScalarProperty Name="PrevStatus" ColumnName="PrevStatus" />
+          <ScalarProperty Name="Modified" ColumnName="Modified" />
+          <ScalarProperty Name="Inserted" ColumnName="Inserted" />
+          <ScalarProperty Name="LostNote" ColumnName="LostNote" />
+          <ScalarProperty Name="LostToID" ColumnName="LostToID" />
+          <ScalarProperty Name="LostReasonID" ColumnName="LostReasonID" />
+          <ScalarProperty Name="BidDate" ColumnName="BidDate" />
+          <ScalarProperty Name="SalespersonID" ColumnName="SalespersonID" />
+          <ScalarProperty Name="PlantID" ColumnName="PlantID" />
+          <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="County" ColumnName="County" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Address2" ColumnName="Address2" />
+          <ScalarProperty Name="Address1" ColumnName="Address1" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="SourceID" ColumnName="SourceID" />
+          <ScalarProperty Name="StatusChangeDate" ColumnName="StatusChangeDate" />
+          <ScalarProperty Name="StatusID" ColumnName="StatusID" />
+          <ScalarProperty Name="ProjectTypeID" ColumnName="ProjectTypeID" />
+          <ScalarProperty Name="ProjectName" ColumnName="ProjectName" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+          <ScalarProperty Name="Private" ColumnName="Private" />
+          <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProjectProducts">
+      <EntityTypeMapping TypeName="OracleEntities.ProjectProduct">
+        <MappingFragment StoreEntitySet="ProjectProducts">
+          <ScalarProperty Name="PriceExtensionCode" ColumnName="PriceExtensionCode" />
+          <ScalarProperty Name="LostNote" ColumnName="LostNote" />
+          <ScalarProperty Name="LostToID" ColumnName="LostToID" />
+          <ScalarProperty Name="LostReasonID" ColumnName="LostReasonID" />
+          <ScalarProperty Name="MsModificationDate" ColumnName="MsModificationDate" />
+          <ScalarProperty Name="StatusID" ColumnName="StatusID" />
+          <ScalarProperty Name="LineOfBusinessID" ColumnName="LineOfBusinessID" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Category" ColumnName="Category" />
+          <ScalarProperty Name="CompetitorPrice" ColumnName="CompetitorPrice" />
+          <ScalarProperty Name="FreightPay" ColumnName="FreightPay" />
+          <ScalarProperty Name="Freight" ColumnName="Freight" />
+          <ScalarProperty Name="PlantID" ColumnName="PlantID" />
+          <ScalarProperty Name="Forecasted" ColumnName="Forecasted" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="ProductUsageID" ColumnName="ProductUsageID" />
+          <ScalarProperty Name="PsiID" ColumnName="PsiID" />
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+          <ScalarProperty Name="ProductTypeID" ColumnName="ProductTypeID" />
+          <ScalarProperty Name="ProductLineID" ColumnName="ProductLineID" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Modified" ColumnName="Modified" />
+          <ScalarProperty Name="Inserted" ColumnName="Inserted" />
+          <ScalarProperty Name="UOMID" ColumnName="UOMID" />
+          <ScalarProperty Name="Qty" ColumnName="Qty" />
+          <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
+          <ScalarProperty Name="ProjectProductID" ColumnName="ProjectProductID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProjectNotes">
+      <EntityTypeMapping TypeName="OracleEntities.ProjectNote">
+        <MappingFragment StoreEntitySet="ProjectNotes">
+          <ScalarProperty Name="MsModificationDate" ColumnName="MsModificationDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Inserted" ColumnName="Inserted" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
+          <ScalarProperty Name="NoteID" ColumnName="NoteID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProjectBidders">
+      <EntityTypeMapping TypeName="OracleEntities.ProjectBidder">
+        <MappingFragment StoreEntitySet="ProjectBidders">
+          <ScalarProperty Name="EffectiveDate" ColumnName="EffectiveDate" />
+          <ScalarProperty Name="MsModificationDate" ColumnName="MsModificationDate" />
+          <ScalarProperty Name="CustJobNbr" ColumnName="CustJobNbr" />
+          <ScalarProperty Name="UnloadCharge" ColumnName="UnloadCharge" />
+          <ScalarProperty Name="SeasonalCharge" ColumnName="SeasonalCharge" />
+          <ScalarProperty Name="SundryCharge" ColumnName="SundryCharge" />
+          <ScalarProperty Name="MinLoadCharge" ColumnName="MinLoadCharge" />
+          <ScalarProperty Name="PONumber" ColumnName="PONumber" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="ProjectCode" ColumnName="ProjectCode" />
+          <ScalarProperty Name="PlantID" ColumnName="PlantID" />
+          <ScalarProperty Name="StatusID" ColumnName="StatusID" />
+          <ScalarProperty Name="NotLIkeLIst" ColumnName="NotLIkeLIst" />
+          <ScalarProperty Name="QuoteDate" ColumnName="QuoteDate" />
+          <ScalarProperty Name="StatusSub" ColumnName="StatusSub" />
+          <ScalarProperty Name="Quoted" ColumnName="Quoted" />
+          <ScalarProperty Name="ProspectID" ColumnName="ProspectID" />
+          <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
+          <ScalarProperty Name="ProjectBidderID" ColumnName="ProjectBidderID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProjectBidderProducts">
+      <EntityTypeMapping TypeName="OracleEntities.ProjectBidderProduct">
+        <MappingFragment StoreEntitySet="ProjectBidderProducts">
+          <ScalarProperty Name="PreviousDeliveredPrice" ColumnName="PreviousDeliveredPrice" />
+          <ScalarProperty Name="PreviousPrice" ColumnName="PreviousPrice" />
+          <ScalarProperty Name="MsModificationDate" ColumnName="MsModificationDate" />
+          <ScalarProperty Name="LineNbr" ColumnName="LineNbr" />
+          <ScalarProperty Name="StatusID" ColumnName="StatusID" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="Exported" ColumnName="Exported" />
+          <ScalarProperty Name="CustomerPrice" ColumnName="CustomerPrice" />
+          <ScalarProperty Name="ListPrice" ColumnName="ListPrice" />
+          <ScalarProperty Name="FreightPay" ColumnName="FreightPay" />
+          <ScalarProperty Name="Freight" ColumnName="Freight" />
+          <ScalarProperty Name="Forecasted" ColumnName="Forecasted" />
+          <ScalarProperty Name="SameAsList" ColumnName="SameAsList" />
+          <ScalarProperty Name="Modified" ColumnName="Modified" />
+          <ScalarProperty Name="Inserted" ColumnName="Inserted" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="ProjectProductID" ColumnName="ProjectProductID" />
+          <ScalarProperty Name="ProjectBidderID" ColumnName="ProjectBidderID" />
+          <ScalarProperty Name="ProjectBidderProductID" ColumnName="ProjectBidderProductID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Quotes">
+      <EntityTypeMapping TypeName="OracleEntities.Quote">
+        <MappingFragment StoreEntitySet="Quotes">
+          <ScalarProperty Name="SalespersonID" ColumnName="SalespersonID" />
+          <ScalarProperty Name="MsModificationDate" ColumnName="MsModificationDate" />
+          <ScalarProperty Name="AllowAfterComplete" ColumnName="AllowAfterComplete" />
+          <ScalarProperty Name="AllowExceedLoads" ColumnName="AllowExceedLoads" />
+          <ScalarProperty Name="AllowExceedQty" ColumnName="AllowExceedQty" />
+          <ScalarProperty Name="AllowAfterEnd" ColumnName="AllowAfterEnd" />
+          <ScalarProperty Name="AllowBeforeStart" ColumnName="AllowBeforeStart" />
+          <ScalarProperty Name="ApexNoteID" ColumnName="ApexNoteID" />
+          <ScalarProperty Name="BeginDate" ColumnName="BeginDate" />
+          <ScalarProperty Name="PurchaseOrder" ColumnName="PurchaseOrder" />
+          <ScalarProperty Name="CustomerOrderID" ColumnName="CustomerOrderID" />
+          <ScalarProperty Name="VehicleTypeID_5" ColumnName="VehicleTypeID_5" />
+          <ScalarProperty Name="VehicleTypeID_4" ColumnName="VehicleTypeID_4" />
+          <ScalarProperty Name="VehicleTypeID_3" ColumnName="VehicleTypeID_3" />
+          <ScalarProperty Name="VehicleTypeID_2" ColumnName="VehicleTypeID_2" />
+          <ScalarProperty Name="VehicleTypeID_1" ColumnName="VehicleTypeID_1" />
+          <ScalarProperty Name="ExpireOrderDate" ColumnName="ExpireOrderDate" />
+          <ScalarProperty Name="StartOrderDate" ColumnName="StartOrderDate" />
+          <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
+          <ScalarProperty Name="CreatedByID" ColumnName="CreatedByID" />
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+          <ScalarProperty Name="QuoteStatusID" ColumnName="QuoteStatusID" />
+          <ScalarProperty Name="EscalationAmount" ColumnName="EscalationAmount" />
+          <ScalarProperty Name="QuoteNote" ColumnName="QuoteNote" />
+          <ScalarProperty Name="EscalationDate" ColumnName="EscalationDate" />
+          <ScalarProperty Name="Exported" ColumnName="Exported" />
+          <ScalarProperty Name="CustomerQuoteID" ColumnName="CustomerQuoteID" />
+          <ScalarProperty Name="DateLastModified" ColumnName="DateLastModified" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="QuoteTypeID" ColumnName="QuoteTypeID" />
+          <ScalarProperty Name="QuoteSequenceNumber" ColumnName="QuoteSequenceNumber" />
+          <ScalarProperty Name="FirmUntilDate" ColumnName="FirmUntilDate" />
+          <ScalarProperty Name="QuoteDate" ColumnName="QuoteDate" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="CellPhone" ColumnName="CellPhone" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Attention" ColumnName="Attention" />
+          <ScalarProperty Name="TermsID" ColumnName="TermsID" />
+          <ScalarProperty Name="ContactID" ColumnName="ContactID" />
+          <ScalarProperty Name="ProjectBidderID" ColumnName="ProjectBidderID" />
+          <ScalarProperty Name="QuoteID" ColumnName="QuoteID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProjectDistances">
+      <EntityTypeMapping TypeName="OracleEntities.ProjectDistance">
+        <MappingFragment StoreEntitySet="ProjectDistances">
+          <ScalarProperty Name="MsModificationDate" ColumnName="MsModificationDate" />
+          <ScalarProperty Name="Kilometers" ColumnName="Kilometers" />
+          <ScalarProperty Name="Miles" ColumnName="Miles" />
+          <ScalarProperty Name="PlantID" ColumnName="PlantID" />
+          <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
+          <ScalarProperty Name="ProjectDistanceID" ColumnName="ProjectDistanceID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Companies">
+      <EntityTypeMapping TypeName="OracleEntities.Company">
+        <MappingFragment StoreEntitySet="Companies">
+          <ScalarProperty Name="MsModificationDate" ColumnName="MsModificationDate" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="UsesSalesOrders" ColumnName="UsesSalesOrders" />
+          <ScalarProperty Name="UsesPriceIntegration" ColumnName="UsesPriceIntegration" />
+          <ScalarProperty Name="ChangeProjectCode" ColumnName="ChangeProjectCode" />
+          <ScalarProperty Name="TimeoutRedirect" ColumnName="TimeoutRedirect" />
+          <ScalarProperty Name="UsesSAML" ColumnName="UsesSAML" />
+          <ScalarProperty Name="Cert509" ColumnName="Cert509" />
+          <ScalarProperty Name="DefaultUomID" ColumnName="DefaultUomID" />
+          <ScalarProperty Name="MaxQuantity" ColumnName="MaxQuantity" />
+          <ScalarProperty Name="UsesCategories" ColumnName="UsesCategories" />
+          <ScalarProperty Name="CompanyCode" ColumnName="CompanyCode" />
+          <ScalarProperty Name="InstanceID" ColumnName="InstanceID" />
+          <ScalarProperty Name="ChannelID" ColumnName="ChannelID" />
+          <ScalarProperty Name="SourceSystemID" ColumnName="SourceSystemID" />
+          <ScalarProperty Name="QuoteImage" ColumnName="QuoteImage" />
+          <ScalarProperty Name="ServiceUrl" ColumnName="ServiceUrl" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="Phone2" ColumnName="Phone2" />
+          <ScalarProperty Name="Phone1" ColumnName="Phone1" />
+          <ScalarProperty Name="Zip" ColumnName="Zip" />
+          <ScalarProperty Name="ST" ColumnName="ST" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Address2" ColumnName="Address2" />
+          <ScalarProperty Name="Address1" ColumnName="Address1" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
